@@ -6,8 +6,8 @@ import { Observable } from 'rxjs/Observable';
 import { ProblemComponent } from './problem.component';
 
 @Component({
-  selector: 'jbl-search',
-  templateUrl: './jbl-search.component.html',
+  selector: 'search',
+  templateUrl: './search.component.html',
   styles: []
 })
 export class SearchComponent implements OnInit {
@@ -20,15 +20,15 @@ export class SearchComponent implements OnInit {
     private router: Router,
     private searchService: SearchService
   ) {
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector("#" + tree.fragment);
-          if (element) { element.scrollIntoView(element); }
-        }
-      }
-    });
+    // router.events.subscribe(s => {
+    //   if (s instanceof NavigationEnd) {
+    //     const tree = router.parseUrl(router.url);
+    //     if (tree.fragment) {
+    //       const element = document.querySelector("#" + tree.fragment);
+    //       if (element) { element.scrollIntoView(element); }
+    //     }
+    //   }
+    // });
   }
 
   ngOnInit() {
@@ -40,5 +40,12 @@ export class SearchComponent implements OnInit {
 
   ngAfterViewInit() {
 
+  }
+
+  goToId(event){
+    event.preventDefault();
+    let id = event.target.text.replace(/ /g, "-");
+    const element = document.querySelector("#" + id);
+    if (element) { element.scrollIntoView(element); }
   }
 }

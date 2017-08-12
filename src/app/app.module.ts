@@ -14,9 +14,8 @@ import { ProblemService } from './problem.service';
 import { LoginComponent } from './login/login.component';
 
 import { JblMainComponent } from './jbl-main/jbl-main.component';
-import { ViewProblemsComponent } from './view-problems/view-problems.component';
-import { SearchComponent } from './jbl-search/jbl-search.component';
-import { ProblemComponent } from './jbl-search/problem.component';
+import { SearchComponent } from './search/search.component';
+import { ProblemComponent } from './search/problem.component';
 
 import { TopicIdPipe } from './topic-id.pipe';
 
@@ -40,7 +39,6 @@ class AuthRequestOptions extends BaseRequestOptions {
     TopicIdPipe,
     JblMainComponent,
     SearchBarComponent,
-    ViewProblemsComponent,
     SearchComponent,
     ProblemComponent,
     LoginComponent

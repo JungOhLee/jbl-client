@@ -19,7 +19,7 @@ export class ProblemService {
   setSearchParams(problem){
     let params: URLSearchParams = new URLSearchParams();
     params.append('question', problem.question);
-    params.append('number', problem.number);
+    // params.append('number', problem.number);
     params.append('year', problem.year);
     params.append('topic', problem.topic);
     params.append('course', problem.course);
@@ -45,6 +45,6 @@ export class ProblemService {
   }
 
   deleteComment(comment){
-    return this.http.delete(this.commentUrl, comment)
+    return this.http.delete(this.commentUrl, {body: comment, headers: this.headers})
   }
 }

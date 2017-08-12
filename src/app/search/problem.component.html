@@ -16,12 +16,16 @@
   </div>
 
   <!-- 문제 comment toggler -->
-  <div class="comments-toggler"><a (click)="toggleComments();getComments()">Comments</a><span class="badge badge-pill badge-info align-top">{{problem.commentsCount}}</span> </div>
+  <div class="comments-toggler">
+    <a (click)="toggleComments();getComments()">Comments</a>
+    <!-- <span class="badge badge-pill badge-info align-top">{{problem.commentsCount}}</span>  -->
+  </div>
   <!-- comments -->
   <div class="problem-comments col-12" *ngIf="showComments">
-    <div class="problem-comment clearfix" *ngFor="let comment of comments">
+    <div class="problem-comment clearfix" *ngFor="let comment of comments; let i = index;">
       {{comment.body}}
-      <span class="fa fa-pencil float-right text-muted mr-1"></span> <span class="fa fa-times float-right text-muted mr-1"></span>
+      <!-- <span class="fa fa-pencil float-right text-muted mr-1"></span>  -->
+      <span class="fa fa-times float-right text-muted mr-1" (click)="deleteComment(comment, i)"></span>
     </div>
     <!-- comment form toggler-->
     <div class="comment-form-toggle" (click)="toggleCommentForm()" *ngIf="!showCommentForm">

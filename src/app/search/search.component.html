@@ -3,7 +3,7 @@
     <div class="toc navbar col-sm-3" id="toc-list" #toc>
       <ul class="nav flex-column sidebar sticky-top">
         <li class="nav-item" *ngFor="let content of jblData.contents">
-          <a class="nav-link pt-1" [routerLink]="['./']" fragment="{{content.h2|topicId}}">{{content.h2}}</a>
+          <a class="nav-link pt-1" (click)="goToId($event)" >{{content.h2}}</a>
         </li>
       </ul>
     </div>

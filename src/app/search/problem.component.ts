@@ -12,7 +12,7 @@ export class ProblemComponent implements OnInit{
   private showComments = false;
   private showCommentForm = false;
   private newCommentBody: string;
-  private comments ;
+  private comments =[];
   constructor(
     private problemService: ProblemService
   ){}
@@ -33,7 +33,7 @@ export class ProblemComponent implements OnInit{
   // Comment C(R)UD
   getComments(){
     this.problemService.getComments(this.problem)
-    .subscribe(res => this.comments=res.comments);
+    .subscribe(res => this.comments=res);
   }
 
   addComment(commentBody){
@@ -50,7 +50,8 @@ export class ProblemComponent implements OnInit{
     this.problemService.updateComment(comment);
   }
 
-  deleteComment(comment){
-    this.problemService.deleteComment(comment);
+  deleteComment(comment, i){
+    this.problemService.deleteComment(comment)
+      .subscribe(res => {this.comments.splice(i,1);console.log(res);});
   }
 }
