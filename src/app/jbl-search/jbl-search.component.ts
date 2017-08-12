@@ -6,11 +6,11 @@ import { Observable } from 'rxjs/Observable';
 import { ProblemComponent } from './problem.component';
 
 @Component({
-  selector: 'discuss-problems',
-  templateUrl: './discuss-problems.component.html',
+  selector: 'jbl-search',
+  templateUrl: './jbl-search.component.html',
   styles: []
 })
-export class DiscussProblemsComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   @ViewChild('toc') toc: ElementRef;
   private jblData;

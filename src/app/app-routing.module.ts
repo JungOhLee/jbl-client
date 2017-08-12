@@ -3,9 +3,9 @@ import { RouterModule, Routes }  from '@angular/router';
 
 import { JblMainComponent } from './jbl-main/jbl-main.component'
 import { ViewProblemsComponent } from './view-problems/view-problems.component';
-import { DiscussProblemsComponent } from './d-mode/discuss-problems.component';
+import { SearchComponent } from './jbl-search/jbl-search.component';
 
-import { AuthGuard } from './auth-guard.service';
+import { AuthGuard } from './login/auth-guard.service';
 
 const appRoutes: Routes = [
   // { path: 'crisis-center', component: CrisisListComponent },
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     children: [
       {
         path: 'search',
-        component: DiscussProblemsComponent
+        component: SearchComponent
       }
       //이후 routing 추가할 부분
     ]

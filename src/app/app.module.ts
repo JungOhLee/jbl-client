@@ -5,18 +5,18 @@ import { HttpModule } from '@angular/http';
 
 //Routing Module
 import { AppRoutingModule } from './app-routing.module';
-import { LoginRoutingModule } from './login-routing.module';
+import { LoginRoutingModule } from './login/login-routing.module';
 
 import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SearchService} from './search.service';
 import { ProblemService } from './problem.service';
-import { LoginComponent } from './login.component';
+import { LoginComponent } from './login/login.component';
 
 import { JblMainComponent } from './jbl-main/jbl-main.component';
 import { ViewProblemsComponent } from './view-problems/view-problems.component';
-import { DiscussProblemsComponent } from './d-mode/discuss-problems.component';
-import { ProblemComponent } from './d-mode/problem.component';
+import { SearchComponent } from './jbl-search/jbl-search.component';
+import { ProblemComponent } from './jbl-search/problem.component';
 
 import { TopicIdPipe } from './topic-id.pipe';
 
@@ -41,7 +41,7 @@ class AuthRequestOptions extends BaseRequestOptions {
     JblMainComponent,
     SearchBarComponent,
     ViewProblemsComponent,
-    DiscussProblemsComponent,
+    SearchComponent,
     ProblemComponent,
     LoginComponent
   ],
