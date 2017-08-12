@@ -1,0 +1,21 @@
+<div class="content container-fluid" *ngIf="jblData">
+  <div class="content row">
+    <div class="toc navbar col-sm-3" id="toc-list" #toc>
+      <ul class="nav flex-column sidebar sticky-top">
+        <li class="nav-item" *ngFor="let content of jblData.contents">
+          <a class="nav-link pt-1" [routerLink]="['./']" fragment="{{content.h2|topicId}}">{{content.h2}}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="problems py-2 col-sm-9" data-spy="scroll" data-target="#toc-list" data-offset="0">
+      <h1 class="text-center">{{jblData.h1}}</h1>
+      <br>
+      <div class="problems-by-content" *ngFor="let content of jblData.contents">
+        <h2 id="{{content.h2|topicId}}" class="mb-2">[{{content.h2}}]</h2>
+        <!-- 문제 div-->
+        <problem *ngFor="let problem of content.contents" [problem]=problem></problem>
+      </div>
+    </div>
+  </div>
+</div>

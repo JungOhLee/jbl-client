@@ -1,0 +1,123 @@
+{
+  "is-toc": false,
+  "course": "질병의 병리학적 이해",
+  "topics": [
+    {
+      "title": "세포의 손상 및 적응",
+      "problems": [
+        {
+        "id": 0,
+        "tags": [2015, "10", "세포의 손상 및 적용", "prof1"],
+        "year": 2015,
+        "topic": "세포의 손상 및 적응",
+        "number": "10",
+        "prof": ["prof1"],
+        "question": "<p>칼슘이 세포 손상을 일으키는 기전에 대한 설명이다. 옳지 않은 항목을 하나 고르시오.</p><p>1) 정상세포에서 칼슘 농도는 세포밖에 비해 매우 낮다.</p><p>2) Mitochondria가 손상을 받으면 세포질의 칼슘 농도가 높아진다.</p><p>3) 세포질의 칼슘 농도가 높아지면 mitochondria permeability transition pore가 열려서 apoptosis가 진행된다.</p><p>4) 칼슘 농도가 높아지면 phospholipase, protease 등이 활성화되어 세포손상이 일어난다.</p><p>5) 칼슘 농도가 높아지면 caspase-3가 활성화되어 apoptosis가 일어난다.</p>",
+        "answer": "3",
+        "explanations": [{"text":"empty explanation"}],
+        "comments": [{"text":"comment1"},{"text":"comment2"}]},
+      {
+        "id": 1,
+        "tags": [2015, "11", "세포의 손상 및 적용", "prof1", "prof2"],
+        "year": 2015,
+        "topic": "세포의 손상 및 적응",
+        "number": "11",
+        "prof": ["prof1", "prof2"],
+        "question": "<p>세포를 구성하는 membrane에 손상을 일으키는 원인으로 가장 관련이 적은 것은?</p> <p>1) ATP 저하</p> <p>2) Misfolded protein accumulation</p> <p>3) Reactive oxygen species</p> <p>4) Phospholipase activation</p> <p>5) Protease activation</p>",
+        "answer": "2",
+        "explanations": [{"text":"empty explanation"},{"text":"empty explanation2"}],
+        "comments": [{"text":"comment1"},{"text":"comment2"}]
+      },
+      {
+        "id": 2,
+        "tags": [2015, "R4", "R5", "세포의 손상 및 적용", "prof1"],
+        "year": 2015,
+        "topic": "세포의 손상 및 적응",
+        "number": "R4, R5",
+        "prof": ["prof1"],
+        "question": "<p>다음은 세포내 변화에 대한 설명이다. 해당하는 항목을 고르시오.</p> <p>1) ATP 저하에 의해 세포내 여러 기능이 저하된다.</p> <p>2) 활성산소에 의해 거대분자가 손상된다.</p> <p>3) 세포막이 손상되어 세포질 성분이 세포 밖으로 빠져나간다.</p> <p>4) FADD에의해 caspase-8가 활성화된다.</p> <p>5) 심한 DNA damage가 복구되지 못한 채로 남아 있다.</p> <p>6) mitochondria에 위치하던 cytochrome C가 세포질로 누출된다.</p> <p>7) 세포가 산성화되고 효소의 기능이 저하된다.</p> <p>8) caspase-3가 활성화된다.</p> <p>9) “BH-3 only protein”의 활성화로 인해 미토콘드리아 막에 이상이 일어난다.</p> <p>10) Autophagosome과 liposome이 결합하여 세포내 소기관을 분해한다.</p> <p>cyanide가 cytochrome oxidase와 결합하여 일으키는 가장 직접적인 변화를 1개 고르시오.</p>",
+        "answer": "1",
+        "explanations": [{"text": "empty explanation"}],
+        "comments": [{"text":"comment1"},{"text":"comment2"}]
+      },
+      {
+        "id": 3,
+        "tags": [2015, "R5", "세포의 손상 및 적용", "prof1", "prof2"],
+        "year": 2015,
+        "topic": "세포의 손상 및 적응",
+        "number": "R5",
+        "prof": ["prof1", "prof2"],
+        "question": "<p>세포의 DNA를 전기영동하니 아래 그림과 같이 규칙적인 band를 보였다. 이와 관련이 있는 항목을 5개 고르시오.</p><p><img alt=\"PIC4B72\" src=\"https://bytebucket.org/jungkook/jbl_data/raw/236fb3c18d12f98af6b4cf8a530b20f5256ba4fe/%EC%A7%88%EB%B3%91%EC%9D%98%20%EB%B3%91%EB%A6%AC%ED%95%99%EC%A0%81%20%EC%9D%B4%ED%95%B4/%EC%84%B8%ED%8F%AC%EC%9D%98%20%EC%86%90%EC%83%81%20%EB%B0%8F%20%EC%A0%81%EC%9D%91/PIC4B72.png?token=0a9610484bc464dcd9fa5103a5abb99fa1f6ba11\"></p>",
+        "answer": "4, 5, 6, 8, 9",
+        "explanations": [{"text": "empty explanation"},{"text": "explanations2"}],
+        "comments": [{"text":"comment1"},{"text":"comment2"}]
+      },
+      {
+        "id": 4,
+        "tags": [2014, "1", "세포의 손상 및 적용", "prof1", "prof2"],
+        "year": 2014,
+        "topic": "세포의 손상 및 적응",
+        "number": "1",
+        "prof": ["prof1", "prof2"],
+        "question": "<p>뇌경색(cerebral infarct)으로 신경세포가 손상되면 정상으로 회복되기 어렵다. 이와 유사하게 손상 후 정상으로 회복되기 매우 어려운 세포로 가장 적절한 것은?</p> <p>1) 간세포(hepatocyte)</p> <p>2) 심장근육(myocardium)</p> <p>3) 골수세포(bone marrow cell)</p> <p>4) 모낭세포(hair follicular cell)</p> <p>5) 위장관 점막(gastrointestinal mucosa)</p>",
+        "answer": "1",
+        "explanations": [{"text": "empty explanation"},{"text": "explanations2"}],
+        "comments": [{"text":"comment1"},{"text":"comment2"}]
+      },
+      {
+        "id": 5,
+        "tags": [2014, "2", "세포의 손상 및 적용", "prof1"],
+        "year": 2014,
+        "topic": "세포의 손상 및 적응",
+        "number": "1",
+        "prof": ["prof1"],
+        "question": "<p>어린 아이에서 주로 발생하는 망막모세포증 (retinoblastoma)의 원인 유전자로 알려진 Rb에 의해서 조절 받는 세포 주기의 단계로 가장 적절한 것은?</p> <p>1) G0 → G1 이행기         </p> <p>2) G1 → S 이행기</p> <p>3) S → G2 이행기          </p> <p>4) G2 → M 이행기</p> <p>5) M → G1 이행기</p>",
+        "answer": "2",
+        "explanations": [{"text": "empty explanation"},{"text": "explanations2"}],
+        "comments": [{"text":"comment1"},{"text":"comment2"}]
+      }
+      ]
+    },
+    {
+      "title": "약리학 총론",
+      "problems": [
+        {
+          "id": 6,
+          "tags": [2016, "1", "약리학 총론", "박종완"],
+          "year": 2016,
+          "topic": "약리학 총론",
+          "number": "1",
+          "prof": ["박종완"],
+          "question": "<p>선도물질(lead  compound)에  대한  설명  후,  전임상 시험 전에 선도물질을 목적에 맞게 수정하는 과정은 무엇인가?</p> <p>1)  Lead modification</p> <p>2)  Lead optimization</p> <p>3)  Lead revision</p> <p>4)  Lead correcting</p> <p>5)  Lead remodeling</p>",
+          "answer": "2",
+          "explanations": [{"text": "empty explanation"},{"text": "explanations2"}],
+          "comments": [{"text":"comment1"},{"text":"comment2"}]
+        },
+        {
+          "id": 7,
+          "tags": [2016, "2", "약리학 총론", "박종완"],
+          "year": 2016,
+          "topic": "약리학 총론",
+          "number": "1",
+          "prof": ["박종완"],
+          "question": "<p>이상적인 약물(ideal drug)의 가장 중요한 특성은?</p> <p>1)  Selectivity</p> <p>2)  Effectiveness</p> <p>3)  Safety</p> <p>4)  Predictability</p> <p>5)  Low price</p>",
+          "answer": "2",
+          "explanations": [{"text": "empty explanation"},{"text": "explanations2"}],
+          "comments": [{"text":"comment1"},{"text":"comment2"}]
+        },
+        {
+          "id": 8,
+          "tags": [2015, "1", "2","3", "약리학 총론", "박종완"],
+          "year": 2015,
+          "topic": "약리학 총론",
+          "number": "1-3",
+          "prof": ["박종완"],
+          "question": "<p>다음 글을 읽고 문제에 답하시오.</p> <p>Cetuximab (ErbituxⓇ )</p> <p>Cetuximab, which is also known as ErbituxⓇ , is mainly used to treat cancers that affect the large bowel(colon and rectum) or the head and neck. Certuximab may  also  be  used to treat other  types of cancer as part of a research trial</p> <br/><p>What is cetuximab?</p> <p>Cetuximab belongs to a group of cancerdrugs known as monoclonal antibodies. Monoclonal antibodies are sometimes called targeted therapies because they work by ‘targeting’ specific proteins (receptors) on the surface of cells.</p> <br/><p>How cetuximab works?</p> <p>Some types of cancer have large numbers  of receptors on their surface called epidermal growth factorreceptors (EGFRs). When the receptors are activated they trigger the cancer cells to divide and grow. Cetuximab locks on to the EGFRs. This stops them from stimulating the cancer  cells  to  divide and grow. It may also make the cancer cells more sensitive to the effects of chemotherapy and radiotherapy. Cetuximab is most likely to work for cancers withlarge numbers of EGFRs on their surfaces.</p> <br/><p>How cetuximab is given?</p> <p>Cetuximab is given  as  a  drip into  a  vein (intravenous infusion). The first infusion involves a larger dose of cetuximab that  is  given slowly, over  about  two hours. Afterwards you'll  stay in  the  clinic for about an hour to make sure that you don’ t have a reaction to the infusion. After the first infusion, the following infusions are given once a week and take about an  hour.</p> <br/><p>다음 약의 성분명(generic name)으로 올바른 것은?</p> <p>1) Cetuximab</p> <p>2) ErbituxⓇ</p> <p>3) monoclonal  antibody</p> <p>4) EGFR blocker</p> <br/><p>본문의  \"How  cetuximab  works?\"를  연구하는  학문은?</p> <p>1)  Pharmaceutics</p> <p>2)  Therapeutics</p> <p>3)  Pharmacokinetics</p> <p>4)  Pharmacodynamics</p> <p>5)  Pharmacogenetics</p> <br/><p>본문의  \"How cetuximab is given?\"을 연구하는 학문은?</p> <p>1)  Pharmaceutics</p> <p>2)  Therapeutics</p> <p>3)  Pharmacokinetics</p> <p>4)  Pharmacodynamics</p> <p>5)  Pharmacogenetics</p>",
+          "answer": "1 / 4 / 3",
+          "explanations": [{"text": "empty explanation"},{"text": "explanations2"}],
+          "comments": [{"text":"comment1"},{"text":"comment2"}]
+        }
+      ]
+    }
+  ]
+}

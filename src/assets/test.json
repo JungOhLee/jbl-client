@@ -1,0 +1,457 @@
+{
+  "topics": [{
+    "problems": [{
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 다음 중 세포자멸사(apoptosis)가 일어나고 있는 세포의 형태학적 특성으로 가장 알맞은 것은 무엇인가?</p><p> 1) 세포의 크기가 커진다.</p><p> 2) 세포막이 파괴된다.</p><p> 3) 주변에 염증을 유발하지 않는다.</p><p> 4) 염색질이 풀어지고 색이 옅어진다.</p><p> 5) 핵의 크기가 커진다.</p>",
+      "tags": ["2016", "20", "세포의 손상 및 적응", "문경철", "질병의 병리학적 이해"],
+      "comments":[{"text":"comment blah blah"},{"text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 다음 중 세포자멸사(apoptosis)의 시작(initiation) 단계 중 외인성경로(extrinsic pathway)에 관여하는 물질은 무엇인가?</p><p> 1)  caspase-9</p><p> 2)  BCL2</p><p> 3)  BAX</p><p> 4)  Fas</p><p> 5)  BAD</p>",
+      "tags": ["2016", "21", "세포의 손상 및 적응", "문경철", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 다음은 세포사(cell death)의 여러 형태 중 하나에 관한 기술이다. 이 형태의 세포죽음의 기전에 관여하는 중심적인 물질로 가장 적당한 것은 무엇인가?</p><ul> <li>  세포예정사(programmed cell death)의 일종이다. </li> <li>  형태학적으로 괴사(necrosis)와 유사한 모습을 보인다. </li> <li>  성장판(growth plate)의형성과정, 지방간염(steatohepatitis)에서의 세포사 등에 관여한다. </li> <li>  Caspase와 무관하게 일어난다. </li></ul><p> 1)  FADD (Fas-associated death domain)</p><p> 2)  Inflammasome</p><p> 3)  BCL-XL</p><p> 4)  Chaperones</p><p> 5)  RIP1 (receptorassociated kinase 1)</p>",
+      "tags": ["2016", "22", "세포의 손상 및 적응", "문경철", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1\n</code></pre>",
+      "question": "<p> 다음 중 자가포식현상(Autophagy)과 관련있다고 알려진 질병은 무엇인가?</p><p> 1)  Alzheimer disease</p><p> 2)  Graft versus host disease</p><p> 3)  Tuberculosis</p><p> 4)  Acute cellular rejection</p><p> 5)  Myocardial  infarction</p>",
+      "tags": ["2016", "23", "세포의 손상 및 적응", "문경철", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 다음 중 cholesterol/cholesterol ester의 침착이 흔하게 관찰되는 질환은 무엇인가?</p><p> 1) Alcoholic fatty liver disease</p><p> 2)  Atherosclerosis</p><p> 3)  Non-alcoholic fatty liver disease</p><p> 4)  Diabetes</p><p> 5)  Amyloidosis</p>",
+      "tags": ["2016", "24", "세포의 손상 및 적응", "문경철", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 다음이 설명하는 것으로 가장 가능성이 높은 것은 무엇인가?</p><ul> <li>  세포노화(cellular aging)를 억제한다고 알려져 있다. </li> <li>  DNA복구효소(DNA repair enzyme)을활성화시켜 유전체통합성(genomic integrity) 유지에 관여한다. </li> <li>  NAD-dependent protein deacetylase의 일종이다. </li></ul><p> 1)  Telomere</p><p> 2)  Telomerase</p><p> 3)  Insulin-like growth factor 1 (IGF-1)</p><p> 4)  Sirtuins</p><p> 5)  Rapamycin</p>",
+      "tags": ["2016", "25", "세포의 손상 및 적응", "문경철", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 미토콘드리아가 손상되었을때, 세포질(cytoplasm) 내에 증가하는 성분으로 가장 적절한 것은?</p><p> 1)   pH</p><p> 2)  K+</p><p> 3)  Ca2+</p><p> 4) 단백질</p><p> 5) 당원(글리코겐,glycogen)</p>",
+      "tags": ["2016", "36", "세포의 손상 및 적응", "정경천", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 뇌로 가는 혈관이 막혔을 때 발생하는 괴사의 종류로 가장 적절한 것은?</p><p> 1)  Coagulation necrosis (응고괴사)</p><p> 2)  Liquefaction necrosis (액화괴사)</p><p> 3)  Gangrenous necrosis (괴저괴사)</p><p> 4)  Caseous necrosis (치즈괴사)</p><p> 5)  Fat necrosis(지방괴사)</p>",
+      "tags": ["2016", "37", "세포의 손상 및 적응", "정경천", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 다음은 산소자유라디칼(oxygen free radical)의 생성 및 제거 반응을 나타낸 모식도이다. Transferrin을 투여하여 억제할 수 있는 과정은?</p><p> <img alt=\"image009\" src=\"https://s3.ap-northeast-2.amazonaws.com/jbl-data/img/질병의+병리학적+이해/image009.jpg\"/></p>",
+      "tags": ["2016", "38", "세포의 손상 및 적응", "정경천", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 신장으로 가는 혈관이 막혔을 때 신세뇨관(콩팥요세관, renal tubule)상피세포에 가장 초기에 발생하는 형태학적 변화는?</p><p> 1) 염증</p><p> 2) Myelin figure</p><p> 3)  핵농축(pyknosis)</p><p> 4)  세포종창(cellular  swelling)</p><p> 5)  세포질내  공포형성(vacuolization)</p>",
+      "tags": ["2016", "39", "세포의 손상 및 적응", "정경천", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>R2: 2, 3, 11, 12\nR3: 1, 7\n</code></pre>",
+      "question": "<p> 아래 답가지 (1-13) 중에서 각 문항의 정답을 주어진 수만큼 고르시오.</p><p> 1)  Barrett  식도</p><p> 2) 헌혈한 남성의 골수</p><p> 3) 아기를 분만 여성의 유방</p><p> 4) 말기 암환자의 사지 근육</p><p> 5) 폐경 후 여성의 자궁 내막</p><p> 6) 만성  고혈압 환자의 우심실</p><p> 7) 20년 이상 흡연한 사람의 기관지 점막</p><p> 8) 오랫동안 근력운동을 한 운동선수의 사지  근육</p><p> 9) 6개월간 우주 정거장 근무 중인 우주비행사</p><p> 10) 당뇨병으로 뇌혈관이  좁아진 사람의 대뇌 피질</p><p> 11) 에스트로젠(estrogen)에 과다 노출된 여성의 자궁 내막</p><p> 12) 간이식을 위하여 간의  일부를 기증한 사람의 남은 간 조직</p><p> 13) 테스토스테론억제  약물을 장기간 복용한 남자의 전립선</p><h6> R2</h6><p> 세포/조직 적응 과정 중 주로 증식(과증식, 과다형성, hyperplasia)이 발생하는 상황을   4개 고르시오.</p><h6> R3</h6><p> 줄기세포의 reprogramming을 거치는 과정을 2개 고르시오.</p>",
+      "tags": ["2016", "R2", "R3", "세포의 손상 및 적응", "정경천", "질병의 병리학적 이해"]
+    }],
+    "title": "세포의 손상 및 적응"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>R4: 2, 4, 6, 13\nR5: 1, 5\n</code></pre>",
+      "question": "<p> 염증과 관련된 사항을 열거한 것이다(1-15). 각 문항의 설명에 가장 적절한 답을 각 문항에서 제시하는 수 만큼 고르시오.</p><p> 1) increased vascular permeability</p><p> 2) transmigration</p><p> 3) complement activation</p><p> 4) rolling  of  leukocytes</p><p> 5) vasodilation</p><p> 6) margination</p><p> 7)  chemotaxis</p><p> 8)  proliferation of blood vessels</p><p> 9)  vasoconstriction</p><p> 10)  neovascularization</p><p> 11)  killing or  degradation</p><p> 12)  phagocytosis</p><p> 13)  firm adhesion to endothelium</p><p> 14)  degranulation</p><p> 15)  recognition  of microbes</p><h6> R4</h6><p> 급성 염증에서 혈관 내에서 이루어지는 염증세포의 변화 4개를 열거하시오.</p><h6> R5</h6><p> 급성염증에서 나타나는 혈관의 변화 2개를 열거하시오.</p>",
+      "tags": ["2016", "R4", "R5", "급성염증", "정두현", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 염증에 관한 설명이다. 가장 옳은 것을 고르시오.</p><p> 1) 염증에서 혈관 밖으로 유출되는 fluid는 transudate이다.</p><p> 2) 염증은 일반적으로 숙주를 방어하는 기전이며 숙주에게 유해한 작용은 없다.</p><p> 3) 염증은 감염과 생체 내의 세포 또는 조직 손상에 의하여 유발될 수 있다.</p><p> 4) 급성염증의 과정은 염증의 원인에 따라 매우 다양하게 이루어진다.</p><p> 5) 염증발생 기전에서 가장 중요한 혈관 변화는 혈관 근육세포의 기능 변화이다.</p>",
+      "tags": ["2016", "40", "급성염증", "정두현", "질병의 병리학적 이해"]
+    }],
+    "title": "급성염증"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>2\n\n▶ 학생들이 응시한 CBT에는 포함되지 않아서, 채점에서 제외된 문제입니다.\n</code></pre>",
+      "question": "<p> 염증을 조절하는 인자들에 대한 설명으로 옳은 것은?</p><p> 1) 염증 매개 물질은 염증 자극 전에 항상 세포질에 이미 만들어져 있다가 분비한다.</p><p> 2) 대부분의 염증 매개 물질은 작용시간이 짧다.</p><p> 3) 염증 매개 물질은 국소적으로염증부위에서만 선택적으로 작용하고, 전신적인 효과를 보이지 않는다.</p><p> 4)  Non-steroidal anti-inflammatorydrug (NSAID)는 lipoxygenase를 억제하여 염증을 감소시킨다.</p><p> 5)  항원항체복합체는  보체(complement)의 alternative pathway를 활성화시킨다.</p>",
+      "tags": ["2016", "10", "염증의 화학적 매개인자", "김영아", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>R6: 2, 3, 4, 5\nR7: 10\n</code></pre>",
+      "question": "<p> 아래 답가지(1-12) 중에서 각 문항에 해당하는 염증매개인자를 고르시오.</p><p> 1) Histamine</p><p> 2) Prostaglandin D2   (PGD2)</p><p> 3) Thromboxane A2   (TXA2)</p><p> 4) Leukotriene C4   (LTC4)</p><p> 5) Lipoxin A4  (LXA4)</p><p> 6) Serotonin</p><p> 7)  Tumor necrosis factor (TNF)</p><p> 8)  IL-1</p><p> 9)  IL-6</p><p> 10)  Interferon gamma (IFN-g)</p><p> 11)  IL-4</p><p> 12)  Platelet activating factor (PAF)</p><h6> R6</h6><p> Arachidonic acid metabolite를 4개 고르시오.</p><h6> R7</h6><p> CD4+ T cell에서 분비되어 M1 macrophage를 활성화시켜 만성 염증에 관여하는 cytokine은? (1개)</p>",
+      "tags": ["2016", "R6", "R7", "염증의 화학적 매개인자", "김영아", "질병의 병리학적 이해"]
+    }],
+    "title": "염증의 화학적 매개인자"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 만성 염증에 대한 설명으로 옳지 않은 것은?</p><p> 1) 자가면역(autoimmunity)도 만성 염증을 유발한다.</p><p> 2) 만성 염증시 대식세포(macrophage)는 탐식작용(phagocytosis)를 통해 균과  괴사성물질을 제거하고, 조직복구에도관여한다.</p><p> 3) 만성 염증에 주로 관여하는 세포는 대식세포, 림프구(lymphocyte), 그리고 형질세포(plasma cell)로 중성구(neutrophil)은 관찰되지  않는다.</p><p> 4) M1대식세포는 염증을 증가시키는 반면, M2 대식세포는 섬유화를 증가시킨다.</p><p> 5) 육아종성 염증(granulomatous inflammation)이 관찰되는 질환으로는 결핵, leprosy, cat-scatch disease와 같은 것이 있다.</p>",
+      "tags": ["2016", "11", "만성염증", "김영아", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>Inflammation of prolonged duration inwhich active inflammation, tissue destruction and attemptat repair are proceeding  simultaneously\n</code></pre>",
+      "question": "<p> 만성염증의 정의를 기술하시오.</p>",
+      "tags": ["2016", "72", "만성염증", "김영아", "질병의 병리학적 이해"]
+    }],
+    "title": "만성염증"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 염증 조절에서 면역세포의 기능에 관한 것이다. 가장 옳은 것은?</p><p> 1)  모든 형태의 염증은 주로 innateimmune cell에 의하여 조절된다.</p><p> 2)  염증 조절 과정에서 pro-inflammatory response와 anti-inflammatory response의 균형이 매우 중요하게 작용한다.</p><p> 3) CD4+T세포는 염증을 주로 증가시키는 작용 만을 한다.</p><p> 4) Macrophage는 염증 조절에 관여하지 않는다.</p><p> 5) 염증 조절에 관여하는 면역세포는 다양하지 않다.</p>",
+      "tags": ["2016", "41", "질병에서 염증의 조절 및 의미", "정두현", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1\n</code></pre>",
+      "question": "<p> 질병과 염증의 관련성에 대한 기술이다. 가장 옳은 것은?</p><p> 1) 비만에 의한 당 조절 대사이상에 지방조직 내의 염증이 중요하게 관여한다.</p><p> 2) 만성 염증에 의한 암 발생은 없다.</p><p> 3) 악성 종양 내의 염증발생은 매우 드물다.</p><p> 4) 자가면역질환에서 발생되는 염증은 주로 급성염증으로 쉽게 치료된다.</p><p> 5) 동맥경화는 혈관벽에서 이루어지며 염증반응과 무관하게 발생된다.</p>",
+      "tags": ["2016", "42", "질병에서 염증의 조절 및 의미", "정두현", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 기술된 면역세포 중에서 염증 질환에서 염증을 증가시키기 보다는 억제하는 면역세포는?</p><p> 1)  Neutrophils</p><p> 2)  Mast cells</p><p> 3)  CD8+Tcells</p><p> 4) M2 macrophages</p><p> 5)  Th17 CD4+ T cells</p>",
+      "tags": ["2016", "43", "질병에서 염증의 조절 및 의미", "정두현", "질병의 병리학적 이해"]
+    }],
+    "title": "질병에서 염증의 조절 및 의미"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 세포외 바탕질 (extracellular matrix)을 구성하는 다음 성분 중 세포막을 관통하고 있으며 세포 골격과 세포의 외부를 연결시켜주는 역할을 담당하는 것은?</p><p> 1)  Fibronectin</p><p> 2)  Hyaluronan</p><p> 3)  Elastin</p><p> 4)  Integrin</p><p> 5)  Type IV collagen</p>",
+      "tags": ["2016", "13", "조직 재생 및 수복", "김혜령", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1\n</code></pre>",
+      "question": "<p> 다음 중 배아줄기세포(embryonal stem cell)가 존재하는 곳은?</p><p> 1)  Inner cell mass of blastocyst</p><p> 2)  Canal of Hering</p><p> 3)  Corneal limbus</p><p> 4)  Intestinal crypt</p><p> 5)  Bulge region of hair follicles</p>",
+      "tags": ["2016", "14", "조직 재생 및 수복", "김혜령", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 세포 주기와 관련된 다음 유전자/단백질 중 G1/S checkpoint에서 세포 주기의 진행을 억제하는 역할을 하는 것은?</p><p> 1)   CDK4</p><p> 2)  Cyclin D</p><p> 3)  Cyclin A</p><p> 4)  CDK2</p><p> 5)  p16</p>",
+      "tags": ["2016", "15", "조직 재생 및 수복", "김혜령", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 다음 성장인자(growth factor) 중 신생혈관생성 과정에 기여하는 바가 가장 적은 것은?</p><p> 1)  VEGF-A (vascular endothelial growth factor-A)</p><p> 2)  TGF-β (transforming growth factor-β)</p><p> 3)  EGF (epidermal growth factor)</p><p> 4)  FGF-2 (fibroblast growth factor-2)</p><p> 5)  PDGF (platelet-derivedgrowth factor)</p>",
+      "tags": ["2016", "16", "조직 재생 및 수복", "김혜령", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 다음 환자들 중 피부의 창상 치유 과정이 지연될 수 있는 경우는?</p><blockquote> <p>  가. 당뇨 환자 </p> <p>  나. 장기간 스테로이드 제제 복용 환자 </p> <p>  다. VitaminC 결핍증 환자 </p> <p>  라. 혈액순환의 장애가 있는 환자 </p></blockquote><p> 1) 가, 나, 다</p><p> 2) 가, 다</p><p> 3) 나, 라</p><p> 4) 라</p><p> 5) 가, 나, 다, 라</p>",
+      "tags": ["2016", "17", "조직 재생 및 수복", "김혜령", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2\n\n▶ keloid와 hypertrophic scar 모두 정답으로 처리하였습니다.\n&lt;보충 설명&gt; \"상처 부위 표면으로 볼록 튀어나온 4x2cm 크기의 단단한 종괴\"라는 설명은 keloid에 대한 설명이나, 원래 상처 부위의 크기를 제시하지 않았기 때문에 이 병변이 본래 상처부위의 범위보다 훨씬 큰 병변이라는 점을 인식하지 못할 수 있다고 생각됩니다.\n</code></pre>",
+      "question": "<p> 46세 여자 환자가 복강경 담낭절제술을 받은 후 특별한 문제 없이 퇴원하였다가, 2개월 후 피부 상처 부위 표면으로 볼록 튀어나온 4 x 2cm 크기의 단단한 종괴가 발생하여 내원하였다. 외과에서 종괴를 절제 후 병리과로 접수하였다. 현미경 소견상 종괴는 대부분 collagen으로 구성되어 있었으며 fibroblast들이 흩어져 있었다. 다음 중 가장 가능성 높은 진단명은?</p><p> 1)  Hypertrophic scar</p><p> 2)  Keloid</p><p> 3)  Wound  contracture</p><p> 4)  Wound dehiscence</p><p> 5)  Abscess</p>",
+      "tags": ["2016", "18", "조직 재생 및 수복", "김혜령", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 교통사고 후 하반신 마비로 장기간 침상에 누워서 지내던 35세 남자 환자의 꼬리뼈 부위 피부에 궤양성 병변이 발생하였다 (사진).본 병변의 치유 과정에 대한 설명 중 틀린 것은?</p><p> <img alt=\"image004\" src=\"https://s3.ap-northeast-2.amazonaws.com/jbl-data/img/%EC%A7%88%EB%B3%91%EC%9D%98+%EB%B3%91%EB%A6%AC%ED%95%99%EC%A0%81+%EC%9D%B4%ED%95%B4/image004.jpg\"/></p><p> 1) 이차융합(second intention)에 의하여 치유되는 창상(wound)에  해당된다.</p><p> 2) 손상 후 24시간 이내에 다수의 대식세포(macrophage)들이 침윤하여 다양한 성장인자(growth factor)들을 분비한다.</p><p> 3) 손상 후 1주일 이내로 광범위하게 육아조직(granulation tissue)이형성된다.</p><p> 4) 손상 부위에 collagen이축적되어 흉터(scar)가 형성되며, collagen이과도하게 분비되는 경우에는 비대흉터(hypertrophic scar)가 발생하기도 한다.</p><p> 5) 손상 부위에 근섬유아세포(myofibroblast)의 작용으로 상처가 수축하게 된다.</p>",
+      "tags": ["2016", "19", "조직 재생 및 수복", "김혜령", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>(괄호 안 답도 인정)\n1)  Continuously dividing cells  (또는 labile cells, 불안정 세포)\n2)  Quiescent cells (또는 stablecells, 안정 세포)\n3)  Non-dividing cells (또는 permanentcells, 영구 세포)\n</code></pre>",
+      "question": "<p> 손상된 조직의 수복 과정에서 중요한 요인 중 하나는 손상된 세포의 재생 능력이다. 재생 능력에 따른 체세포의 분류를 나열하시오. (주관식)</p>",
+      "tags": ["2016", "77", "조직 재생 및 수복", "김혜령", "질병의 병리학적 이해"]
+    }],
+    "title": "조직 재생 및 수복"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>2), 4)\n</code></pre>",
+      "question": "<p> 인체 세포의 상염색체와 성염색체에 대한 다음의 설명중 옳은 것 <strong>  두가지 </strong> 를 고르시오.</p><p> 1) 인체 염색체중 가장 크기가 작은 것은 22번 염색체이다.</p><p> 2) 염색체의 크기를 분모(B)로,염색체내 유전자수를 분자(A)로 만든 함수 (A/B) 값을 구하였을 때, 가장 작은 것은 Y 염색체이다.</p><p> 3) 위 함수 (A/B) 값은 21번 염색체에서, 18번이나 13번에 비해 더 작다.</p><p> 4) Acrocentric chromosome중 Y 염색체는 metaphase관찰시 satellite가 없다.</p><p> 5) 염색체군 중 A군에 속하는 1, 2, 3번 염색체는 metacentric 염색체이다.</p>",
+      "tags": ["2016", "1", "유전질환", "강경훈", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2, 3\n\n▶ (2)와 (3) 두 개가 정답이나, 보기 (2) 하나만 적어도 정답으로 처리하였습니다. 보기 (5)번이 포함되면 오답 처리 하였습니다.\n&lt;보충 설명&gt;\n● 보기 (3):  시험 과목이 질병의 병리학적 이해이지 유전학이나 조직학이 아니기 때문에, 보기가 병리상태(성염색체질환)를 기준으로 질문하고 있음을 판단하는게 맞습니다.\n● 보기 (5): 불활성화 된 X 염색체가 일부 전사된다는 것은 강의록에도 확실하게 있는 내용이고 강의 중에도 확실하게 전달한 내용입니다.\n</code></pre>",
+      "question": "<p> 성염색체질환 및 성염색체에 대한 다음의 설명중 옳은 것 두 가지를 고르시오.</p><p> 1) 성염색체 질환의 대부분은 출생당시 이상이 있음을 쉽게 인지할 수 있다.</p><p> 2) XXXY Klinefelter syndrome의 경우, 세포내 barr body는 2개가 관찰된다.</p><p> 3) X염색체의 수가 많을수록 지능저하가 더 심하다.</p><p> 4) XXY Klinefelter syndrome의 경우, X염색체는 둘다 모성 기원이다 (엄마로부터받은 것이다).</p><p> 5) 여성의 경우, XX염색체중 하나가 random inactivation되어 있는데, inactiveX염색체에서는 유전자가 발현되지 않는다.</p>",
+      "tags": ["2016", "2", "유전질환", "강경훈", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1, 2\n</code></pre>",
+      "question": "<p> 다운증후군에 대한 다음의 기술중 옳은 것 두가지를 고르시오.</p><p> 1) Maternal age가 많을수록 태아의 21번 삼염색체증의 위험도가 높아진다.</p><p> 2)  Menstrual cycle때 일어나는 oocyte의meiotic nondisjunction이 삼염색체증의 주요한 원인이다.</p><p> 3)  Robertsonian translocation에 의해 다운증후군이 초래될 수 있는데, 21번 염색체와 16, 17, 18번염색체간의 translocation에 의해 초래될 수 있다.</p><p> 4)  Robertsonian translocation은 paternal age와 상관이 있다.</p><p> 5) 다운증후군은 21번 삼염색체증은 maternal age요인뿐만 아니라 paternal age도 대등한 정도로 중요한 역할을 한다.</p>",
+      "tags": ["2016", "3", "유전질환", "강경훈", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2, 4\n</code></pre>",
+      "question": "<p> Fragile X syndrome에대한 다음의 기술중 옳은 것 두 가지를 고르시오.</p><p> 1)  Trinucleotide repeat mutation으로, trinucleotide는 CAG이다.</p><p> 2)  Trinucleotide repeat은 FMR-1유전자 5‘ UTR에 위치해 있다.</p><p> 3)  Trinucleotide repeat의 반복수가 증가하여 full mutation이되면, 유전자의 활성은 증가한다.</p><p> 4) FragileX syndrome 환자의 이학적 검사(신체검사)상 가장 특징적인 것은 large testicle이다.</p><p> 5) FragileX syndrome 환자의 세포를 culturemedia에 배양할 때, 배지에 folate농도를올려 주면, metaphase에서 fragileX의 특징적인 염색체 모습을 볼 수 있다.</p>",
+      "tags": ["2016", "4", "유전질환", "강경훈", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2, 5\n</code></pre>",
+      "question": "<p> Imprinting  disorder인  Prader-Willi증후군과 Angelman증후군에 대한 다음의 기술 중 옳은 것 두가지를 고르시오.</p><p> 1)  Prader-Willi증후군의  원인기전이uniparental  disomy라면, 15번 염색체 둘다 paternal origin이다.</p><p> 2)  Angelman syndrome의 발생원인중, uniparental disomy보다는 염색체의 interstitial deletion이 더 흔한 원인이다.</p><p> 3)  Angelman syndrome의 interstitial deletion은 paternal origin의 15번 염색체에서 일어난다.</p><p> 4)  Prader-Willi증후군의  원인기전이  interstitial deletion이라면, maternal origin의 15번 염색체에서 일어난다.</p><p> 5)  Angelman syndrome이 uniparental disomy에 의해 초래되었다면, 15번 염색체 둘다 paternalorigin이다.</p>",
+      "tags": ["2016", "5", "유전질환", "강경훈", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2, 4\n</code></pre>",
+      "question": "<p> Mitochondria에 있는 유전자변이에 의한 유전질환의 특성과 관련이 있는 것 두가지를 고르시오.</p><p> 1)  premutation</p><p> 2)  threshold effect</p><p> 3)  anticipation</p><p> 4)  heteroplasmy</p><p> 5)  carrier male</p>",
+      "tags": ["2016", "6", "유전질환", "강경훈", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2, 4\n</code></pre>",
+      "question": "<p> 단일유전자 Mendelian disorder에 대한 다음의 기술 중 옳은 것 두가지를 고르시오 (AD, autosomal dominant; AR, autosomal recessive).</p><p> 1)  유전자변이는 gain of function이 적은데, gain of function mutation은 AR transmission pattern을 보인다.</p><p> 2)  Multimeric protein의 한 subunit을 코드하고 있는 유전자의 변이가 multimeric protein의 assembly를 저해하는 경우, 이 변이는 AD transmission pattern을 보인다.</p><p> 3)  3Feedback을 받지 않는 complexmetabolic pathway의 조절에 관여하는 non-enzyme protein을 코드하는 유전자의 변이는 AD transmission pattern을 보인다.</p><p> 4) 유전성 종양증후군을일으키는 유전자들의 변이는 AR transmission보다는 AD transmission pattern을 보이는 경우가 더 많다.</p><p> 5)  Penetrance와 expressivity는 AD보다는 AR transmission pattern에서더 다양하게 나타난다.</p>",
+      "tags": ["2016", "7", "유전질환", "강경훈", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2, 4\n</code></pre>",
+      "question": "<p> Familial hypercholesterolemia에 대한 다음의 기술중 옳은 것 두가지를 고르시오.</p><p> 1)  Receptor protein defect로, autosomal recessive transmission pattern을 보인다.</p><p> 2)  Biallelic mutation이 있는 homozygote가 one mutant gene을 가진 heterozygote에 비해 혈중 콜레스테롤 레벨이 더 높다.</p><p> 3)  LDL receptor gene의 mutation종류는 비교적 단순하여, LDL receptor가만들어지지 않는 null allele mutant가 비교적 흔하다.</p><p> 4)  LDL receptor protein defect는 LDL 및 IDL clearance가 저하되어 혈중 콜레스테롤 레벨의 상승을 초래한다.</p><p> 5)   LDL receptor protein defect는 간세포내 콜레스테롤 레벨을 떨어뜨려, 간세포내 콜레스테롤합성을담당하는 HMG CoA reductase의 활성도를 저해하여 간내 콜레스테롤합성이 저하되고, VLDL생성이저하된다.</p>",
+      "tags": ["2016", "8", "유전질환", "강경훈", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1, 3\n</code></pre>",
+      "question": "<p> Marfan syndrome에 대한 다음의 기술 중 옳은 것 <strong>  두가지 </strong> 를 고르시오.</p><p> 1)  Fibrillin-1 protein defect로 fibrillin fiber의 polymerization을  저해한다.</p><p> 2)  Fibrillin은 elastic fiber의 주요한 구성원으로 elastic fiber는 microfibril의 합성에 필수적이다.</p><p> 3)  Microfibril은 TGF-beta signaling regulation에도 중요한 역할을 한다.</p><p> 4)  Bilateral dislocation of lens은 TGF-beta의과도한 활성화와 관련이 있다.</p><p> 5)  Marfan syndrome은 elastin gene mutation으로 인한 elastic fiber의 양적 저하로 인한 것이다.</p>",
+      "tags": ["2016", "9", "유전질환", "강경훈", "질병의 병리학적 이해"]
+    }],
+    "title": "유전질환"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>1\n\n▶ Amnion nodosum은 Oligohydramnios 때문에 아기의 Squame이 떨어져서 amnion surface에 붙은 것으로 변형과는 전혀 상관없는 것입니다.\n</code></pre>",
+      "question": "<p> 다음 중 기형, 파괴, 변형 중 변형에 해당하는 것은?</p><p> 1)  곤봉발 (Club foot)</p><p> 2)  무뇌증  (Anencephaly)</p><p> 3)  양막띠 증후군 (Amniotic band syndrome)</p><p> 4)  폐 저형성증 (Pulmonary hypoplasia)</p><p> 5)  양막결절증 (Amnionnodosum)</p>",
+      "tags": ["2016", "64", "소아기질환의 특성", "박성혜", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 22세 여자가 41주에 아기를 출산하였다. 아기의 키와 몸무게는 같은 주수에 비해 작은 편이었으며 검진에서 소두증, 짧은 눈꺼풀틈새, 심방 중격 결손, 인지장애, 행동장애가 확인되었다. 가장 가능성이 높은 질환은?</p><p> 1)  Wafarin  embryopathy</p><p> 2)  Fetal alcohol syndrome</p><p> 3)  Fragile X syndrome</p><p> 4)  Rubella  embryopathy</p><p> 5)  Patau syndrome</p>",
+      "tags": ["2016", "65", "소아기질환의 특성", "박성혜", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 태아의 성장단계와 기형발생요인의 관계에 대한 다음 기술 중 옳은 것은?</p><p> 1) 수정 후 2주 이전에 기형발생요인에 노출되는 경우 신경계와 순환기계의 주요 장기에 심각한 장애가 있는 아기가 태어나게 된다.</p><p> 2) 수정 후 4-5주에 기형발생요인에노출되는 경우 소수의 세포만이 손상을 받으므로 발생과정에서 회복되기 쉽다.</p><p> 3) 수정 후 3주에서 8주 사이에 기형발생요인에노출되는 경우 태아의 기관에는 큰 영향이 없으나 전반적인 성장이 지체된다.</p><p> 4) 기형발생요인의 영향이 가장 큰 시기는 태아의 기관발생 시기와 겹친다.</p><p> 5) 노출시기에 관계없이 기형발생요인은동일한 효과를 보인다.</p>",
+      "tags": ["2016", "66", "소아기질환의 특성", "박성혜", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1\n</code></pre>",
+      "question": "<p> 다음 중 아래 사진에서 볼 수 있는 질환이 발생할 위험이 가장 높은 신생아는?</p><p> <img alt=\"image019\" src=\"https://s3.ap-northeast-2.amazonaws.com/jbl-data/img/질병의+병리학적+이해/image019.jpg\"/></p><p> 1) 25세 산모에게서 자연분만으로태어난 26주 여아</p><p> 2) 폐질환의 가족력이 있는 35세 산모에게서 태어난 30주 남아</p><p> 3) 임신성 당뇨가 있는 32세 산모에게서 제왕절개로 태어난 35주 남아</p><p> 4) 산전검사를 정기적으로 받지 않은 18세 산모에게서 태어난 41주 여아</p><p> 5) 두 살 터울의 형이 출생 직후 중환자실에서 호흡기 치료를 받았던 38주 남아</p>",
+      "tags": ["2016", "67", "소아기질환의 특성", "박성혜", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 아래 신생아에 대한 특징을 서술한 보기 중에서 진단에 합당한 항목으로만 짝지어진 것은?</p><blockquote> <p>  22세 산모에게서 35주에 태어난 지 2개월 된 여아가 엎드린 채로 낮잠을 자던 중 사망하였다. 부검에서 외상이나 기형은 관찰되지 않았다. 아기는 출생 당시 저체중이었으며 생후 1개월 경 호흡기 감염으로 입원한 적이 있었다. 산모는 임신 초기에 임신 사실을 몰라 감기약을 먹거나 흡연을 한 적이 있으며, 산전검사도 제대로 받지 못하였다. 이전에도 2-3차례 임신을 하여 아기를 지운 적이 있으며, 출산 후에는 아기를 항상 옆에 데리고 잤다고 한다. </p></blockquote><p> 1) 22세 산모 / 35주에 출산 / 생후 2개월 / 여아</p><p> 2) 임신 중 흡연 / 임신 중 근무 / 비정기적인 산전검사</p><p> 3) 출생시 저체중 / 생후 호흡기 감염 / 산모와 함께 잠</p><p> 4) 이전 임신력과 낙태 경력이 있음 / 첫 출산</p><p> 5) 엎드린 채 잠듦 / 부검시 이상소견 없음 / 단태아 (single baby)</p>",
+      "tags": ["2016", "68", "소아기질환의 특성", "박성혜", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 태아 수종에 대한 설명으로 옳은 것은?</p><p> 1) 태아 수종의 비면역성 원인 중 염색체 관련 질환에는 Turner 증후군, Down 증후군, Fragile X 증후군이 포함된다.</p><p> 2) Cytomegalovirus, syphilis, toxoplasmosis와 달리 parvovirus B19는 면역성 기전을 통해 태아 수종을 일으킨다.</p><p> 3)  ABO incompatibility는 발생빈도가 높기 때문에 진단과 예방을 위해 철저한 혈액학적 검사를 시행해야 한다.</p><p> 4)  Rh incompatibility의 기전에서 가장 중요한 단계는 산모의 IgM Ab가 태반을 통과한 후 태아의 RBC에 결합하는 단계이다.</p><p> 5) 태아 수종은 신생아 용혈성 빈혈의 한 형태로 나타나기로 하며, 이때 extramedullary hematopoietis와 kernicterus가 동반될 수 있다.</p>",
+      "tags": ["2016", "69", "소아기질환의 특성", "박성혜", "질병의 병리학적 이해"]
+    }],
+    "title": "소아기질환의 특성"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 이차 지혈 과정의 coagulation cascade중 fibrinogen 을 fibrin으로전환시켜 최초 형성된 plateletclot 을 공고히 하는 데 핵심적 역할을 하는 직접적 매개 물질은?</p><p> 1)  Plasmin</p><p> 2)  Von Willebrand factor</p><p> 3)  Factor X</p><p> 4)  Thrombin</p><p> 5)  Tissue plasminogen activator</p>",
+      "tags": ["2016", "59", "지혈 출혈 혈전", "신은", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 내피세포의 antithrombotic effect 와 prothrombotic effect 사이의 균형은 정상적인 지혈 과정의 중요 요소이다. 다음 중 내피 세포의 antithrombotic effect 에 대한 기술 중 옳지 <strong>  않은 </strong> 것은?</p><p> 1) Platelet 과 세포외 기질 사이의 접촉 제한</p><p> 2)  Thrombomodulin 의 분비로 coagulation cascade 억제</p><p> 3)  Tissue factor 분비로 coagulation cascade 억제</p><p> 4)  Tissue palsminogen activator 합성으로 fibrinolysis 유도</p><p> 5)  Adenosine diphosphatase 분비로 platelet활성 억제</p>",
+      "tags": ["2016", "60", "지혈 출혈 혈전", "신은", "질병의 병리학적 이해"]
+    }],
+    "title": "지혈 출혈 혈전"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 70세 남자가 좌측 femur neck fracture 로 수술 후 6주 째 침상 안정 중 날카롭고 베이는 듯한 가슴통증과 호흡곤란을 호소하였다. 전산화 단층 촬영과 폐 관류 스캔 검사상 폐색전증이 강력히 의심되었다.다음 중 색전의 기원으로 가장 가능성이 높은 혈관은?</p><p> 1) 대동맥</p><p> 2) 대정맥</p><p> 3) 관상동상</p><p> 4) 상지 정맥</p><p> 5) 하지 정맥</p>",
+      "tags": ["2016", "61", "색전 경색 쇽", "신은", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 경색에 대한 다음 설명 중 옳은 것은?</p><p> 1) Dual supply를 받는 신장은 주로 red infarct 이 발생하는 장기이다.</p><p> 2) 혈관의 폐쇄가 장시간에 걸쳐 천천히 진행하는 경우 혈관 폐쇄의 정도가 작아도 경색이 나타날 수 있다.</p><p> 3) 심근세포, 심장의 섬유아세포 등 심장 조직은 특히 경색에 취약하다.</p><p> 4) Lung 과 같은 loose tissue 로 이루어진 조직은 red infarct 이 발생한다.</p><p> 5) Arteriovenous fistula 의 경우 주로 red infarct이 발생한다.</p>",
+      "tags": ["2016", "62", "색전 경색 쇽", "신은", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 다음 중 septic shock 의 현상으로 적합하지 <strong>  않은 </strong> 것은?</p><p> 1)  Inflammatory mediator 로 인한 발열 현상</p><p> 2)  Hyperglycemia, lactic acidosis 등 대사 이상</p><p> 3) Vascular endothelial dysfunction 으로 인한 vasoconstriction</p><p> 4) Disseminated  intravascular  coagulation</p><p> 5) 심근 수축력 저하</p>",
+      "tags": ["2016", "63", "색전 경색 쇽", "신은", "질병의 병리학적 이해"]
+    }],
+    "title": "색전 경색 쇽"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 다음의 종양 중에서 악성종양은?</p><p> 1)  chondroma</p><p> 2)  lipoma</p><p> 3)  myoma</p><p> 4)  papillary  cystadenoma</p><p> 5)  seminoma</p>",
+      "tags": ["2016", "44", "종양의 병태생리", "최기영", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1\n</code></pre>",
+      "question": "<p> 다음의 종양의 특성에 관한 기술 중에서 옳은 것은?</p><p> 1) 모든 종양은 실질(parenchyma)과 간질(stroma)로 이루어져 있다.</p><p> 2) 종양의 분류는 그 종양의 간질 형태를 기준으로 분류된다.</p><p> 3) 종양의 성장과 파급은 간질의 영향을 받지 않는다.</p><p> 4) 종양의 실질은 결체조직, 혈관 및 면역세포 등으로 구성된다.</p><p> 5) 종양의 실질세포가 주로 결체조직으로 구성되면 scirrhous cancer라고  명명한다.</p>",
+      "tags": ["2016", "45", "종양의 병태생리", "최기영", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 종양의 전이경로 중에서 암종(carcinoma) 보다는 육종(sarcoma)에서 더 흔히 관찰되는 전이 경로는?</p><p> 1)  Direct peritoneal seeding</p><p> 2)  Lymphatic spread</p><p> 3)  Hematogenous  spread</p><p> 4)  Sentinel node metastasis</p><p> 5)  CSF seeding</p>",
+      "tags": ["2016", "46", "종양의 병태생리", "최기영", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 한국인의 암발생률 중에서, 최근 10년 동안 발생률이 증가하고 있는 종양이 아닌 것은?</p><p> 1) 갑상선</p><p> 2) 간</p><p> 3) 대장</p><p> 4) 유방</p><p> 5) 전립선</p>",
+      "tags": ["2016", "47", "종양의 병태생리", "최기영", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 2014년 말에 발표된 2012년도 한국인의 암발생률 중에서, 여성에서 발생율이 가장 높은 순서대로 1, 2, 3위가 정확하게 나열된 것은?</p><p> 1) 갑상선 - 유방 – 위</p><p> 2) 갑상선 - 유방 – 대장</p><p> 3) 유방 – 위 - 대장</p><p> 4) 유방 – 자궁경부 - 대장</p><p> 5) 자궁경부 - 유방 – 위</p>",
+      "tags": ["2016", "48", "종양의 병태생리", "최기영", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 다음 중 분자병리의 발전에 따른 최신 암치료와 관련된 용어가 아닌 것은?</p><p> 1)  표적치료 (target therapy)</p><p> 2)  예측인자 (predictive markers) 분석</p><p> 3)  개인맞춤치료  (personalized medicine)</p><p> 4)  집중치료 (intensive care)</p><p> 5)  정밀의학 (precision medicine)</p>",
+      "tags": ["2016", "49", "종양의 병태생리", "최기영", "질병의 병리학적 이해"]
+    }],
+    "title": "종양의 병태생리"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 다음 중 cancer stem cell 에 대한 기술로 가장 적절한 것은?</p><p> 1)   Symmetric division을 특징으로 한다.</p><p> 2)  Limited replicative potential을 갖는다.</p><p> 3)  Senescence와 mitotic crisis를 회피하는 것이 특징이다.</p><p> 4)  Bulky tumor population을 형성하는 주요 세포군이다.</p><p> 5) 항암치료에 잘 반응한다.</p>",
+      "tags": ["2016", "32", "종양의 분자생물학", "전윤경", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1\n</code></pre>",
+      "question": "<p> 다음 중 p53에 대한 기술로 가장 적절하지 않은 것은?</p><p> 1) 스트레스가 없는 정상 세포에서 MDM2에 의해 핵에 과발현된다.</p><p> 2) DNA 손상을 받은 세포에서 세포주기의 G1 arrest를 유도한다.</p><p> 3) 세포 자멸사 (apoptosis) 를 촉진한다.</p><p> 4)  세포의 anabolicmetabolism을 억제한다.</p><p> 5)  Germline mutation 시 다양한 종류의 암이 발생한다.</p>",
+      "tags": ["2016", "33", "종양의 분자생물학", "전윤경", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 다음 유전자 중에서 흔히 두개의 대립유전자 모두가 loss of function의 변화를 일으켜서 정상세포가 암세포로 변화하는데 관여하는 유전자에 해당하는 것이 아닌 것은?</p><p> 1)  RB</p><p> 2)  NF1</p><p> 3)  VHL</p><p> 4)  BRAF</p><p> 5)  APC</p>",
+      "tags": ["2016", "34", "종양의 분자생물학", "전윤경", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 다음은 oncogene에 대한 기술이다. 가장 적절한 것은?</p><p> 1)  다양한 passengermutation 들에 의해 oncogene addiction 이 일어난다.</p><p> 2)  EGFR tyrosine kinase domain 의 돌연변이가 있는 폐선암은 EGFR pathway를통한 세포 성장을 위해 EGF 등의 growth factor 에 의존한다.</p><p> 3)  KRAS 의 돌연변이가 있는 대장암은 EGFR targeted therapy 에 잘 반응한다.</p><p> 4)  Chronic myelogenous leukemia에서 나타나는 Philadelphia chromosome, 즉 BCR-ABL 유전자 전위 산물은 receptor tyrosinekinase activity를 갖는다.</p><p> 5)   Cyclin D 는 G1/S checkpoint 인 RB의 inactive hyperphosphorylated state를 유도하여 E2F 의 transcriptional activity 와 cell cycle progression을 촉진시킨다.</p>",
+      "tags": ["2016", "35", "종양의 분자생물학", "전윤경", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>의미: high levels of glucose  uptake and  increased conversion of glucose to lactate via the glycolytic pathway rather  than  mitochondrial oxidative  phosphorylation  even in the presenceof ample oxygen (aerobic glycolysis)\n의의: provides rapidly growingtumor cells with metabolic intermediates for the synthesisof cellular components includingas nucleotide, amino acids and lipids(\"Biomass\")\n</code></pre>",
+      "question": "<p> 암세포 대사의 특징인 Warburg effect 의 의미와 그 생물학적 의의를 기술하시오.(서술형)</p>",
+      "tags": ["2016", "75", "종양의 분자생물학", "전윤경", "질병의 병리학적 이해"]
+    }],
+    "title": "종양의 분자생물학"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 종양의 침윤 및 전이에 대한 설명으로 옳지 않은 것은?</p><p> 1) 종양의 특성은 암세포와 면역세포, 섬유모세포, 혈관 등 미세환경의 상호 작용으로 나타난다.</p><p> 2) Matrix metalloproteinase, cathepsin D 등의 효소는 암세포의 침윤에 기여한다.</p><p> 3) 간질세포에서 분비한 HGF는 암세포의 MET에 결합하여 암세포의 migration에 관여한다.</p><p> 4) 암세포가 혈관 내로 들어가면 물리적 힘, anoikis, 면역 반응 등에 의해 파괴되기 쉽다.</p><p> 5) 위장관에 생긴 암은 정맥의 흐름에 따라 비장, 신장으로의 원격 전이가 흔하다.</p>",
+      "tags": ["2016", "27", "종양의 생물학적 특성", "이혜승", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 암세포가 면역 반응을 회피하는 기전과 연관 인자가 가장 바르게 연결된 것은?</p><p> 1) MHC molecule발현 감소      --         PD-1</p><p> 2) 면역조절 인자의 활성화         --         CTLA-4</p><p> 3) 면역 억제 인자 분비            --         MAGE</p><p> 4)  Regulatory T cells 증가           --       CD28</p><p> 5)  암세포의 glycoprotein 변화      --     CA19-9</p>",
+      "tags": ["2016", "28", "종양의 생물학적 특성", "이혜승", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> DNA repair system의 손상 기전 또는 연관된 유전자와 이로 인한 종양의 연결로 맞지 않은 것은?</p><p> 1)  mismatch repair – hereditary nonpolyposis colorectal cancer</p><p> 2)  nucleotide excision repair – xeroderma pigmentosum</p><p> 3)  recombination repair – familial gastriccancer</p><p> 4)  BRCA1, BRCA2 – familialbreast cancer</p><p> 5)  recombination repair – ataxia telangiectasia</p>",
+      "tags": ["2016", "29", "종양의 생물학적 특성", "이혜승", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>VEGF, bevacizumab (or VEGFR2, ramucirumab)\n</code></pre>",
+      "question": "<p> 종양의 angiogenesis를 조절하는 중요한 단백으로 이에 대한 monoclonal antibody가 대장암, 폐암 등 진행성 암환자에서 치료제로 이미 국내에서 승인되어 생존 기간을 연장시켰다.이 단백과 표적 치료제를 쓰시오.</p>",
+      "tags": ["2016", "76", "종양의 생물학적 특성", "이혜승", "질병의 병리학적 이해"]
+    }],
+    "title": "종양의 생물학적 특성"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 화학물질에 의한 발암에 대한 설명 중 가장 올바른 것은?</p><p> 1) 대부분의 화학적 발암물질은 체내에서 metabolic conversion이 필요 없는 direct-acting agents이다.</p><p> 2) 개시(initiation) 과정은 DNA 손상을 유발하는 가역적 변화이다.</p><p> 3) 개시(initiation) 후 일정 시간이 지나면 발암촉진제(promoter)에도 암이 생기지 않는다.</p><p> 4) 대부분의 특정 화학적 발암 물질은 특정한 driver gene mutation을 유발한다.</p><p> 5) 발암의 촉진(promotion) 인자는 DNA 손상을 일으키지 않고 세포의 증식에 주로 관여한다.</p>",
+      "tags": ["2016", "30", "발암의 원인", "이혜승", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 외인성 발암 요인과 연관되는 발암 기전의 연결이 틀린 것은?</p><p> 1) UVB – pyrimidine dimer</p><p> 2)  HTLV - aflatoxin B1</p><p> 3)  HBV, HCV – chronic inflammation</p><p> 4)  EBV (gastric cancer) – promoter hypermethylation</p><p> 5)  HPV – E6, E7</p>",
+      "tags": ["2016", "31", "발암의 원인", "이혜승", "질병의 병리학적 이해"]
+    }],
+    "title": "발암의 원인"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 환자 검체에 대한 병리 진단시 분자병리 방법을 이용한 분석의 목적과 가장 거리가 먼 것은?</p><p> 1) 병의 진단 및 분류</p><p> 2) 예후 인자 결정</p><p> 3) 치료 반응의 예측</p><p> 4) 약제 내성 원인 인자 규명</p><p> 5) 병기의 결정</p>",
+      "tags": ["2016", "26", "분자면역병리", "원재경", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1) 염기서열 치환 : 유전자 염기서열중 일부가 원래의 염기에서 다른 염기로 대체되어 과도하게 활동 --&gt;시퀀싱, PCR\n2) 유전자 증폭: 유전자 일부가 증폭되어 단백질  과도  증식  --&gt; FISH\n3) 염색체 재배열: 유전자 일부가 다른  위치의  유전자와  붙어서 과도 증식 --&gt; FISH\n\n● 이의신청 내용: 각 답안들에 대한 분자병리학적 방법으로 시퀀싱, pcr, FISH가 나열되어 있는데, 교수님께서 배포해주신 학습자료를 바탕으로 각문제에 대한 분자 병리학적 방법을 1) 시퀀싱과 next generation sequencing, 2)FISH와 next generation sequencing, 3)FISH와 next generation sequencing으로 작성하였을 때 문제가 있을지 궁금하여 문의 드립니다. → 회답: Next generation sequencing 포함은 문제 없습니다. PCR이 빠졌으므로 그에 해당하는 부분만 감점하였습니다. \n● 이의신청 내용: 시험 때 저는 강의록에서 있었던 대로 point mutation, gene amplification, translocation이라고 쓰고 각 기전에 대해 간략하게 설명했습니다. 그런데데 이들을 탐지할 수 있는 분자병리학적 방법을 기술하라는 부분에서, 각 기전에 대해서 각각각  \"point mutation은 PCR, 시퀀싱, gene amplification은 FISH, translocation은 FISH\"라고 안 쓰고,  \"point mutation, gene amplification, translocationdms PCR, 시퀀싱, FISH, ISH 등으로 탐지할 수 있다\" 라고 답안 작성하였습니다. 문제의 문장에서, 각 기전에 대해 한문장씩 간단히 설명하라고는 했지만, 이들을 탐지할 수 있는 분자병리학적 방법 또한 각 기전에 대해 각각각 쓰라는 말은 없고, 그냥 이들을 탐지하는 방법을 기술하라고 나와 있었기 때문입니다. 그래서 세 기전을 합해서 이들을 탐지할 수 있는 분자병리학적 방법을 함께 묶어서 답안을 적었었는데, 막상 나온 답안을 보니 각 기전별로 각각 쓰는 것으로 나와 당황했습니다. '각 기전에 대해 분자병리학적 방법을 각각 쓰라'고 문제에서 말해줬었더라면, 당연히 각 기전에 대해 어떤 방법을 이용하는 지 각각각 적을 수 있었다고 생각합니다. 따라서 이처럼 문제의 문장 뜻을 있는 그대로 받아들여 세 가지 기전은 각각 설명하되, 분자병리학적 방법은 세 가지 기전에 대해 각각 안 쓰고 합해서 쓴 경우도 맞게 해주어야 하지 않을까 생각하여 이렇게 여쭈어봅니다. → 회답: 수업 시간에 강조해서 따로따로 설명을 했고, 중요하다고도 했고 다른 학생들은 다들 따로따로 썼습니다 수업 시간에 집중을 잘 하였는지 의심이 됩니다. 하지만 문제에서 명확하게 나눠서 쓰라는 것을 명시하지 않았음을 참작하여 많이 감점하지는 않았습니다.\n● 이의 신청 내용: 저는 1) Point mutation, 2) Amplificatoin, 3) Overexpression 세가지를 답으로 적었습니다. 전윤경 교수님의 '종양의 분자생물학_1_2' 강의록에 하기와 같이 oncogene activation 기전이 overexpression, gene amplification, mutation, translocation 4가지가 적혀있습니다. 따라서 overexpression 또한 정답이 될 것이라 생각합니다. → 회답: Overexpression은 원인이 매우 여러 가지입니다. Overexpression의 원인에는 amplification도 있을 수 있고 mutation도 있을 수 있으며, translocation도 있을 수 있습니다. Overexpression은 기본적으로 단백질 차원의 변화를 얘기합니다. 물론 학생이 설명한 epigenetic change를 통한 overexpression이 있을 수도 있으나 일단 다른 두 가지하고 Category level이 맞지 않습니다. Oncogene으로 바뀌게 되는 기전을 크게 세 가지로 나눠 기술하라고 했으므로 수업 시간에 설명한 세가지 중에 overexpression은 포함될 수 없습니다.\n</code></pre>",
+      "question": "<p> 암에서 proto-oncogene이 oncogene으로 바뀌게 되는 기전을 크게 세 가지로 나눠 한 문장씩 정도로 간단히 설명하고 이들을 탐지할 수 있는 분자병리학적 방법을 기술하시오.</p>",
+      "tags": ["2016", "74", "분자면역병리", "원재경", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 환자로부터 얻은 종양 조직에 대하여 면역조직화학 (immunohistochemistry) 염색을 시행하는 목적으로 적합하지 않은 것은?</p><p> 1) 종양의 유래 장기 감별</p><p> 2) 종양의 세포 종류 감별</p><p> 3) 종양의 분자적 확진</p><p> 4) 종양의 치료방법 결정에 활용</p><p> 5) 종양의 보관방법 결정에 활용</p>",
+      "tags": ["2016", "12", "분자면역병리", "김정호", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>amplification, translocation, deletion, aneusomy\n\n▶ Inversion도 답으로 가능한지에 대해 이의신청이 들어왔습니다. Inversion을 FISH로 보는 것은 가능한 일이긴 하나 종양의 진단병리학적 목적에서 흔히 쓰이지는 않습니다. 학생들의 이의제기와 참고문헌 제시는 적절하였다고 평가되며 이번에는 정답으로 처리하였습니다.\n</code></pre>",
+      "question": "<p> 종양 조직에서 FISH (fluorescence in situ hybridization)를 시행하여 탐지할 수 있는 유전자의 구조적 변화 4가지를 나열하시오.</p>",
+      "tags": ["2016", "73", "분자면역병리", "김정호", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1) 염기서열 치환 : 유전자 염기서열중 일부가 원래의 염기에서 다른 염기로 대체되어 과도하게 활동 --&gt;시퀀싱, PCR\n2) 유전자 증폭: 유전자 일부가 증폭되어 단백질  과도  증식  --&gt; FISH\n3) 염색체 재배열: 유전자 일부가 다른  위치의  유전자와  붙어서 과도 증식 --&gt; FISH\n\n● 이의신청 내용: 각 답안들에 대한 분자병리학적 방법으로 시퀀싱, pcr, FISH가 나열되어 있는데, 교수님께서 배포해주신 학습자료를 바탕으로 각문제에 대한 분자 병리학적 방법을 1) 시퀀싱과 next generation sequencing, 2)FISH와 next generation sequencing, 3)FISH와 next generation sequencing으로 작성하였을 때 문제가 있을지 궁금하여 문의 드립니다. → 회답: Next generation sequencing 포함은 문제 없습니다. PCR이 빠졌으므로 그에 해당하는 부분만 감점하였습니다. \n● 이의신청 내용: 시험 때 저는 강의록에서 있었던 대로 point mutation, gene amplification, translocation이라고 쓰고 각 기전에 대해 간략하게 설명했습니다. 그런데데 이들을 탐지할 수 있는 분자병리학적 방법을 기술하라는 부분에서, 각 기전에 대해서 각각각  \"point mutation은 PCR, 시퀀싱, gene amplification은 FISH, translocation은 FISH\"라고 안 쓰고,  \"point mutation, gene amplification, translocationdms PCR, 시퀀싱, FISH, ISH 등으로 탐지할 수 있다\" 라고 답안 작성하였습니다. 문제의 문장에서, 각 기전에 대해 한문장씩 간단히 설명하라고는 했지만, 이들을 탐지할 수 있는 분자병리학적 방법 또한 각 기전에 대해 각각각 쓰라는 말은 없고, 그냥 이들을 탐지하는 방법을 기술하라고 나와 있었기 때문입니다. 그래서 세 기전을 합해서 이들을 탐지할 수 있는 분자병리학적 방법을 함께 묶어서 답안을 적었었는데, 막상 나온 답안을 보니 각 기전별로 각각 쓰는 것으로 나와 당황했습니다. '각 기전에 대해 분자병리학적 방법을 각각 쓰라'고 문제에서 말해줬었더라면, 당연히 각 기전에 대해 어떤 방법을 이용하는 지 각각각 적을 수 있었다고 생각합니다. 따라서 이처럼 문제의 문장 뜻을 있는 그대로 받아들여 세 가지 기전은 각각 설명하되, 분자병리학적 방법은 세 가지 기전에 대해 각각 안 쓰고 합해서 쓴 경우도 맞게 해주어야 하지 않을까 생각하여 이렇게 여쭈어봅니다. → 회답: 수업 시간에 강조해서 따로따로 설명을 했고, 중요하다고도 했고 다른 학생들은 다들 따로따로 썼습니다 수업 시간에 집중을 잘 하였는지 의심이 됩니다. 하지만 문제에서 명확하게 나눠서 쓰라는 것을 명시하지 않았음을 참작하여 많이 감점하지는 않았습니다.\n● 이의 신청 내용: 저는 1) Point mutation, 2) Amplificatoin, 3) Overexpression 세가지를 답으로 적었습니다. 전윤경 교수님의 '종양의 분자생물학_1_2' 강의록에 하기와 같이 oncogene activation 기전이 overexpression, gene amplification, mutation, translocation 4가지가 적혀있습니다. 따라서 overexpression 또한 정답이 될 것이라 생각합니다. → 회답: Overexpression은 원인이 매우 여러 가지입니다. Overexpression의 원인에는 amplification도 있을 수 있고 mutation도 있을 수 있으며, translocation도 있을 수 있습니다. Overexpression은 기본적으로 단백질 차원의 변화를 얘기합니다. 물론 학생이 설명한 epigenetic change를 통한 overexpression이 있을 수도 있으나 일단 다른 두 가지하고 Category level이 맞지 않습니다. Oncogene으로 바뀌게 되는 기전을 크게 세 가지로 나눠 기술하라고 했으므로 수업 시간에 설명한 세가지 중에 overexpression은 포함될 수 없습니다.\n</code></pre>",
+      "question": "<p> 암에서 proto-oncogene이 oncogene으로 바뀌게 되는 기전을 크게 세 가지로 나눠 한 문장씩 정도로 간단히 설명하고 이들을 탐지할 수 있는 분자병리학적 방법을 기술하시오.</p>",
+      "tags": ["2016", "74", "분자면역병리", "김정호", "질병의 병리학적 이해"]
+    }],
+    "title": "분자면역병리"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 인간의 질병을 초래하였던 원인과 관련된 설명으로 옳은 것은?</p><p> 1) 콜레라는 공기를 통해 전염될 수 있다.</p><p> 2) 산업혁명은 삶의 질을 향상시키셔 산업혁명초기부터 수명이 크게 증가하기 시작하였다.</p><p> 3) 콜럼부스는 유럽에서 담배를 아메리카대륙에전파시킨 최초의 사람이었다.</p><p> 4) 고혈압, 당뇨병, 심장질환 등과 같은 만성질환은 각각 특이적인 생활위험인자를 갖고 있다.</p><p> 5) 인간이 경험한 감염병의 세균은 대부분 동물이나 가축에서 옮겨온 것이다.</p>",
+      "tags": ["2016", "57", "질병의 원인", "홍윤철", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1\n</code></pre>",
+      "question": "<p> 질병의 변천에 대한 설명으로 옳은 것은?</p><p> 1) 질병의 양상은 사회발전의단계에 따라 다르게 나타난다.</p><p> 2) 생활환경요인보다 유전자변이가비감염성질병발생에 미치는 영향이 더 크다.</p><p> 3) 비감염성질병이 유럽에서 유행을 시작한 시기는 르네상스가 시작된 14세기이다.</p><p> 4) 선진국과 후진국의 질병양상의 차이는 시간이 지날수록 커지고 있다.</p><p> 5) 국가별 암발생의 양상은 인종과 유전자의 차이에 의하여 주로 결정된다.</p>",
+      "tags": ["2016", "58", "질병의 원인", "홍윤철", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>건강이란 단지 질병에 걸리거나 허약하지 않은 상태만이 아니라 신체적, 정신적, 사회적으로양호한 상태(Well-being)이다.\n</code></pre>",
+      "question": "<p> 세계보건기구(WHO)에서 정한 건강의 정의를 쓰시오.</p>",
+      "tags": ["2016", "70", "질병의 원인", "홍윤철", "질병의 병리학적 이해"]
+    }],
+    "title": "질병의 원인"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 기술역학연구에서 인적 특성별 기술과 관련한 내용으로 옳지 않은 것은?</p><p> 1) 연령에 따른 질병빈도의 차이는 발병원인에 대한 실마리정보를  제공한다.</p><p> 2) 당뇨병과 고혈압의 유병률은 남성에서 여성보다 높은 질환이다.</p><p> 3) 관상동맥질환이나 정신신경증은 전문직에서 높게 나타난다.</p><p> 4) 유방암은 미혼여성보다결혼한 여성에서 낮게 발생한다.</p><p> 5) 연령과 질병발생간 연관성은 매우 강하므로 질병요인 분석 시 연령을 보정한다.</p>",
+      "tags": ["2016", "50", "건강-질병현상의 기술", "박병주", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 지역 간 질병발생 수준의 차이가 실제로는 없는데, 마치 있는 것처럼 나타나는 이유가 아닌 것은?</p><p> 1) 지역 간 질병진단법의 정확도에 차이가 있는 경우</p><p> 2) 인구센서스자료의 정확도에 차이가 있는 경우</p><p> 3) 질병신고체계의 완전성에 차이가 있는 경우</p><p> 4) 지역별 질병등록체계의존재 여부</p><p> 5) 지역별 거주인구의 연령구조가 다른 경우</p>",
+      "tags": ["2016", "51", "건강-질병현상의 기술", "박병주", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 아래 그림은 1854 년 런던 콜레라 발생 때 존 스노우 박사가 발생환자(점)와 상수 Pump 위치를 표시한 그림이다. 이에 대한 설명으로 옳지 않은 것은?</p><p> <img alt=\"image012\" src=\"https://s3.ap-northeast-2.amazonaws.com/jbl-data/img/질병의+병리학적+이해/image012.jpg\"/></p><p> 1) 이 지도를 역학적 용어로 점지도(spot map)라 한다.</p><p> 2) 이 지도는 각 가구별 환자 발생상태를 표시한 지도이다.</p><p> 3) pump A 가 질병 발생과 관련성이 있는 주 발생원으로 볼 수 있다.</p><p> 4) pump A 가 위치한 지역의 대기오염이 질병 발생과 관련되어 있다.</p><p> 5) pump 별 상수원에 따라 환자발생에차이가 있음을 알 수 있다.</p>",
+      "tags": ["2016", "52", "건강-질병현상의 기술", "박병주", "질병의 병리학적 이해"]
+    }],
+    "title": "건강-질병현상의 기술"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>2\n</code></pre>",
+      "question": "<p> 다음 표와 같이 A, B 두 지역의 연령별 특수사망률과 연령별 인구 구성을 나타내었을 때 A, B 두 지역의 표준화 사망률은? (단, 표준화 사망률 계산에는 두 지역 인구의 합을 표준인구로 설정)</p><p> <img alt=\"image013\" src=\"https://s3.ap-northeast-2.amazonaws.com/jbl-data/img/질병의+병리학적+이해/image013.JPG\"/></p>",
+      "tags": ["2016", "53", "건강과 질병 측정지표", "박수경", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> A지역과 B지역의 사망자를 연령별로 구분한 결과는 아래와 같다. 비례사망지수(PMI)로 두 지역의 보건상태를 비교하면?</p><table> <thead>  <tr>   <th>    사망자의 사망당시  연령   </th>   <th>    A지역   </th>   <th>    B지역   </th>  </tr> </thead> <tbody>  <tr>   <td>    -24   </td>   <td>    10   </td>   <td>    10   </td>  </tr>  <tr>   <td>    25-44   </td>   <td>    20   </td>   <td>    20   </td>  </tr>  <tr>   <td>    45-64   </td>   <td>    20   </td>   <td>    25   </td>  </tr>  <tr>   <td>    65-   </td>   <td>    40   </td>   <td>    45   </td>  </tr> </tbody></table><p> 1) A지역이 더 우수하다.</p><p> 2) B지역이 더 우수하다.</p><p> 3) A지역과 B지역은 동일하다.</p><p> 4) 위 자료로는 PMI를 산출할 수 없으므로 비교가 불가능하다.</p><p> 5) 사망자의 연령별 구성으로 보건상태를 비교하는 것은 의미가 없다.</p>",
+      "tags": ["2016", "54", "건강과 질병 측정지표", "박수경", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1, 2, 4, 6\n</code></pre>",
+      "question": "<p> 다음 지표 중 Proportion 인 것을 모두 고르시오.</p><p> 1) 홍역 발병률</p><p> 2) 고혈압 유병률</p><p> 3) 고혈압 평균발생률</p><p> 4) 고혈압의 평생 의사진단율</p><p> 5) 고혈압 사망률</p><p> 6) 고혈압 누적발생률</p><p> 7) 성비</p><p> 8) 비교위험도</p>",
+      "tags": ["2016", "R1", "건강과 질병 측정지표", "박수경", "질병의 병리학적 이해"]
+    }],
+    "title": "건강과 질병 측정지표"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 역학적 변천설에 대한 설명으로 적절한 것을 고르시오.</p><p> 1) Orman 은 지연된 만성퇴행성질환의 시대까지의4단계 변천을 제시하였다.</p><p> 2) 우리나라는 현재 지연된 만성퇴행성질환의 시대에 해당한다.</p><p> 3) 질병과 기근의 시대에는 산업재해와직업병이 중요한 보건문제이다.</p><p> 4) 결핵과 기생충질환은 질병과 기근의 시대 이후에는 잘 관리가 된다.</p><p> 5) 신종감염병과 기존감염병재출현 시대에는 SARS, MERS, 지카바이러스 등이 문제가 된다.</p>",
+      "tags": ["2016", "55", "한국인의 건강과 질병 수준", "신애선", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> 우리나라의 2014년도 사망원인 중 5위 안에 포함되지 않는 것을 고르시오.</p><p> 1) 악성신생물</p><p> 2) 심장질환</p><p> 3) 폐렴</p><p> 4) 고의적 자해(자살)</p><p> 5) 운수사고</p>",
+      "tags": ["2016", "56", "한국인의 건강과 질병 수준", "신애선", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>고령화사회\n</code></pre>",
+      "question": "<p> 전체 인구에서 65세 이상 인구의 비율이 7%이상이면 고령화사회, 14%이상이면 고령사회, 20% 이상이면 초고령사회로 분류한다. 우리나라는 2016년 현재 어느 단계에 속하는가?</p>",
+      "tags": ["2016", "71", "한국인의 건강과 질병 수준", "신애선", "질병의 병리학적 이해"]
+    }],
+    "title": "한국인의 건강과 질병 수준"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>3\n</code></pre>",
+      "question": "<p> 65세 여자 환자가 복부 통증으로 내원하여 수술하였다. <strong>  슬라이드 A-3 </strong> 은 수술로 적출된 환자의 조직 일부이다. 장기와 진단명이 옳게 짝지어진 것은?</p><p> ① Appendix: acute suppurative appendicitis</p><p> ② Stomach: chronic peptic ulcer</p><p> ③ Colon: antibiotics-associated colitis</p><p> ④ Salpinx: Chronic salpingitis</p><p> ⑤ Gallbladder: Chronic cholecystitis</p>",
+      "tags": ["2016", "실2", "급성염증 실습", "김영아", "질병의 병리학적 이해"]
+    }],
+    "title": "급성염증 실습"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>1\n</code></pre>",
+      "question": "<p> <strong>  슬라이드 A-4 </strong> 와 같은 현미경소견을 보이는 질환에 대한 설명으로 옳은 것은?</p><p> ① Epithelioid histiocytes가 관찰되는 것이 특징이다.</p><p> ② Multinucleated giant cell은관찰되지 않는다.</p><p> ③ AFB 염색을 하여 분홍색으로 염색되는 bacilli를 관찰하면 쉽게 진단할 수 있다.</p><p> ④ Necrosis가 동반된다.</p><p> ⑤ Abscess가관찰되기도 한다.</p>",
+      "tags": ["2016", "실3", "만성염증 실습", "김영아", "질병의 병리학적 이해"]
+    }],
+    "title": "만성염증 실습"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> <strong>  슬라이드 A-5 </strong> 은 유전질환으로 인해 절제하게 된 표본의 조직 슬라이드이며, 아래 첨부된 <strong>  사진 A-6 </strong> 는 본 표본의 육안적 단면 사진이다. 본 질환을 설명한 것으로 옳지 <strong>  않은 </strong> 것은?</p><p> ① Autosomal recessive하게 유전된다.</p><p> ② Hepatic fibrosis가 동반될 수 있다.</p><p> ③ 어린이에게서호발한다.</p><p> ④ PKD1 유전자의 돌연변이가 원인이다.</p><p> ⑤ Renal collecting tubule이 늘어나면서 cyst가 발생한다.</p>",
+      "tags": ["2016", "실4", "유전질환 실습", "김정호", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> <strong>  슬라이드 A-7 </strong> 에서 관찰되는 갈색 pigment로 가장 가능성이 높은 것은 무엇인가?</p><p> ① Lipofuscin pigment</p><p> ② Melaninpigment</p><p> ③ Carbon pigment</p><p> ④ Hemosiderin pigment</p><p> ⑤ Anthracotic pigment</p>",
+      "tags": ["2016", "실5", "유전질환 실습", "김정호", "질병의 병리학적 이해"]
+    }],
+    "title": "유전질환 실습"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 슬라이드 <strong>  A-18 </strong> 의 진단에 대하여 예후가 좋지 <strong>  않을 </strong> 것으로 예상되는 항목은?</p><p> ① Absence of N-MYC gene amplification</p><p> ② DNA hyperploidy</p><p> ③ TRKA expression present</p><p> ④ 연령 (3세)</p><p> ⑤ Schwannian stroma present</p>",
+      "tags": ["2016", "실11", "소아병리 실습", "박성혜", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1\n</code></pre>",
+      "question": "<p> 2세 여아가 태어날 때부터 있던 꼬리뼈 부근의 종괴를 제거하였다. 종괴의 크기는 3cm이었으며 절개시 고형성 부분과 낭성 부분이 섞여 있는 양상으로, 내부에는 머리카락 뭉치가 들어있었다. 조직검사 결과 <strong>  사진 A-19 </strong> 와 같은 부분들이 관찰되었다.이 종양에 대하여 옳은 설명은?</p><p> ① 미성숙한 신경상피조직이 관찰되면 미성숙기형종이라 하며, 미성숙신경상피 조직의 양이 많을수록 악성 잠재능이 증가한다.</p><p> ② 가장 많이 발생하는 호발시기는 2세 이후부터 10세 이전이다.</p><p> ③ 악성은 주로 갓 태어난 신생아에게서 발견된다.</p><p> ④ 청소년기에는 대부분 꼬리뼈 부근에 발생한다.</p><p> ⑤ 발생기전이 다르므로 선천성 기형은 거의 동반되지 않는다.</p>",
+      "tags": ["2016", "실12", "소아병리 실습", "박성혜", "질병의 병리학적 이해"]
+    }],
+    "title": "소아병리 실습"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> 다음 중 종양세포에서 역형성(anaplasia)가 가장 <strong>  심한 것 </strong> 은 어느 것인가?</p><p> ① <strong>  사진 A-13 </strong></p><p> ② <strong>  사진 A-14 </strong></p><p> ③ <strong>  사진 A-15 </strong></p><p> ④ <strong>  사진 A-16 </strong></p>",
+      "tags": ["2016", "실9", "양성-악성종양 실습", "최기영", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>5\n</code></pre>",
+      "question": "<p> <strong>  사진A-17 </strong> 의 설명으로 가장 적합한 것은?</p><p> ① Anaplasia</p><p> ② Differentiation</p><p> ③ Mitoticactivity</p><p> ④ Lymph node metastasis</p><p> ⑤ Endolymphatic tumor emboli</p>",
+      "tags": ["2016", "실10", "양성-악성종양 실습", "최기영", "질병의 병리학적 이해"]
+    }],
+    "title": "양성-악성종양 실습"
+  }, {
+    "problems": [{
+      "answer": "<pre><code>evasion of apoptosis\n▶ 정답의 기준에 대해 묻는 문의가 많았습니다. “apoptosis”, “evasion”, “세포사멸사”, “회피”, “피하다”, “빠지지 않게 된다” 등 주요 단어나 비슷한 단어가 들어갈 경우 정답으로 인정했으며 그 외에는 오답으로 채점되었습니다.\n</code></pre>",
+      "question": "<p> 50세 여자 환자의 림프절의 H&amp;E( <strong>  슬라이드 A-1 </strong> )와 BCL2 ( <strong>  슬라이드 A-2 </strong> ) 면역염색에 대한 virtual microscopy이다. 주어진 virtual microscopy 소견으로 미루어 이 환자의 종양과 가장 관련 깊은 cancer hallmark를 쓰시오.</p>",
+      "tags": ["2016", "실1", "종양병리 실습", "전윤경", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>1\n</code></pre>",
+      "question": "<p> 60세 남자 환자의 폐 종괴의 H&amp;E ( <strong>  슬라이드 A-11 </strong> ) 와 ALK ( <strong>  슬라이드 A-12 </strong> )의 면역염색에 대한 virtual microscopy 이다. 이 환자의 질환에 대한 설명으로 가장 <strong>  거리가 먼 </strong> 것은?</p><p> ① Driver oncogene은 transcription factor 이다.</p><p> ②  Adenocarcinoma이다.</p><p> ③ ALK protein은비종양성 정상 폐실질에서 발현되지 않는다.</p><p> ④ ALK protein이종양세포의 세포질에서 발현되고 있다.</p><p> ⑤ ALK gene break apart probe를 이용한 FISH 검사에서 split signal이 자주 관찰된다.</p>",
+      "tags": ["2016", "실8", "종양병리 실습", "전윤경", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>4\n</code></pre>",
+      "question": "<p> <strong>  슬라이드 A-8, A-9, A-10 </strong> 은 종양의 대표적 증례이다. 다음 중 이들 종양의 종류를 올바르게 분류한 것은?</p><p> ① <strong>  A-8 </strong> : Carcinoma, <strong>  A-9 </strong> : Sarcoma, <strong>  A-10 </strong> : Lymphoma</p><p> ② <strong>  A-8 </strong> : Carcinoma, <strong>  A-9 </strong> : Lymphoma, <strong>  A-10 </strong> : Sarcoma</p><p> ③ <strong>  A-8 </strong> : Sarcoma, <strong>  A-9 </strong> : Carcinoma, <strong>  A-10 </strong> : Lymphoma</p><p> ④ <strong>  A-8 </strong> : Sarcoma, <strong>  A-9 </strong> : Lymphoma, <strong>  A-10 </strong> : Carcinoma</p><p> ⑤ <strong>  A-8 </strong> : Lymphoma, <strong>  A-9 </strong> : Carcinoma, <strong>  A-10 </strong> : Sarcoma</p>",
+      "tags": ["2016", "실6", "종양병리 실습", "이혜승", "질병의 병리학적 이해"]
+    }, {
+      "answer": "<pre><code>5\n▶ ‘가장’ 틀린 문제를 고르는 문제로 보기 (5) 외에는 오답 처리 하였습니다.\n</code></pre>",
+      "question": "<p> 다음 중 종양의 특성에 대한 설명 중 가장 옳지 <strong>  않은 </strong> 것은?</p><p> ① Carcinoma는 상피세포에서 기원한(epithelial origin) 암이다.</p><p> ② Carcinoma는 기원한 세포로의 분화를 관찰할 수 있고, 림프절 또는 혈관을 통해 전이한다.</p><p> ③ Sarcoma는간질세포에서 기원한(mesenchymal origin) 암종이다.</p><p> ④ Sarcoma는대개 공모양의 bulky mass를 형성하고 혈관을 통해 전이한다.</p><p> ⑤ 림프절에서 관찰되는 악성 종양은 lymphoma로진단한다.</p>",
+      "tags": ["2016", "실7", "종양병리 실습", "이혜승", "질병의 병리학적 이해"]
+    }],
+    "title": "종양병리 실습"
+  }],
+  "key": "2016질병의병리학적이해",
+  "title": "질병의 병리학적 이해"
+}

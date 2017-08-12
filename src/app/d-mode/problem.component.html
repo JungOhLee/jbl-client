@@ -1,0 +1,40 @@
+<div class="problem mb-4">
+  <!-- 문제 기본 정보 해시태그 - 연도, 번호 교수 -->
+  <div class="problem-info d-flex justify-content-start text-muted">
+    <div class="pr-2" *ngFor="let tag of problem.tags">#{{tag}}</div>
+  </div>
+  <!-- 문제 질문 -->
+  <div class="problem-question pl-2" [innerHTML]="problem.question"></div>
+  <!-- 문제 답 -->
+  <div class="problem-answer text-right">
+    <a data-toggle="collapse" [attr.data-parent]="'#problem'+problem.id" [attr.href]="'#problem-answer'+problem.id" aria-expanded="false" [attr.aria-controls]="'problem-answer'+problem.id">Answer</a>
+    <div [attr.id]="'problem-answer'+problem.id" class="collapse" role="tabpanel">
+
+        <div class="d-inline answer text-left" [innerHTML]="problem.answer"></div>
+
+    </div>
+  </div>
+
+  <!-- 문제 comment toggler -->
+  <div class="comments-toggler"><a (click)="toggleComments();getComments()">Comments</a><span class="badge badge-pill badge-info align-top">{{problem.commentsCount}}</span> </div>
+  <!-- comments -->
+  <div class="problem-comments col-12" *ngIf="showComments">
+    <div class="problem-comment clearfix" *ngFor="let comment of comments">
+      {{comment.body}}
+      <span class="fa fa-pencil float-right text-muted mr-1"></span> <span class="fa fa-times float-right text-muted mr-1"></span>
+    </div>
+    <!-- comment form toggler-->
+    <div class="comment-form-toggle" (click)="toggleCommentForm()" *ngIf="!showCommentForm">
+      Add Comment
+    </div>
+    <!-- comment form -->
+    <form class="comment-form form-inline" *ngIf="showCommentForm" [attr.id]="'problem-comment-form'+problem.id" (submit)="toggleCommentForm()">
+      <div class="form-group">
+        <label for="new-comment" class="sr-only">Comment</label>
+        <textarea #newComment class="form-control" name="text"></textarea>
+        <button type="submit" class="btn" (click)="addComment(newComment.value)">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</div>

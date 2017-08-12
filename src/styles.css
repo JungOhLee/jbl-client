@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.1rem;
+}
+
+.sidebar {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+div .problems {
+  position: relative;
+  overflow-y: scroll;
+}
+
+body {
+  position: relative;
+}
+
+div .problem-info {
+  font-size: 13px;
+  border-bottom: 1px solid #ccc;
+}
+
+.badge {
+  font-size: 8px;
+}
+
+.sidebar {
+  font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  box-sizing: border-box;
+  color: #333;
+  cursor: pointer;
+  display: block;
+  max-width: 260px;
+  overflow-wrap: break-word;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-decoration: none;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+table {
+  border-collapse: collapse !important;
+}
+table td,
+table th {
+  background-color: #fff !important;
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #eceeef;
+}
+
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #eceeef;
+}
+
+table tbody + tbody {
+  border-top: 2px solid #eceeef;
+}
+
+table {
+  background-color: #fff;
+  padding: 2 2 2 2;
+}
+
+img {
+  vertical-align: middle;
+  display: inline-block;
+  border-style: none;
+  page-break-inside: avoid;
+  max-width: 100%;
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 90%;
+  color: #292b2c;
+}
+
+div .answer > pre{
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+div .answer > pre>code{
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  font-family: monospace, monospace;
+  max-width: 100%;
+  overflow-wrap: normal;
+  white-space: pre;
+}

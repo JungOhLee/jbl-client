@@ -1,0 +1,24 @@
+TODO
+
+#.answer 보이는거 고치기 --> pre tag와 code tag를 없애달라고 해야하나? 아니면 p-tag로?
+#.navbar 모양 및 기능 --> anchor tag 가 잘 작동하지 않는건 알려진 issue, scroll plugin 을 넣거나 만들어야 함.. --> 만든 것을 넣었는데, 이게 좋은지는 모르겠음 -> 통과
+
+
+
+//로그인 페이지 모양 다듬기
+//current user 설정
+
+//테이블 모양
+답 모양
+//그림 크기 조절
+모바일화면 네비게이션, 태그 모양
+
+comment 모양 및 기능
+
+toc
+
+search list 추천
+
+client -> jbl_client 로 분리해서 git 만들자
+다 되면 파일들 정리
+shared, search, login, jbl-main 파트로 나누고, 각각에 필요한 것

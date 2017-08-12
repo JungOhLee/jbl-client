@@ -1,0 +1,79 @@
+<header id="header">
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-sm-12 overflow">
+        some other sites' links here
+      </div>
+    </div>
+  </div> -->
+  <nav class="navbar navbar-toggleable-sm">
+    <!-- Logo image -->
+    <a class="navbar-brand" href="/"><img src="./assets/medical_directory-512.png" width="45" height="45" class="d-inline-block align-top" alt=""><img src="./assets/brand.png" height="45" class="d-inline-block align-top" alt=""></a>
+    <!-- toggle buttons   -->
+    <div class="btn-group justify-content-end" role="group">
+      <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#userInfo" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-user"></span>
+      </button>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- navbar -->
+  <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/book">KMLE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/board">Board</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            JBL
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Grade 1</a>
+            <a class="dropdown-item" href="#">Grade 2</a>
+            <a class="dropdown-item" href="#">Grade 3</a>
+            <a class="dropdown-item" href="#">Grade 4</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<search-bar></search-bar>
+
+  <!-- Warning -->
+  <div *ngIf="alert" class="alert alert-danger" role="alert">
+    <strong></strong>
+  </div>
+
+</header>
+
+
+<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
+
+
+
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-sm-12 text-center bottom-separator">
+          <hr/>
+        </div>
+        <div class="copyright-text text-center">
+              <p>&copy; JBros Company 2017. All Rights Reserved.</p>
+              <p>Designed by <a target="_blank" href="http://www.themeum.com">Lee</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

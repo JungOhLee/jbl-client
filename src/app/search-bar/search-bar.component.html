@@ -1,0 +1,8 @@
+<!-- Search bar -->
+<div class="input-group container">
+  <label for="mainSearch" class="sr-only">Search</label>
+  <input #input type="text" class="form-control" id="mainSearch" placeholder="Search for..." (keyup.enter)="search(input.value)">
+  <span class="input-group-btn">
+    <button class="btn btn-outline-primary" type="button" (click)="search(input.value)"><span class="fa fa-search"></span></button>
+  </span>
+</div>
