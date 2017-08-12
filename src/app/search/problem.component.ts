@@ -9,7 +9,7 @@ import { ProblemService } from '../problem.service'
 export class ProblemComponent implements OnInit{
 
   @Input() problem;
-  private showComments = false;
+  public showComments = false;
   private showCommentForm = false;
   private newCommentBody: string;
   private comments =[];

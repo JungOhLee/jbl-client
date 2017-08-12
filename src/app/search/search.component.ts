@@ -13,7 +13,7 @@ import { ProblemComponent } from './problem.component';
 export class SearchComponent implements OnInit {
 
   @ViewChild('toc') toc: ElementRef;
-  private jblData;
+  public jblData;
 
   constructor(
     private route: ActivatedRoute,
