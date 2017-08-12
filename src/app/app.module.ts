@@ -55,7 +55,7 @@ class AuthRequestOptions extends BaseRequestOptions {
   providers: [
     SearchService,
     ProblemService,
-    {provide: RequestOptions, useClass: AuthRequestOptions}
+    // {provide: RequestOptions, useClass: AuthRequestOptions}
   ],
   bootstrap: [AppComponent]
 })
