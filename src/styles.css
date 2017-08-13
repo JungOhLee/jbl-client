@@ -103,7 +103,6 @@ div .answer > pre{
   border: 1px solid #e1e1e8;
   border-radius: 4px;
   word-wrap: normal;
-  white-space: pre;
 }
 
 div .answer > pre>code{
@@ -115,5 +114,80 @@ div .answer > pre>code{
   font-family: monospace, monospace;
   max-width: 100%;
   overflow-wrap: normal;
-  white-space: pre;
+  white-space: pre-line;
+}
+
+.toc {
+  white-space: nowrap;
+  color: #636c72;
+}
+
+.toc-header {
+  font-size: 115%;
+  font-weight: 600;
+  color: #292b2c;
+}
+
+.sidebar {
+  border-right: 1px dotted #ccc;
+}
+
+a:not([href]):not([tabindex]) {
+  color: black;
+}
+
+a:not([href]):not([tabindex]):hover {
+  /*color: #2d2dad;*/
+  color: #2644af;
+}
+
+div.content {
+  background-color: #f1f1f1;
+}
+
+div.problem {
+  background-color: #fff;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.2rem;
+}
+
+h2 {
+  padding-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  border-top: 1px solid #a0a0a0;
+}
+
+div.problem-comments{
+
+}
+div.problem-comment{
+  border-bottom: 1px solid #eceeef;
+  padding: 0.1rem;
+}
+
+div.comment-form-toggle {
+  color: #0275d8;
+}
+
+div.comment-form-toggle:hover{
+  /*color: #2d2dad;*/
+  color: darkblue;
+}
+
+form.comment-form{
+  padding: 0.1rem;
+
+}
+
+/*
+textarea.comment-form{
+  width: 100% !important;
+}*/
+
+div.comment-body{
+  white-space: pre-line;
+  word-break: break-word;
 }
