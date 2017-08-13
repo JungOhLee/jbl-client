@@ -25,13 +25,13 @@
     <div class="problem-comment clearfix" *ngFor="let comment of comments; let i = index;">
       <div class="comment-body">{{comment.body}}</div>
       <!-- <span class="fa fa-pencil float-right text-muted mr-1"></span>  -->
-      <span class="fa fa-times float-right text-muted mr-1" (click)="deleteComment(comment, i)"></span>
+      <span *ngIf="checkCommentUser(comment)"class="fa fa-times float-right text-muted mr-1" (click)="deleteComment(comment, i)"></span>
     </div>
     <!-- comment form -->
     <form class="comment-form form-inline" [attr.id]="'problem-comment-form'+problem.id" (submit)="toggleCommentForm()">
       <div class="col text-right d-flex justify-content-center p-0">
         <div class="input-group row col py-1">
-          <textarea #newComment class="form-control comment-form" name="body" [(ngModel)]="newCommentBody"></textarea>
+          <textarea #newComment class="form-control comment-form" required name="body" [(ngModel)]="newCommentBody"></textarea>
           <span class="input-group-btn">
             <button type="submit" class="btn btn-secondary" (click)="addComment(newComment.value)">Submit</button>
           </span>

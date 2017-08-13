@@ -1,57 +1,68 @@
 import { Component, Input, OnInit} from '@angular/core';
-import { ProblemService } from '../problem.service'
+import { ProblemService } from '../problem.service';
+import * as $ from 'jquery';
+
 @Component({
   selector: 'problem',
   templateUrl: './problem.component.html',
   styles: []
 })
 
-export class ProblemComponent implements OnInit{
+export class ProblemComponent implements OnInit {
 
   @Input() problem;
   public showComments = false;
   private showCommentForm = false;
   private newCommentBody: string;
-  private comments: Array<any> =[];
+  private comments: Array<any> = [];
   constructor(
     private problemService: ProblemService
-  ){}
+  ) { }
 
   ngOnInit() {
   }
 
-  toggleComments(){
-    this.showComments= !this.showComments
+  toggleComments() {
+    this.showComments = !this.showComments
   }
-  toggleCommentForm(){
-    this.showCommentForm =!this.showCommentForm
+  toggleCommentForm() {
+    this.showCommentForm = !this.showCommentForm
   }
-  editComment(){
+  editComment() {
+  }
 
+  checkCommentUser(comment) {
+    if (JSON.parse(localStorage.getItem('curUser')).email === comment.email) {
+      return true
+    }
+    return false
   }
 
   // Comment C(R)UD
-  getComments(){
+  getComments() {
     this.problemService.getComments(this.problem)
-    .subscribe(res => {if(res){this.comments=res}});
+      .subscribe(res => { if (res) { this.comments = res } });
   }
 
-  addComment(commentBody){
+  addComment(commentBody) {
+    if (commentBody === "") {
+      return null;
+    }
     let newComment = {
       "email": JSON.parse(localStorage.getItem('curUser')).email,
       "body": commentBody
     }
     console.log(newComment)
     this.problemService.addComment(this.problem, newComment)
-      .subscribe(res => {this.newCommentBody=""; this.comments.push(res)});
+      .subscribe(res => { this.newCommentBody = ""; this.comments.push(res) });
   }
 
-  updateComment(comment){
+  updateComment(comment) {
     this.problemService.updateComment(comment);
   }
 
-  deleteComment(comment, i){
+  deleteComment(comment, i) {
     this.problemService.deleteComment(comment)
-      .subscribe(res => {this.comments.splice(i,1);console.log(res);});
+      .subscribe(res => { this.comments.splice(i, 1); console.log(res); });
   }
 }

@@ -19,7 +19,8 @@ const appRoutes: Routes = [
       }
       //이후 routing 추가할 부분
     ]
-  }
+  },
+  { path: '**', redirectTo: ''}
   // { path: '**', component: PageNotFoundComponent }
 ];
 

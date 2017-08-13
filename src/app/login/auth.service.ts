@@ -30,7 +30,10 @@ export class AuthService {
       .then(res =>
         {
           localStorage.setItem('curUser', JSON.stringify(res.json()));
-          this.isLoggedIn = true;}
+          this.isLoggedIn = true;},
+          err => { console.log(err);
+
+          }
       )
   }
 

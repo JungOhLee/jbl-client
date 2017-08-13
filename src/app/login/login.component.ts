@@ -9,6 +9,7 @@ import 'rxjs/add/operator/toPromise';
 })
 export class LoginComponent {
   message: string;
+  failMessage: string;
   model: any = {};
 
   constructor(public authService: AuthService, public router: Router) {
@@ -21,7 +22,7 @@ export class LoginComponent {
 
   login() {
     this.message = '로그인 중입니다. ';
-
+    this.failMessage = "";
     this.authService.login(this.model)
     .then(() => {
       this.setMessage();
@@ -32,6 +33,8 @@ export class LoginComponent {
 
         // Redirect the user
         this.router.navigateByUrl(redirect);
+      } else {
+        this.failMessage = "로그인에 실패하였습니다. "
       }
     });
   }
