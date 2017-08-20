@@ -9,7 +9,7 @@ import { AuthService } from './login/auth.service';
 export class AppComponent {
   title = 'app';
   alert ="";
-  userName:string = this.getUserName();
+
 
   constructor(public authService: AuthService) {
   }
@@ -20,7 +20,7 @@ export class AppComponent {
     }
     return false
   }
-  getUserName(){
+  userName(){
     if(localStorage.getItem('curUser')){
       return JSON.parse(localStorage.getItem('curUser')).email;
     }

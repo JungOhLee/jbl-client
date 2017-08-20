@@ -27,13 +27,11 @@ export class AuthService {
   login(info) {
     return this.http.post(this.url, info)
       .toPromise()
-      .then(res =>
-        {
-          localStorage.setItem('curUser', JSON.stringify(res.json()));
-          this.isLoggedIn = true;},
-          err => { console.log(err);
-
-          }
+      .then(res => {
+              localStorage.setItem('curUser', JSON.stringify(res.json()));
+              this.isLoggedIn = true;
+            },
+            err => { console.log(err); }
       )
   }
 

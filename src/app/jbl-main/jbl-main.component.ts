@@ -20,4 +20,8 @@ export class JblMainComponent implements OnInit {
     this.router.navigate(['/search'],{queryParams: {query: query}});
     console.log(query);
   }
+  preventDefault(event){
+    event.preventDefault();
+  }
+
 }
