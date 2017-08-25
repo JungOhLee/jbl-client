@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './problem-form.component.html',
   styles: []
 })
-export class ProblemForm implements OnInit {
+export class ProblemFormComponent implements OnInit {
 
   constructor(){
 

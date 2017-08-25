@@ -16,7 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { JblMainComponent } from './jbl-main/jbl-main.component';
 import { SearchComponent } from './search/search.component';
 import { ProblemComponent } from './problem/problem.component';
-import { ProblemForm } from './problem/problem-form.component';
+import { ProblemFormComponent } from './problem/problem-form.component';
 
 import { TopicIdPipe } from './topic-id.pipe';
 
@@ -42,6 +42,7 @@ class AuthRequestOptions extends BaseRequestOptions {
     SearchBarComponent,
     SearchComponent,
     ProblemComponent,
+    ProblemFormComponent,
     LoginComponent
   ],
   imports: [
