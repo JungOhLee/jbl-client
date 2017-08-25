@@ -1,7 +1,7 @@
 <div class="problem">
   <!-- 문제 기본 정보 해시태그 - 연도, 번호 교수 -->
-  <div class="problem-info d-flex justify-content-start text-muted">
-    <div class="pr-2" *ngFor="let tag of problem.tags">#{{tag}}</div>
+  <div class="problem-info text-muted">
+    <div class="pr-2 d-inline-block" *ngFor="let tag of problem.tags">#{{tag}}</div>
   </div>
   <!-- 문제 질문 -->
   <div class="problem-question pl-2" [innerHTML]="problem.question"></div>

@@ -3,6 +3,7 @@ import { RouterModule, Routes }  from '@angular/router';
 
 import { JblMainComponent } from './jbl-main/jbl-main.component'
 import { SearchComponent } from './search/search.component';
+import { ProblemForm } from './problem/problem-form.component';
 
 import { AuthGuard } from './login/auth-guard.service';
 
@@ -16,6 +17,10 @@ const appRoutes: Routes = [
       {
         path: 'search',
         component: SearchComponent
+      },
+      {
+        path: 'problem',
+        component: ProblemForm
       }
       //이후 routing 추가할 부분
     ]

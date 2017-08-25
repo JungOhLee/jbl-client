@@ -3,7 +3,7 @@ import { SearchService } from '../search.service';
 import { Router, ActivatedRoute, ParamMap, NavigationEnd} from '@angular/router'
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
-import { ProblemComponent } from './problem.component';
+import { ProblemComponent } from '../problem/problem.component';
 
 @Component({
   selector: 'search',
