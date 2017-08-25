@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Http, URLSearchParams, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import {baseUrl} from './base-url';
 
 @Injectable()
 export class ProblemService {
 
   constructor( private http: Http ){ }
 
-  private commentUrl = 'http://jbl-api.snumedu.net:5000/comments'
+  private commentUrl = baseUrl + '/comments'
 
   headers = new Headers(
     {

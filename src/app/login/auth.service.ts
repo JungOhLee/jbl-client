@@ -3,7 +3,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
-
+import { baseUrl } from '../base-url';
 
 
 @Injectable()
