@@ -48,7 +48,7 @@ export class SearchComponent implements OnInit {
     const element = document.querySelector("#" + id);
     if (element) { element.scrollIntoView(element); }
   }
-  scrollTop(){
+  goToTop(){
     window.scrollTo(0, 0)
   }
 }

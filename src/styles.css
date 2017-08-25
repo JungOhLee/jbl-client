@@ -152,10 +152,12 @@ div.problem {
   border-radius: 0.3rem;
 }
 div.problems-by-content>h2 {
-  padding-top: 2rem;
   margin-bottom: 0.75rem;
   padding-left: 1rem;
   font-size: 1.5rem;
+}
+div.problems-by-content {
+  padding-top: 2rem;
   border-top: 1px solid #a0a0a0;
 }
 
