@@ -169,15 +169,6 @@ div.problem-comment{
   padding: 0.1rem;
 }
 
-div.comment-form-toggle {
-  color: #0275d8;
-}
-
-div.comment-form-toggle:hover{
-  /*color: #2d2dad;*/
-  color: darkblue;
-}
-
 form.comment-form{
   padding: 0.1rem;
 
@@ -198,4 +189,27 @@ div.up-btn {
     right: 0;
     bottom: 0;
     z-index: 1030;
+}
+
+h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #eceeef;
+  color: black;
+}
+.btn-outline-secondary {
+  color: black !important;
+  border: 1px solid rgba(0,0,0,.15);
+}
+
+.btn-outline-secondary:active{
+  border: 1px solid black;
+}
+
+.btn-outline-secondary:focus{
+  border: 1px solid black;
+  box-shadow: 0 0 0 0;
 }

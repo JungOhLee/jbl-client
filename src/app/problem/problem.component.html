@@ -17,7 +17,7 @@
 
   <!-- 문제 comment toggler -->
   <div class="comments-toggler">
-    <a class="btn btn-light btn-sm" (click)="toggleComments();getComments()">Comments</a>
+    <a class="btn btn-outline-secondary btn-sm" (click)="toggleComments();getComments()">Comments</a>
     <!-- <span class="badge badge-pill badge-info align-top">{{problem.commentsCount}}</span>  -->
   </div>
   <!-- comments -->
@@ -33,7 +33,7 @@
         <div class="input-group row col py-1">
           <textarea #newComment class="form-control comment-form" required name="body" [(ngModel)]="newCommentBody"></textarea>
           <span class="input-group-btn">
-            <button type="submit" class="btn btn-light" (click)="addComment(newComment.value)">Submit</button>
+            <button type="submit" class="btn btn-outline-secondary h-100" (click)="addComment(newComment.value)">Submit</button>
           </span>
         </div>
       </div>
