@@ -1,8 +1,8 @@
 <div class="content container-fluid" *ngIf="jblData">
   <div class="content row">
-    <div class="toc navbar col-sm-3 pr-0" id="toc-list" #toc>
+    <div class="toc col-sm-3 pr-0" id="toc-list" #toc>
       <div class="toc-header">Contents</div>
-      <ul class="nav flex-column sidebar sticky-top">
+      <ul class="nav sidebar sticky-top">
         <li class="nav-item" *ngFor="let content of jblData.contents">
           <a class="nav-link pt-0" (click)="goToId($event)" >{{content.h2}}</a>
         </li>
