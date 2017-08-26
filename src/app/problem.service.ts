@@ -10,6 +10,7 @@ export class ProblemService {
   constructor( private http: Http ){ }
 
   private commentUrl = baseUrl + '/comments'
+  private problemInfoUrl = baseUrl +'/problem-info'
 
   headers = new Headers(
     {
@@ -31,6 +32,14 @@ export class ProblemService {
 //  problem CRUD  //
 //----------------//
 
+  findInfo(problemInfo){
+    let params = this.setSearchParams(problemInfo);
+    params.append('profs', '');
+    params.append('numbers', '');
+    console.log(params);
+    return this.http.get(this.problemInfoUrl, {search: params, headers: this.headers})
+      .map(res => {console.log(res.json());return res.json()});
+  }
   addProblem(problem){
     console.log(problem)
   }
