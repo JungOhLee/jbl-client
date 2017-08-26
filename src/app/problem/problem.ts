@@ -9,3 +9,7 @@ export class Problem {
   commentsCount: number =0;
   number: string='';
 }
+
+export const courseList =["병리학", "면역학", "이외"];
+
+export const topicList =["topic1", "topic2", "topic3"];

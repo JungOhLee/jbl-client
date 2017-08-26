@@ -27,6 +27,29 @@ export class ProblemService {
     return params;
   }
 
+//----------------//
+//  problem CRUD  //
+//----------------//
+
+  addProblem(problem){
+    console.log(problem)
+  }
+
+  getProblem(){
+
+  }
+
+  updateProblem(){
+
+  }
+
+  deleteProblem(){
+
+  }
+
+//------------------//
+// comment CRUD //
+//------------------//
   getComments(problem){
     let params = this.setSearchParams(problem);
     return this.http.get(this.commentUrl,{search: params, headers: this.headers})

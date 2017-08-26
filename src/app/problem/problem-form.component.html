@@ -1,3 +1,39 @@
-<p>Problem! Yeah!</p>
+<div class="problem-form container">
+  <p>Problem! Yeah!</p>
+  Test: {{problemForm.value | json }} {{problemForm.status | json}}
+  <form [formGroup]="problemForm" (ngSubmit)="onSubmit()" novalidate>
 
-<form action=""></form>
+
+    <div class="form-group">
+      <label for="course">과목명:
+      <select class="form-control" formControlName="course">
+        <option *ngFor="let course of courseList" [value]="course">{{course}}</option>
+      </select>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="topic">수업명:
+      <select  class="form-control" formControlName="topic">
+        <option *ngFor="let topic of topicList" [value]="topic">{{topic}}</option>
+      </select>
+      </label>
+    </div>
+
+    <div class="form-group"><label for="year">연도: <input type="text" class="form-control" formControlName="year"></label></div>
+    <div class="form-group"><label for="answer">정답: <input type="text" class="form-control" formControlName="answer"></label></div>
+    <div *ngIf="answer.invalid && (answer.dirty || answer.touched)" class="alert alert-danger">
+      <div *ngIf="answer.errors.required">
+        Answer is required.
+      </div>
+    </div>
+
+    <div class="form-group"><label for="question">질문: <input type="text" class="form-control" formControlName="question"></label></div>
+    <div class="form-group"><label for="number">번호: <input type="text" class="form-control" formControlName="number"></label></div>
+    <div class="form-group"><label for="tags">태그: <input type="text" class="form-control" formControlName="tags"></label></div>
+
+    <button type="submit" [disabled]="problemForm.invalid" class="btn btn-success">저장</button> &nbsp;
+    <button type="reset" (click)="revert()" [disabled]="problemForm.pristine" class="btn btn-danger">취소</button>
+  </form>
+
+</div>
