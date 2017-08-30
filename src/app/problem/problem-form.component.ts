@@ -5,7 +5,7 @@ import { Problem, yearList, courseList, topicList } from './problem';
 
 import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
 
-// TODO adding duplicate, null validators
+// TODO adding duplicate validators
 
 @Component({
   selector: 'problem-form',
@@ -136,9 +136,10 @@ export class ProblemFormComponent implements OnInit {
 
   prepareSave(): Problem {
     const formModel = this.problemForm.value;
-    const additionalTagsDeepCopy: string[] = formModel.additionalTags.map(
-      (tag) => tag.body
-    );
+    const additionalTagsDeepCopy: string[] = formModel.additionalTags
+      .map((tag) => tag.body)
+      .filter(body => body!="")
+    ;
     const saveProblem: Problem = {
       id: this.problem? this.problem.id : {} ,
       topic: formModel.info.topic,
@@ -151,7 +152,6 @@ export class ProblemFormComponent implements OnInit {
       numbers: formModel.numbers.replace(/\s+/g, "").split(","),
       commentsCount: 0
     };
-    console.log(saveProblem.additionalTags);
     return saveProblem;
   }
 }
