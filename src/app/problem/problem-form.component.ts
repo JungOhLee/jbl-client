@@ -2,6 +2,11 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProblemService } from '../problem.service';
 import { Problem, yearList, courseList, topicList } from './problem';
+
+import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
+
+// TODO adding duplicate, null validators
+
 @Component({
   selector: 'problem-form',
   templateUrl: './problem-form.component.html',
@@ -13,9 +18,9 @@ export class ProblemFormComponent implements OnInit {
   problemInfoForm;
   @Input() problem: Problem;
   newProblem: Problem;
-  yearList = yearList;
-  courseList = courseList;
-  topicList = topicList;
+  yearList: Array<string>;
+  courseList: Array<string>;
+  topicList: Array<string>;
   profList;
 
   constructor(
@@ -46,13 +51,13 @@ export class ProblemFormComponent implements OnInit {
         topic: ['', Validators.required],
         course: ['', Validators.required],
         year: ['', Validators.required],
-        profs: this.fb.array([['',Validators.required]])
+        profs: this.fb.array([['',Validators.required]], Validators.required)
       }),
-      question: ['', Validators.required],
+      question: ['질문을 입력하세요', Validators.required],
       answer: ['', Validators.required],
 
 
-      otherTags: this.fb.array([]),
+      additionalTags: this.fb.array([]),
       commentsCount: 0,
       numbers: ['', Validators.pattern('^[^0].*')],
     });
@@ -62,18 +67,34 @@ export class ProblemFormComponent implements OnInit {
       .subscribe(res => { this.yearList = res })
   }
 
-  setOtherTags(tags: string[]) {
+  setAdditionalTags(tags: string[]) {
     const tagFGs = tags.map(tag => this.fb.group({ body: tag }));
     const tagFormArray = this.fb.array(tagFGs);
     this.problemForm.setControl('tags', tagFormArray);
   }
 
   addTag() {
-    this.otherTags.push(this.fb.group({ body: '' }));
+    this.additionalTags.push(this.fb.group({ body: '' }));
+  }
+  deleteTag(index) {
+    this.additionalTags.removeAt(index);
   }
   addProf() {
-    this.profs.push(this.fb.control(''));
+    this.profs.push(this.fb.control('', Validators.required));
   }
+  deleteProf(index){
+    this.profs.removeAt(index);
+  }
+
+  get question() { return this.problemForm.get('question'); }
+  get answer() { return this.problemForm.get('answer'); }
+  get numbers() { return this.problemForm.get('numbers'); }
+  get additionalTags(): FormArray { return this.problemForm.get('additionalTags') as FormArray; }
+  get course() { return this.problemForm.get('info.course')}
+  get year() { return this.problemForm.get('info.year')}
+  get topic() { return this.problemForm.get('info.topic') }
+  get profs(): FormArray { return this.problemForm.get('info.profs') as FormArray; }
+
 
   // Getting Select Box List //
   updateCourseList() {
@@ -105,7 +126,8 @@ export class ProblemFormComponent implements OnInit {
     this.newProblem = this.prepareSave();
     this.problemForm.reset();
     console.log(this.newProblem);
-    this.problemService.addProblem(this.newProblem);
+    this.problemService.addProblem(this.newProblem)
+      .subscribe(res => console.log(res));
   }
 
   revert() {
@@ -114,7 +136,7 @@ export class ProblemFormComponent implements OnInit {
 
   prepareSave(): Problem {
     const formModel = this.problemForm.value;
-    const otherTagsDeepCopy: string[] = formModel.otherTags.map(
+    const additionalTagsDeepCopy: string[] = formModel.additionalTags.map(
       (tag) => tag.body
     );
     const saveProblem: Problem = {
@@ -125,25 +147,11 @@ export class ProblemFormComponent implements OnInit {
       profs: formModel.info.profs,
       question: formModel.question,
       answer: formModel.question,
-      otherTags: otherTagsDeepCopy,
+      additionalTags: additionalTagsDeepCopy,
       numbers: formModel.numbers.replace(/\s+/g, "").split(","),
       commentsCount: 0
     };
+    console.log(saveProblem.additionalTags);
     return saveProblem;
   }
-
-
-  get answer() { return this.problemForm.get('answer'); }
-  get numbers() { return this.problemForm.get('numbers'); }
-  get otherTags(): FormArray {
-    return this.problemForm.get('otherTags') as FormArray;
-  };
-  get profs(): FormArray {
-    return this.problemForm.get('info.profs') as FormArray;
-  };
-
-
-
-
-
 }

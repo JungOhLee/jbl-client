@@ -9,7 +9,7 @@
       </ul>
     </div>
 
-    <div class="problems py-2 col-sm-9 px-0 pr-md-2" data-spy="scroll" data-target="#toc-list" data-offset="0">
+    <div class="problems py-2 col-sm-9 px-0 pr-md-2" data-spy="scroll" data-target="#toc-list" >
       <h1 class="text-center py-2">{{jblData.h1}}</h1>
       <div class="problems-by-content" *ngFor="let content of jblData.contents">
         <h2 id="{{content.h2|topicId}}" class="d-inline block">· {{content.h2}}</h2> <a class="small text-muted px-1" (click)="goToTop()">맨위로</a>

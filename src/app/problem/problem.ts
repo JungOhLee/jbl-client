@@ -4,7 +4,7 @@ export class Problem {
 	year: string ='';
   answer: string ='';
   profs: string[]=[];
-  otherTags: string[] =[];
+  additionalTags: string[] =[];
 	question: string ='';
   id: Object ={}; // 뭘로 해야하지..?
   commentsCount: number =0;

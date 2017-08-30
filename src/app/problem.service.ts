@@ -7,18 +7,20 @@ import {baseUrl} from './base-url';
 @Injectable()
 export class ProblemService {
 
-  constructor( private http: Http ){ }
+  constructor(private http: Http) { }
 
   private commentUrl = baseUrl + '/comments'
-  private problemInfoUrl = baseUrl +'/problem-info'
+  private problemUrl = baseUrl + '/problem'
+  private problemInfoUrl = baseUrl + '/problem-info'
 
   headers = new Headers(
     {
-    'Auth':JSON.parse(localStorage.getItem('curUser')).auth,
-    'Email':JSON.parse(localStorage.getItem('curUser')).email}
+      'Auth': JSON.parse(localStorage.getItem('curUser')).auth,
+      'Email': JSON.parse(localStorage.getItem('curUser')).email
+    }
   );
 
-  setSearchParams(problem){
+  setSearchParams(problem) {
     let params: URLSearchParams = new URLSearchParams();
     params.append('question', problem.question);
     // params.append('number', problem.number);
@@ -28,56 +30,59 @@ export class ProblemService {
     return params;
   }
 
-//----------------//
-//  problem CRUD  //
-//----------------//
-
-  findInfo(problemInfo){
+  // Find Problem Info
+  findInfo(problemInfo) {
     let params = this.setSearchParams(problemInfo);
     params.append('profs', '');
     params.append('numbers', '');
     console.log(params);
-    return this.http.get(this.problemInfoUrl, {search: params, headers: this.headers})
-      .map(res => {console.log(res.json());return res.json()});
+    return this.http.get(this.problemInfoUrl, { search: params, headers: this.headers })
+      .map(res => { console.log(res.json()); return res.json() });
   }
-  addProblem(problem){
-    console.log(problem)
-  }
+  //----------------//
+  //  problem CRUD  //
+  //--------------//
 
-  getProblem(){
 
-  }
-
-  updateProblem(){
-
+  addProblem(problem) {
+    return this.http.post(this.problemUrl, problem, { headers: this.headers})
+      .map(res => res);
   }
 
-  deleteProblem(){
+  getProblem() {
 
   }
 
-//------------------//
-// comment CRUD //
-//------------------//
-  getComments(problem){
+  updateProblem() {
+
+  }
+
+  deleteProblem() {
+
+  }
+
+  //------------------//
+  // comment CRUD //
+  //------------------//
+  getComments(problem) {
     let params = this.setSearchParams(problem);
-    return this.http.get(this.commentUrl,{search: params, headers: this.headers})
+    return this.http.get(this.commentUrl, { search: params, headers: this.headers })
       .map(res => res.json());
   }
-  addComment(problem, newComment){
+  addComment(problem, newComment) {
     let params = this.setSearchParams(problem);
-    return this.http.post(this.commentUrl, newComment, {search: params, headers: this.headers})
+    return this.http.post(this.commentUrl, newComment, { search: params, headers: this.headers })
       .map(res => res.json());
   }
 
-  updateComment(comment){
+  updateComment(comment) {
     return this.http.post(this.commentUrl, {
       comment: comment
     })
       .map(res => res.json());
   }
 
-  deleteComment(comment){
-    return this.http.delete(this.commentUrl, {body: comment, headers: this.headers})
+  deleteComment(comment) {
+    return this.http.delete(this.commentUrl, { body: comment, headers: this.headers })
   }
 }

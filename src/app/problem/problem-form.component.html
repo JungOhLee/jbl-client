@@ -1,73 +1,112 @@
 <div class="problem-form container">
-  <p>Problem! Yeah!</p>
-  Test: {{problemForm.value | json }} {{problemForm.status | json}}
   <form [formGroup]="problemForm" (ngSubmit)="onSubmit()" novalidate>
 
     <div formGroupName="info">
-      <div class="form-group">
-        <label for="year">연도:
-        <select class="form-control" formControlName="year" (change)="updateCourseList()">
-          <option *ngFor="let year of yearList" [value]="year">{{year}}</option>
-        </select>
-        </label>
+      <div class="form-group row">
+        <label for="year" class="col-sm-2">년도</label>
+        <div class="col-sm-4 px-0">
+          <select class="form-control" formControlName="year" (change)="updateCourseList()">
+            <option value="" disabled selected>----</option>
+            <option *ngFor="let year of yearList" [value]="year">{{year}}</option>
+          </select>
+          <div *ngIf="year.invalid && (year.dirty || year.touched)" class="alert alert-danger row no-gutters py-1">
+            <div *ngIf="year.errors.required">
+              년도를 입력해주세요.
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="course">과목명:
-        <select class="form-control" formControlName="course" (change)="updateTopicList()">
-          <option *ngFor="let course of courseList" [value]="course">{{course}}</option>
-        </select>
-        </label>
+      <div class="form-group row">
+        <label for="course" class="col-sm-2">과목</label>
+        <div class="col-sm-4 px-0">
+          <select class="form-control" formControlName="course" (change)="updateTopicList()">
+            <option value="" disabled selected>----</option>
+            <option *ngFor="let course of courseList" [value]="course">{{course}}</option>
+          </select>
+          <div *ngIf="course.invalid && (course.dirty || course.touched)" class="alert alert-danger row no-gutters py-1">
+            <div *ngIf="course.errors.required">
+              과목을 입력해주세요.
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="topic">수업명:
-        <select  class="form-control" formControlName="topic" (change)="updateProfList()">
-          <option *ngFor="let topic of topicList" [value]="topic">{{topic}}</option>
-        </select>
-        </label>
+      <div class="form-group row">
+        <label for="topic" class="col-sm-2">수업</label>
+        <div class="col-sm-4 px-0">
+          <select class="form-control" formControlName="topic" (change)="updateProfList()">
+            <option value="" disabled selected>----</option>
+            <option *ngFor="let topic of topicList" [value]="topic">{{topic}}</option>
+          </select>
+          <div *ngIf="topic.invalid && (topic.dirty || topic.touched)" class="alert alert-danger row no-gutters py-1">
+            <div *ngIf="topic.errors.required">
+              수업을 입력해주세요.
+            </div>
+          </div>
+        </div>
+
       </div>
-      
-      <div formArrayName="profs">
-        <div *ngFor="let prof of profs.controls; let i=index" >
+
+      <div formArrayName="profs" class="form-group row">
+        <label for="profs" class="col-sm-2">교수</label>
+        <div *ngFor="let prof of profs.controls; let i=index" class="col-sm-2 px-0">
           <!-- The repeated address template -->
-          <label for="profs">교수명:
-          <select  class="form-control" [formControlName]="i">
+          <select class="form-control d-inline w-75" [formControlName]="i">
+            <option value="" disabled selected>----</option>
             <option *ngFor="let prof of profList" [value]="prof">{{prof}}</option>
           </select>
-          </label>
+          <span *ngIf="i!=0" (click)="deleteProf(index)" class="d-inline fa fa-times"></span>
+          <div *ngIf="profs.at(i).invalid && (profs.at(i).dirty || profs.at(i).touched)" class="alert alert-danger row no-gutters py-1 w-75">
+            <div *ngIf="profs.at(i).errors.required">
+              오류
+            </div>
+          </div>
         </div>
-        <button (click)="addProf()" class="btn btn-secondary" type="button" >Add a Prof</button>
+        <button (click)="addProf()" class="btn btn-secondary" type="button">다른 교수 추가</button>
       </div>
     </div>
 
-    <div class="form-group"><label for="numbers">번호: <input type="text" class="form-control" formControlName="numbers"></label></div>
+    <div class="form-group row"><label for="numbers" class="col-sm-2">번호</label> <input type="text" class="form-control col-sm-4" formControlName="numbers"></div>
     <div *ngIf="numbers.invalid && (numbers.dirty || numbers.touched)" class="alert alert-danger">
       <div *ngIf="numbers.errors.pattern">
         Number is invalid.
       </div>
     </div>
-    <div class="form-group"><label for="question">질문: <input type="text" class="form-control" formControlName="question"></label></div>
-    <div class="form-group"><label for="answer">정답: <input type="text" class="form-control" formControlName="answer"></label></div>
-    <div *ngIf="answer.invalid && (answer.dirty || answer.touched)" class="alert alert-danger">
-      <div *ngIf="answer.errors.required">
-        Answer is required.
+
+    <div class="form-group row">
+      <label for="question" class="col-12">질문</label>
+      <div class="col-md-6 px-0 pl-sm-2" style="border-radius: .25rem;">
+        <ng2-summernote formControlName="question" height="500px"></ng2-summernote>
       </div>
     </div>
 
 
-    <div formArrayName="otherTags" >
-      이외의 태그
-      <div *ngFor="let tag of otherTags.controls; let i=index" [formGroupName]="i">
-        <!-- The repeated address template -->
-        <div class="form-group"><label for="tags">태그: <input type="text" class="form-control" formControlName="body"></label></div>
+    <div class="form-group row"><label for="answer" class="col-sm-2">정답</label>
+      <div class="col-sm-4 px-0">
+        <textarea class="form-control" formControlName="answer" rows="2"></textarea>
+        <div *ngIf="answer.invalid && (answer.dirty || answer.touched)" class="alert alert-danger">
+          <div *ngIf="answer.errors.required">
+            정답을 입력해주세요.
+          </div>
+        </div>
       </div>
-      <button (click)="addTag()" class="btn btn-secondary" type="button" >Add a Tag</button>
+    </div>
+
+    <div formArrayName="additionalTags" class="form-group row">
+      <label for="additionalTags" class="col-sm-2">이외의 태그</label>
+      <div *ngFor="let tag of additionalTags.controls; let i=index" [formGroupName]="i" class="col-sm-2 px-0">
+        <!-- The repeated address template -->
+        <input type="text" class="form-control w-75 d-inline" formControlName="body">
+        <span (click)="deleteTag(index)" class="fa fa-times d-inline"></span>
+      </div>
+      <button (click)="addTag()" class="btn btn-secondary" type="button">다른 태그 추가</button>
     </div>
     <!-- <div class="form-group"><label for="tags">태그: <input type="text" class="form-control" formControlName="tags"></label></div> -->
 
     <button type="submit" [disabled]="problemForm.invalid" class="btn btn-success">저장</button> &nbsp;
     <button type="reset" (click)="revert()" [disabled]="problemForm.pristine" class="btn btn-danger">취소</button>
   </form>
+
 
 </div>

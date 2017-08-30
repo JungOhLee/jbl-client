@@ -9,7 +9,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "../node_modules/summernote/dist/font/*"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -20,13 +21,17 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/summernote/dist/summernote.css",
         "styles.css"
       ],
       "scripts": [
+
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/tether/dist/js/tether.min.js",
-        "../node_modules/popper.js/dist/umd/popper.js",        
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "../node_modules/popper.js/dist/umd/popper.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/summernote/dist/summernote.js"
+
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
