@@ -19,7 +19,11 @@ const appRoutes: Routes = [
         component: SearchComponent
       },
       {
-        path: 'problem',
+        path: 'problem/:id/edit',
+        component: ProblemFormComponent
+      },
+      {
+        path: 'problem/new',
         component: ProblemFormComponent
       }
       //이후 routing 추가할 부분
