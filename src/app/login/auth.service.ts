@@ -13,7 +13,7 @@ export class AuthService {
   }
 
   isLoggedIn = this.checkLogin();
-  url = 'http://jbl-api.snumedu.net:5000/login'
+  url = baseUrl + '/login';
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
