@@ -1,7 +1,8 @@
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProblemService } from '../problem.service';
-import { Problem, yearList, courseList, topicList } from './problem';
+import { Problem } from './problem';
+import { ActivatedRoute } from '@angular/router';
 
 import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
 
@@ -26,23 +27,25 @@ export class ProblemFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private problemService: ProblemService,
+    private route: ActivatedRoute
   ) {
     this.createForm();
     // problem-info: year -> course -> topic -> prof
 
-  }
-
-
-
-  ngOnInit() {
-
-  }
-
-  ngOnChanges() {
-    this.problemForm.reset({
-      // topic: this.problem.topic,
-      // course: this.problem.course
+    this.route.params.subscribe(param => {
+      console.log(param.id); //for debug
+      if(param.id){
+        this.problemService.getProblem(param.id)
+          .subscribe(res => {
+            this.problem = res;
+            this.setFormValue(this.problem);
+            this.getAllList();
+          });
+      }
     })
+  }
+
+  ngOnInit(){
   }
 
   createForm() {
@@ -56,7 +59,6 @@ export class ProblemFormComponent implements OnInit {
       question: ['질문을 입력하세요', Validators.required],
       answer: ['', Validators.required],
 
-
       additionalTags: this.fb.array([]),
       commentsCount: 0,
       numbers: ['', Validators.pattern('^[^0].*')],
@@ -67,10 +69,36 @@ export class ProblemFormComponent implements OnInit {
       .subscribe(res => { this.yearList = res })
   }
 
+  setFormValue(problem) {
+    let value = {
+      info: {
+        topic: problem.topic,
+        course: problem.course,
+        year: problem.year,
+        profs: ['']
+      },
+      question: problem.question,
+      answer: problem.answer,
+      additionalTags: [],
+      numbers: problem.numbers.join(", "),
+      commentsCount: 0
+    };
+    this.problemForm.setValue(value);
+    this.setProfs(problem.profs);
+    this.setAdditionalTags(problem.additionalTags);
+    console.log(this.problemForm);
+  }
+
+  setProfs(profs: string[]) {
+    const profFCs = profs.map(prof => this.fb.control(prof, Validators.required));
+    const profFormArray = this.fb.array(profFCs);
+    this.problemInfoForm.setControl('profs', profFormArray);
+  }
+
   setAdditionalTags(tags: string[]) {
     const tagFGs = tags.map(tag => this.fb.group({ body: tag }));
     const tagFormArray = this.fb.array(tagFGs);
-    this.problemForm.setControl('tags', tagFormArray);
+    this.problemForm.setControl('additionalTags', tagFormArray);
   }
 
   addTag() {
@@ -120,6 +148,30 @@ export class ProblemFormComponent implements OnInit {
       .subscribe(res => { this.profList = res })
   }
 
+  getAllList(){
+    this.problemService.findInfo({
+      year: this.problem.year,
+      course: "",
+      topic: ""
+    }).subscribe(
+      res => {if(res){this.courseList = res}}
+    )
+    this.problemService.findInfo({
+      year: this.problem.year,
+      course: this.problem.course,
+      topic: ""
+    }).subscribe(
+      res=> {if(res){this.topicList = res}}
+    )
+    this.problemService.findInfo({
+      year: this.problem.year,
+      course: this.problem.course,
+      topic: this.problem.topic,
+      profs: []
+    }).subscribe(
+      res => {if(res){this.profList = res}}
+    )
+  }
 
   // Submit or Cancel //
   onSubmit() {
@@ -131,7 +183,9 @@ export class ProblemFormComponent implements OnInit {
   }
 
   revert() {
-    this.ngOnChanges();
+    this.createForm(); //TODO 이부분에서 summernote 가 instance 없다고 오류남
+    this.setFormValue(this.problem);
+    this.getAllList();
   }
 
   prepareSave(): Problem {

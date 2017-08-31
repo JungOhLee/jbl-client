@@ -1,4 +1,5 @@
 <div class="problem-form container">
+  {{problemForm.status|json}}
   <form [formGroup]="problemForm" (ngSubmit)="onSubmit()" novalidate>
 
     <div formGroupName="info">
@@ -56,7 +57,7 @@
             <option value="" disabled selected>----</option>
             <option *ngFor="let prof of profList" [value]="prof">{{prof}}</option>
           </select>
-          <span *ngIf="i!=0" (click)="deleteProf(index)" class="d-inline fa fa-times"></span>
+          <span *ngIf="i!=0" (click)="deleteProf(i)" class="d-inline fa fa-times"></span>
           <div *ngIf="profs.at(i).invalid && (profs.at(i).dirty || profs.at(i).touched)" class="alert alert-danger row no-gutters py-1 w-75">
             <div *ngIf="profs.at(i).errors.required">
               오류
@@ -98,14 +99,14 @@
       <div *ngFor="let tag of additionalTags.controls; let i=index" [formGroupName]="i" class="col-sm-2 px-0">
         <!-- The repeated address template -->
         <input type="text" class="form-control w-75 d-inline" formControlName="body">
-        <span (click)="deleteTag(index)" class="fa fa-times d-inline"></span>
+        <span (click)="deleteTag(i)" class="fa fa-times d-inline"></span>
       </div>
       <button (click)="addTag()" class="btn btn-secondary" type="button">다른 태그 추가</button>
     </div>
     <!-- <div class="form-group"><label for="tags">태그: <input type="text" class="form-control" formControlName="tags"></label></div> -->
 
     <button type="submit" [disabled]="problemForm.invalid" class="btn btn-success">저장</button> &nbsp;
-    <button type="reset" (click)="revert()" [disabled]="problemForm.pristine" class="btn btn-danger">취소</button>
+    <button type="button" (click)="revert()" [disabled]="problemForm.pristine" class="btn btn-danger">취소</button>
   </form>
 
 

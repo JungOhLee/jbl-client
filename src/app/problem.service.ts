@@ -49,8 +49,11 @@ export class ProblemService {
       .map(res => res);
   }
 
-  getProblem() {
-
+  getProblem(id) {
+    let params = new URLSearchParams();
+    params.set("id", id);
+    return this.http.get(this.problemUrl, {params: params, headers: this.headers})
+      .map(res => {console.log(res.json()); return res.json()})
   }
 
   updateProblem() {
