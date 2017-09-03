@@ -1,0 +1,41 @@
+<div class="toc container">
+  <h4>CourseNameToc</h4><input class="form-control" type="text" value="{{toc.course}}">
+
+  <div class="row">
+    <div class="col-sm-8">
+      <ul class="list-group" dnd-sortable-container [sortableData]="toc.topics">
+        <li *ngFor="let item of toc.topics; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">
+          <div class="row">
+            <div class="blockquote col-9">{{item.topic}}</div>
+            <div class="col-3">
+              <span class="blockquote-footer" *ngFor="let prof of item.profs">{{prof}}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <form [formGroup]= tocForm (ngSubmit)="onSubmit()" class="col-8">
+    <div class="form-group">
+      <label for="topic">수업</label>
+      <select class="form-control" formControlName="topic">
+        <option [value]="topic" *ngFor="let topic of topicList">{{topic}}</option>
+      </select>
+      <input class="form-control" type="text" formControlName="topic" [value]="topic.value">
+    </div>
+    <div class="form-group" formArrayName="profs">
+      <div *ngFor ="let prof of profs.controls; let i = index;">
+        <label for="profs">교수</label>
+        <select class="form-control" [formControlName]="i">
+          <option [value]="prof" *ngFor ="let prof of profList">{{prof}}</option>
+        </select>
+        <span *ngIf="i!=0" (click)="deleteProf(i)" class="d-inline fa fa-times"></span>
+      </div>
+      <button (click)="addProf()" class="btn btn-secondary" type="button">다른 교수 추가</button>
+    </div>
+    {{tocForm.value|json}}
+    <button type="submit" [disabled]="tocForm.invalid" class="btn btn-success">추가하기</button> &nbsp;
+    <button type="button" (click)="revert()" [disabled]="tocForm.pristine" class="btn btn-danger">취소</button>
+  </form>
+</div>
