@@ -4,10 +4,10 @@
 
     <div formGroupName="info">
       <div class="form-group row">
-        <label for="year" class="col-sm-2">년도</label>
+        <label for="year" class="col-sm-2 sr-only">년도</label>
         <div class="col-sm-4 px-0">
           <select class="form-control" formControlName="year" (change)="updateCourseList()">
-            <option value="" disabled selected>----</option>
+            <option value="" disabled selected>년도</option>
             <option *ngFor="let year of yearList" [value]="year">{{year}}</option>
           </select>
           <div *ngIf="year.invalid && (year.dirty || year.touched)" class="alert alert-danger row no-gutters py-1">
@@ -19,10 +19,10 @@
       </div>
 
       <div class="form-group row">
-        <label for="course" class="col-sm-2">과목</label>
+        <label for="course" class="col-sm-2 sr-only">과목</label>
         <div class="col-sm-4 px-0">
           <select class="form-control" formControlName="course" (change)="updateTopicList()">
-            <option value="" disabled selected>----</option>
+            <option value="" disabled selected>과목</option>
             <option *ngFor="let course of courseList" [value]="course">{{course}}</option>
           </select>
           <div *ngIf="course.invalid && (course.dirty || course.touched)" class="alert alert-danger row no-gutters py-1">
@@ -34,10 +34,10 @@
       </div>
 
       <div class="form-group row">
-        <label for="topic" class="col-sm-2">수업</label>
+        <label for="topic" class="col-sm-2 sr-only">수업</label>
         <div class="col-sm-4 px-0">
           <select class="form-control" formControlName="topic" (change)="updateProfList()">
-            <option value="" disabled selected>----</option>
+            <option value="" disabled selected>수업</option>
             <option *ngFor="let topic of topicList" [value]="topic">{{topic}}</option>
           </select>
           <div *ngIf="topic.invalid && (topic.dirty || topic.touched)" class="alert alert-danger row no-gutters py-1">
@@ -50,11 +50,10 @@
       </div>
 
       <div formArrayName="profs" class="form-group row">
-        <label for="profs" class="col-sm-2">교수</label>
+        <label for="profs" class="col-sm-2 sr-only">교수</label>
         <div *ngFor="let prof of profs.controls; let i=index" class="col-sm-2 px-0">
-          <!-- The repeated address template -->
           <select class="form-control d-inline w-75" [formControlName]="i">
-            <option value="" disabled selected>----</option>
+            <option value="" disabled selected>교수</option>
             <option *ngFor="let prof of profList" [value]="prof">{{prof}}</option>
           </select>
           <span *ngIf="i!=0" (click)="deleteProf(i)" class="d-inline fa fa-times"></span>
@@ -68,24 +67,33 @@
       </div>
     </div>
 
-    <div class="form-group row"><label for="numbers" class="col-sm-2">번호</label> <input type="text" class="form-control col-sm-4" formControlName="numbers"></div>
+    <div class="form-group row"><label for="numbers" class="col-sm-2 sr-only">번호</label> <input type="text" class="form-control col-sm-4" formControlName="numbers" placeholder="문제 번호"><div class="col-sm-4 text-secondary">묶음 문제의 경우, 콤마로 번호를 분리하세요. Ex) 1,2,3 / R4,R5</div></div>
     <div *ngIf="numbers.invalid && (numbers.dirty || numbers.touched)" class="alert alert-danger">
       <div *ngIf="numbers.errors.pattern">
         Number is invalid.
       </div>
     </div>
 
+    <div formArrayName="additionalTags" class="form-group row">
+      <label for="additionalTags" class="col-sm-2 sr-only">태그</label>
+      <div *ngFor="let tag of additionalTags.controls; let i=index" [formGroupName]="i" class="col-sm-2 px-0">
+        <input type="text" class="form-control w-75 d-inline" formControlName="body">
+        <span (click)="deleteTag(i)" class="fa fa-times d-inline"></span>
+      </div>
+      <button (click)="addTag()" class="btn btn-secondary" type="button">태그 추가</button>
+    </div>
+
     <div class="form-group row">
-      <label for="question" class="col-12">질문</label>
-      <div class="col-md-6 px-0 pl-sm-2" style="border-radius: .25rem;">
-        <ng2-summernote formControlName="question" height="500px"></ng2-summernote>
+      <label for="question" class="col-12 sr-only">질문</label>
+      <div class="col-md-8 px-0" style="border-radius: .25rem;">
+        <ng2-summernote formControlName="question" height="300" placeholder="질문을 입력하세요"></ng2-summernote>
       </div>
     </div>
 
 
-    <div class="form-group row"><label for="answer" class="col-sm-2">정답</label>
-      <div class="col-sm-4 px-0">
-        <textarea class="form-control" formControlName="answer" rows="2"></textarea>
+    <div class="form-group row"><label for="answer" class="col-sm-2 sr-only">정답</label>
+      <div class="col-sm-8 px-0">
+        <textarea class="form-control" formControlName="answer" rows="2" placeholder="정답"></textarea>
         <div *ngIf="answer.invalid && (answer.dirty || answer.touched)" class="alert alert-danger">
           <div *ngIf="answer.errors.required">
             정답을 입력해주세요.
@@ -93,20 +101,11 @@
         </div>
       </div>
     </div>
-
-    <div formArrayName="additionalTags" class="form-group row">
-      <label for="additionalTags" class="col-sm-2">이외의 태그</label>
-      <div *ngFor="let tag of additionalTags.controls; let i=index" [formGroupName]="i" class="col-sm-2 px-0">
-        <!-- The repeated address template -->
-        <input type="text" class="form-control w-75 d-inline" formControlName="body">
-        <span (click)="deleteTag(i)" class="fa fa-times d-inline"></span>
-      </div>
-      <button (click)="addTag()" class="btn btn-secondary" type="button">다른 태그 추가</button>
-    </div>
     <!-- <div class="form-group"><label for="tags">태그: <input type="text" class="form-control" formControlName="tags"></label></div> -->
 
     <button type="submit" [disabled]="problemForm.invalid" class="btn btn-success">저장</button> &nbsp;
     <button type="button" (click)="revert()" [disabled]="problemForm.pristine" class="btn btn-danger">취소</button>
+    미리보기, 되돌리기
   </form>
 
 

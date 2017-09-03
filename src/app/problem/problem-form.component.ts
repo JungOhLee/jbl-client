@@ -56,14 +56,13 @@ export class ProblemFormComponent implements OnInit {
         year: ['', Validators.required],
         profs: this.fb.array([['',Validators.required]], Validators.required)
       }),
-      question: ['질문을 입력하세요', Validators.required],
+      question: ['질문', Validators.required],
       answer: ['', Validators.required],
 
       additionalTags: this.fb.array([]),
       commentsCount: 0,
       numbers: ['', Validators.pattern('^[^0].*')],
     });
-
     this.problemInfoForm = this.problemForm.get('info');
     this.problemService.findInfo(this.problemInfoForm.value)
       .subscribe(res => { this.yearList = res })
@@ -166,8 +165,7 @@ export class ProblemFormComponent implements OnInit {
     this.problemService.findInfo({
       year: this.problem.year,
       course: this.problem.course,
-      topic: this.problem.topic,
-      profs: []
+      topic: this.problem.topic
     }).subscribe(
       res => {if(res){this.profList = res}}
     )
