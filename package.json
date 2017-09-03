@@ -24,6 +24,7 @@
     "@angular/router": "^4.0.0",
     "bootstrap": "^4.0.0-beta",
     "core-js": "^2.4.1",
+    "ng2-dnd": "^4.2.0",
     "ng2-summernote": "^1.12.0",
     "popper.js": "^1.12.3",
     "resolve-url-loader": "^2.1.0",
