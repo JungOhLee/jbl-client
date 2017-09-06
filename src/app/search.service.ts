@@ -22,9 +22,11 @@ export class SearchService {
     console.log(query);
     let searchParams =new URLSearchParams();
     searchParams.append('query', query);
-    console.log(searchParams);
     return this.http.get(this.url, {search: searchParams, headers: this.headers })
-      .map(res => res.json());
+      .map(res => {
+        console.log(res.json());
+        return res.json();
+      });
   }
 
 }
