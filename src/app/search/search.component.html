@@ -4,17 +4,23 @@
       <div class="toc-header">Contents</div>
       <ul class="nav sidebar sticky-top">
         <li class="nav-item" *ngFor="let content of jblData.contents">
-          <a class="nav-link pt-0" (click)="goToId($event)" >{{content.h2}}</a>
+          <a class="nav-link pt-0" (click)="goToId($event)" >{{content.title}}</a>
         </li>
       </ul>
     </div>
 
     <div class="problems py-2 col-sm-9 px-0 pr-md-2" data-spy="scroll" data-target="#toc-list" >
-      <h1 class="text-center py-2">{{jblData.h1}}</h1>
+      <h1 class="text-center py-2">{{jblData.title}}</h1>
       <div class="problems-by-content" *ngFor="let content of jblData.contents">
-        <h2 id="{{content.h2|topicId}}" class="d-inline block">· {{content.h2}}</h2> <a class="small text-muted px-1" (click)="goToTop()">맨위로</a>
-        <!-- 문제 div-->
-        <problem *ngFor="let problem of content.contents" [problem]=problem></problem>
+        <h2 id="{{content.title|topicId}}" class="d-inline block">· {{content.title}}</h2> <a class="small text-muted px-1" (click)="goToTop()">맨위로</a>
+        <div *ngFor = "let innerContent of content.contents">
+          <h3>{{innerContent.title}}</h3>
+
+          <div *ngFor="let problems of innerContent.contents">
+            <!-- 문제 div-->
+            <problem *ngFor="let problem of problems.contents" [problem]=problem></problem>
+          </div>
+        </div>
       </div>
     </div>
   </div>
