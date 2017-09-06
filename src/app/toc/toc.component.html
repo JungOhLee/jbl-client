@@ -1,0 +1,14 @@
+<div class="toc container" *ngIf="toc">
+  <!-- TODO 연도별 보기 -->
+  <h2>{{toc.course}} <a [routerLink]="['/toc',toc.course,'edit']" class="text-secondary"> Edit </a></h2>
+  <div class="topic-list">
+    <ul class="list-group">
+      <li *ngFor="let item of toc.topics" class="list-group-item">
+        <div class="row">
+          <div class="topic col-6">{{item.topic}}</div>
+          <div class="profs col-6">{{item.profs}}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

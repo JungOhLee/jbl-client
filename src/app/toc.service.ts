@@ -16,11 +16,21 @@ export class TocService {
     }
   );
 
-  private url = 'http://jbl-api-devel.snumedu.net:8000'+ '/toc'
+  private url = baseUrl + '/toc'
 
-  getToc() {
+  getAllTocs() {
     return this.http.get(this.url, {headers: this.headers })
       .map(res => res.json());
+  }
+  getToc(course) {
+    let searchParams =new URLSearchParams();
+    searchParams.append('course', course);
+    return this.http.get(this.url, {search:searchParams, headers: this.headers })
+      .map(res => res.json()[0]);
+  }
+
+  updateToc() {
+    
   }
 
 }

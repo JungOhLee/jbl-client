@@ -5,6 +5,8 @@ import { JblMainComponent } from './jbl-main/jbl-main.component'
 import { SearchComponent } from './search/search.component';
 import { ProblemFormComponent } from './problem/problem-form.component';
 import { TocFormComponent } from './toc/toc-form.component';
+import { TocIndexComponent } from './toc/toc-index.component';
+import { TocComponent } from './toc/toc.component';
 
 import { AuthGuard } from './login/auth-guard.service';
 
@@ -27,13 +29,21 @@ const appRoutes: Routes = [
         path: 'problem/new',
         component: ProblemFormComponent
       },
-      // {
-      //   path: 'toc',
-      //   component: TocComponent
-      // },
+      {
+        path: 'toc/:course',
+        component: TocComponent
+      },
+      {
+        path: 'toc/:course/edit',
+        component: TocFormComponent
+      },
       {
         path: 'toc/new',
         component: TocFormComponent
+      },
+      {
+        path: 'toc',
+        component: TocIndexComponent
       }
       //이후 routing 추가할 부분
     ]

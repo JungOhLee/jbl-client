@@ -10,8 +10,7 @@ import { TocService } from '../toc.service';
 })
 export class TocFormComponent implements OnInit{
 
-  tocForm: FormGroup;
-  listOne = ["1","3","5","7"];
+  topicForm: FormGroup;
   toc = {
     course: "course1",
     topics: [{
@@ -25,8 +24,12 @@ export class TocFormComponent implements OnInit{
       profs: ["prof3","prof4"]
     }]
   }
-  topicList: Array<string> =["topic1", "topic2", "topic3"];
-  profList: Array<string> = ["prof1", "prof2", "prof3"];
+  topicList: Array<string> =[];
+  profList: Array<string> =[];
+
+  showCourseInput: boolean = false;
+  showTopicInput: boolean = false;
+  showProfInput= [];
 
   constructor(
     private fb: FormBuilder,
@@ -34,23 +37,25 @@ export class TocFormComponent implements OnInit{
     private route: ActivatedRoute
   ){
     this.createForm();
-
+    this.route.params.subscribe(param => {
+      if(param.course){
+        this.setToc(param.course)
+      }
+    })
   }
 
   ngOnInit(){
-    this.tocService.getToc()
-      .subscribe( res => {console.log(res); this.toc=res[0]})
   }
 
   createForm(){
-    this.tocForm = this.fb.group({
-      topic: ["hi"],
+    this.topicForm = this.fb.group({
+      topic: [""],
       profs: this.fb.array([[""]])
     })
   }
 
-  get topic(): FormControl { return this.tocForm.get('topic') as FormControl; }
-  get profs(): FormArray { return this.tocForm.get('profs') as FormArray; }
+  get topic(): FormControl { return this.topicForm.get('topic') as FormControl; }
+  get profs(): FormArray { return this.topicForm.get('profs') as FormArray; }
 
   addProf() {
     this.profs.push(this.fb.control('', Validators.required));
@@ -59,9 +64,47 @@ export class TocFormComponent implements OnInit{
     this.profs.removeAt(index);
   }
 
-  onSubmit(){
-    const saveValue = this.tocForm.value
-    this.tocForm.reset();
+  setToc(course){
+    this.tocService.getToc(course)
+      .subscribe( res => {
+        console.log(res);
+        this.toc=res;
+        this.setTopicList();
+        this.setProfList();
+      })
+  }
+  setTopicList(){
+    this.topicList = this.toc.topics.map(item => item.topic);
+  }
+  setProfList(){
+    this.toc.topics.map(item => {
+      for(let prof of item.profs){
+        if (this.profList.indexOf(prof) == -1) {
+          this.profList.push(prof);
+      }
+    }})
+  }
+
+  toggleCourseInput(){
+    this.showCourseInput = !this.showCourseInput;
+  }
+  toggleTopicInput(){
+    this.showTopicInput = !this.showTopicInput;
+  }
+  toggleProfInput(i){
+    this.showProfInput[i] =!this.showProfInput[i];
+  }
+  addTopic(){
+    const saveValue = this.topicForm.value
+    this.topicForm.reset();
     this.toc.topics.push(saveValue);
+  }
+  deleteTopic(i){
+    this.toc.topics.splice(i,1);
+  }
+
+  saveToc(){
+    const saveValue = this.toc;
+    console.log(this.toc);
   }
 }

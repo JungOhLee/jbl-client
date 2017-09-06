@@ -16,6 +16,8 @@ import { SearchComponent } from './search/search.component';
 import { ProblemComponent } from './problem/problem.component';
 import { ProblemFormComponent } from './problem/problem-form.component';
 import { TocFormComponent } from './toc/toc-form.component';
+import { TocComponent } from './toc/toc.component';
+import { TocIndexComponent } from './toc/toc-index.component';
 
 //Service
 import { SearchService} from './search.service';
@@ -52,6 +54,8 @@ class AuthRequestOptions extends BaseRequestOptions {
     ProblemComponent,
     ProblemFormComponent,
     TocFormComponent,
+    TocComponent,
+    TocIndexComponent,
     LoginComponent
   ],
   imports: [
