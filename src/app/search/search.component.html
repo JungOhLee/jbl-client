@@ -12,7 +12,9 @@
     <div class="problems py-2 col-sm-9 px-0 pr-md-2" data-spy="scroll" data-target="#toc-list" >
       <h1 class="text-center py-2">{{jblData.title}}</h1>
       <div class="problems-by-content" *ngFor="let content of jblData.contents">
-        <h2 id="{{content.title|topicId}}" class="d-inline block">· {{content.title}}</h2> <a class="small text-muted px-1" (click)="goToTop()">맨위로</a>
+        <div class="mb-2">
+          <h2 id="{{content.title|topicId}}" class="d-inline block"> {{content.title}}</h2> <a class="small text-muted px-1" (click)="goToTop()">맨위로</a>
+        </div>
         <div *ngFor = "let innerContent of content.contents">
           <h3>{{innerContent.title}}</h3>
 

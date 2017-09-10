@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TocService } from '../toc.service';
+
 
 @Component({
   selector: 'toc-index',
@@ -10,7 +12,10 @@ import { TocService } from '../toc.service';
 export class TocIndexComponent implements OnInit{
 
   public tocList
-  constructor(private tocService: TocService){
+  constructor(
+    private tocService: TocService,
+    private router: Router
+  ){
 
   }
 
@@ -19,4 +24,11 @@ export class TocIndexComponent implements OnInit{
       .subscribe(res => this.tocList = res)
   }
 
+  deleteToc(course){
+    this.tocService.deleteToc(course)
+      .subscribe(res => {
+        console.log("Delete succeeded:", res);
+        this.router.navigate(['/toc']);
+      })
+  }
 }

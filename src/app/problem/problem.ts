@@ -1,12 +1,13 @@
 export class Problem {
+  id: string ='';
+  _status: string ='';
   topic: string ='';
   course: string ='';
 	year: string ='';
   answer: string ='';
   profs: string[]=[];
-  additionalTags: string[] =[];
+  tags: string[] =[];
 	question: string ='';
-  id: Object ={}; // 뭘로 해야하지..?
   commentsCount: number =0;
   numbers: string[]=[];
 }

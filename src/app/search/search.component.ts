@@ -34,7 +34,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.route.queryParamMap
       .switchMap((params: ParamMap) =>
-        this.searchService.getResult(params.get('query')))
+        this.searchService.getResultByCourse(params.get('query')))
       .subscribe(res => {this.jblData = res;});
   }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TocService } from '../toc.service';
 
 @Component({
@@ -34,7 +34,8 @@ export class TocFormComponent implements OnInit{
   constructor(
     private fb: FormBuilder,
     private tocService: TocService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ){
     this.createForm();
     this.route.params.subscribe(param => {
@@ -104,7 +105,25 @@ export class TocFormComponent implements OnInit{
   }
 
   saveToc(){
-    const saveValue = this.toc;
-    console.log(this.toc);
+    const saveValue = this.prepareSave();
+    this.tocService.addToc(saveValue)
+      .subscribe( res => {
+        console.log(res);
+        this.router.navigate(['/toc',saveValue.course]);
+      })
+  }
+  prepareSave(){
+    const currentToc = this.toc
+    const topicsDeepCopy = currentToc.topics.map(topic => {
+      return {
+        topic: topic.topic,
+        profs: topic.profs.join(",")
+      }
+    })
+    const saveToc = {
+      course: currentToc.course,
+      topics: topicsDeepCopy
+    }
+    return saveToc
   }
 }

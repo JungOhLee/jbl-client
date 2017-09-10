@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, URLSearchParams, RequestOptions, Headers } from '@angular/http';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import {baseUrl} from './base-url';
@@ -7,7 +8,10 @@ import {baseUrl} from './base-url';
 @Injectable()
 export class ProblemService {
 
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http,
+    private router: Router
+  ) { }
 
   private commentUrl = baseUrl + '/comments'
   private problemUrl = baseUrl + '/problem'
@@ -46,22 +50,29 @@ export class ProblemService {
 
   addProblem(problem) {
     return this.http.post(this.problemUrl, problem, { headers: this.headers})
-      .map(res => res);
+      .map(res => res.json());
   }
 
   getProblem(id) {
     let params = new URLSearchParams();
     params.set("id", id);
-    return this.http.get(this.problemUrl, {params: params, headers: this.headers})
+    return this.http.get(this.problemUrl, {search: params, headers: this.headers})
       .map(res => {console.log(res.json()); return res.json()})
   }
 
-  updateProblem() {
-
+  updateProblem(problem) {
+    return this.http.put(this.problemUrl, problem, { headers: this.headers})
+      .map(res => res.json());
   }
 
-  deleteProblem() {
-
+  deleteProblem(id) {
+    let params = new URLSearchParams();
+    params.set("id", id);
+    return this.http.delete(this.problemUrl, {search: params, headers:this.headers})
+      .map( res => {
+        console.log(res);
+        return res;
+      })
   }
 
   //------------------//

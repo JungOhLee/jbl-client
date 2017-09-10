@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './login/auth.service';
+import { Router, NavigationEnd } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,9 @@ export class AppComponent {
   title = 'app';
   alert ="";
 
-
-  constructor(public authService: AuthService) {
+  constructor(
+    public authService: AuthService
+  ) {
   }
 
   checkLogin(){
@@ -29,4 +31,5 @@ export class AppComponent {
   logout(){
     this.authService.logout();
   }
+
 }

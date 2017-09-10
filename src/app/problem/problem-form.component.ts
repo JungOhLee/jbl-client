@@ -1,11 +1,15 @@
 import { Component, Input, OnInit, OnChanges, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router'
 import { ProblemService } from '../problem.service';
 import { Problem } from './problem';
+import { TocService } from '../toc.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
 
+import 'rxjs/add/operator/filter';
 // TODO adding duplicate validators
 
 @Component({
@@ -19,30 +23,30 @@ export class ProblemFormComponent implements OnInit {
   problemInfoForm;
   @Input() problem: Problem;
   newProblem: Problem;
-  yearList: Array<string>;
+  tocs: Array<any>;
+  yearList: Array<string> = ["2017","2016","2015","2014","2013"];
   courseList: Array<string>;
   topicList: Array<string>;
   profList;
+  showModal=false;
 
   constructor(
     private fb: FormBuilder,
     private problemService: ProblemService,
-    private route: ActivatedRoute
+    private tocService: TocService,
+    private route: ActivatedRoute,
+    private location: Location,
+    private router: Router
   ) {
     this.createForm();
     // problem-info: year -> course -> topic -> prof
 
-    this.route.params.subscribe(param => {
-      console.log(param.id); //for debug
-      if(param.id){
-        this.problemService.getProblem(param.id)
-          .subscribe(res => {
-            this.problem = res;
-            this.setFormValue(this.problem);
-            this.getAllList();
-          });
-      }
-    })
+    this.tocService.getAllTocs()
+      .subscribe(res => {
+        this.tocs=res;
+        this.updateCourseList();
+        this.checkRouteId();
+      });
   }
 
   ngOnInit(){
@@ -59,13 +63,25 @@ export class ProblemFormComponent implements OnInit {
       question: ['질문', Validators.required],
       answer: ['', Validators.required],
 
-      additionalTags: this.fb.array([]),
+      tags: this.fb.array([]),
       commentsCount: 0,
       numbers: ['', Validators.pattern('^[^0].*')],
     });
     this.problemInfoForm = this.problemForm.get('info');
-    this.problemService.findInfo(this.problemInfoForm.value)
-      .subscribe(res => { this.yearList = res })
+  }
+
+  checkRouteId(){
+    this.route.params.subscribe(param => {
+      console.log("param id:", param.id); //for debug
+      if(param.id){
+        this.problemService.getProblem(param.id)
+          .subscribe(res => {
+            this.problem = res;
+            this.getAllList(this.problem);
+            this.setFormValue(this.problem);
+          });
+      }
+    })
   }
 
   setFormValue(problem) {
@@ -78,13 +94,13 @@ export class ProblemFormComponent implements OnInit {
       },
       question: problem.question,
       answer: problem.answer,
-      additionalTags: [],
-      numbers: problem.numbers.join(", "),
+      tags: [],
+      numbers: problem.numbers.join(","),
       commentsCount: 0
     };
     this.problemForm.setValue(value);
     this.setProfs(problem.profs);
-    this.setAdditionalTags(problem.additionalTags);
+    this.setTags(problem.tags);
     console.log(this.problemForm);
   }
 
@@ -94,17 +110,17 @@ export class ProblemFormComponent implements OnInit {
     this.problemInfoForm.setControl('profs', profFormArray);
   }
 
-  setAdditionalTags(tags: string[]) {
+  setTags(tags: string[]) {
     const tagFGs = tags.map(tag => this.fb.group({ body: tag }));
     const tagFormArray = this.fb.array(tagFGs);
-    this.problemForm.setControl('additionalTags', tagFormArray);
+    this.problemForm.setControl('tags', tagFormArray);
   }
 
   addTag() {
-    this.additionalTags.push(this.fb.group({ body: '' }));
+    this.tags.push(this.fb.group({ body: '' }));
   }
   deleteTag(index) {
-    this.additionalTags.removeAt(index);
+    this.tags.removeAt(index);
   }
   addProf() {
     this.profs.push(this.fb.control('', Validators.required));
@@ -116,7 +132,7 @@ export class ProblemFormComponent implements OnInit {
   get question() { return this.problemForm.get('question'); }
   get answer() { return this.problemForm.get('answer'); }
   get numbers() { return this.problemForm.get('numbers'); }
-  get additionalTags(): FormArray { return this.problemForm.get('additionalTags') as FormArray; }
+  get tags(): FormArray { return this.problemForm.get('tags') as FormArray; }
   get course() { return this.problemForm.get('info.course')}
   get year() { return this.problemForm.get('info.year')}
   get topic() { return this.problemForm.get('info.topic') }
@@ -127,83 +143,85 @@ export class ProblemFormComponent implements OnInit {
   updateCourseList() {
     const courseControl = this.problemInfoForm.get('course');
     const topicControl = this.problemInfoForm.get('topic');
-    topicControl.setValue('');
-    courseControl.setValue('');
-    this.problemService.findInfo(this.problemInfoForm.value)
-      .subscribe(res => { this.courseList = res })
+    this.courseList=this.tocs.map(toc => toc.course);
   }
 
-  updateTopicList() {
+  updateTopicList(course) {
     const topicControl = this.problemInfoForm.get('topic');
     topicControl.setValue('');
-    this.problemService.findInfo(this.problemInfoForm.value)
-      .subscribe(res => { this.topicList = res })
+    let toc = this.tocs.find(toc => toc.course === course);
+    this.topicList = toc.topics.map(topic => topic.topic);
   }
 
-  updateProfList() {
-    // const profsControl = this.problemInfoForm.get('profs');
-    // profsControl.setValue('');
-    this.problemService.findInfo(this.problemInfoForm.value)
-      .subscribe(res => { this.profList = res })
+  updateProfList(topicTitle, course) {
+    course = course || this.course.value;
+    this.problemInfoForm.setControl('profs', this.fb.array([['',Validators.required]], Validators.required))
+    let toc = this.tocs.find(toc => toc.course === course);
+    let topic = toc.topics.find(topic => topic.topic=== topicTitle );
+    this.profList = topic.profs.map(prof => prof);
   }
 
-  getAllList(){
-    this.problemService.findInfo({
-      year: this.problem.year,
-      course: "",
-      topic: ""
-    }).subscribe(
-      res => {if(res){this.courseList = res}}
-    )
-    this.problemService.findInfo({
-      year: this.problem.year,
-      course: this.problem.course,
-      topic: ""
-    }).subscribe(
-      res=> {if(res){this.topicList = res}}
-    )
-    this.problemService.findInfo({
-      year: this.problem.year,
-      course: this.problem.course,
-      topic: this.problem.topic
-    }).subscribe(
-      res => {if(res){this.profList = res}}
-    )
+  getAllList(problem){
+    this.updateTopicList(problem.course);
+    this.updateProfList(problem.topic, problem.course);
   }
 
   // Submit or Cancel //
   onSubmit() {
     this.newProblem = this.prepareSave();
-    this.problemForm.reset();
     console.log(this.newProblem);
-    this.problemService.addProblem(this.newProblem)
-      .subscribe(res => console.log(res));
+    if(this.problem) {
+      this.problemService.updateProblem(this.newProblem)
+        .subscribe(res => {
+          let problem = res;
+          console.log("Save problem succeeded!", problem);
+          this.router.navigate(['/problem', problem.id]);
+        });
+    } else {
+      this.problemService.addProblem(this.newProblem)
+        .subscribe(res => {
+          let problem = res;
+          console.log("Save problem succeeded!", problem);
+          this.router.navigate(['/problem', problem.id]);
+        });
+    }
+
   }
 
-  revert() {
-    this.createForm(); //TODO 이부분에서 summernote 가 instance 없다고 오류남
-    this.setFormValue(this.problem);
-    this.getAllList();
+  cleanNum(){
+    this.numbers.setValue(this.numbers.value.replace(/ /g, ""))
   }
 
   prepareSave(): Problem {
     const formModel = this.problemForm.value;
-    const additionalTagsDeepCopy: string[] = formModel.additionalTags
-      .map((tag) => tag.body)
-      .filter(body => body!="")
-    ;
+    console.log("formModel:", formModel);
+    const tagsDeepCopy: string[] = formModel.tags
+      .map((tag) => tag.body.trim())
+      .filter(body => body!="");
+
+    function onlyUnique(value, index, self) {
+      return self.indexOf(value) === index;
+    }
+    function noEmpty(value){
+      return value !== "";
+    }
     const saveProblem: Problem = {
-      id: this.problem? this.problem.id : {} ,
+      id: this.problem? this.problem.id : "" ,
+      _status: this.problem? this.problem._status : "",
       topic: formModel.info.topic,
       course: formModel.info.course,
       year: formModel.info.year,
-      profs: formModel.info.profs,
+      profs: formModel.info.profs.filter(onlyUnique).filter(noEmpty),
       question: formModel.question,
-      answer: formModel.question,
-      additionalTags: additionalTagsDeepCopy,
-      numbers: formModel.numbers.replace(/\s+/g, "").split(","),
+      answer: formModel.answer,
+      tags: tagsDeepCopy.filter(onlyUnique),
+      numbers: formModel.numbers.replace(/\s+/g, "").split(",").filter(onlyUnique).filter(noEmpty),
       commentsCount: 0
     };
     return saveProblem;
+  }
+
+  toPreviousPage(){
+    this.location.back()
   }
 }

@@ -4,6 +4,7 @@ import { RouterModule, Routes }  from '@angular/router';
 import { JblMainComponent } from './jbl-main/jbl-main.component'
 import { SearchComponent } from './search/search.component';
 import { ProblemFormComponent } from './problem/problem-form.component';
+import { ProblemComponent } from './problem/problem.component';
 import { TocFormComponent } from './toc/toc-form.component';
 import { TocIndexComponent } from './toc/toc-index.component';
 import { TocComponent } from './toc/toc.component';
@@ -22,12 +23,20 @@ const appRoutes: Routes = [
         component: SearchComponent
       },
       {
+        path: 'problem/new',
+        component: ProblemFormComponent
+      },
+      {
+        path: 'problem/:id',
+        component: ProblemComponent
+      },
+      {
         path: 'problem/:id/edit',
         component: ProblemFormComponent
       },
       {
-        path: 'problem/new',
-        component: ProblemFormComponent
+        path: 'toc/new',
+        component: TocFormComponent
       },
       {
         path: 'toc/:course',
@@ -35,10 +44,6 @@ const appRoutes: Routes = [
       },
       {
         path: 'toc/:course/edit',
-        component: TocFormComponent
-      },
-      {
-        path: 'toc/new',
         component: TocFormComponent
       },
       {

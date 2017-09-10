@@ -1,16 +1,17 @@
 <div class="tocs container">
-  <h1>Toc 관리화면</h1>
+  <h1>목차 관리</h1>
   <div class="toc-list">
     <div class="toc-item row" *ngFor="let toc of tocList">
       <div class="col-4">
         <a [routerLink]="['/toc',toc.course]" >{{toc.course}}</a>
       </div>
       <div class="col-6">
-        <a [routerLink]="['/toc',toc.course, 'edit']" >수정하기</a>
+        <a [routerLink]="['/toc',toc.course, 'edit']" >수정 </a>|
+        <a class="btn-link" (click)="deleteToc(toc.course)">삭제</a>
       </div>
     </div>
     <div class="toc-add">
-      <a routerLink="['/toc/new']">Toc 추가하기</a>
+      <a [routerLink]="['/toc','new']"><span class="fa fa-plus-square-o"></span> 추가</a>
     </div>
   </div>
 </div>

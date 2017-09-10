@@ -6,6 +6,9 @@
       <li>
         <a href (click)="preventDefault($event);sendQuery($event.target.textContent);">질병의 병리학적 이해</a>
       </li>
+      <li>
+        <a [routerLink]="['/problem/new']">새 문제 추가하기</a>
+      </li>
     </ul>
   </div>
 </div>

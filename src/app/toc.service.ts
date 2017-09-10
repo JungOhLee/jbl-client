@@ -20,17 +20,39 @@ export class TocService {
 
   getAllTocs() {
     return this.http.get(this.url, {headers: this.headers })
-      .map(res => res.json());
+      .map(res => {
+        console.log(res.json());
+        return res.json().courses;
+      });
   }
   getToc(course) {
     let searchParams =new URLSearchParams();
     searchParams.append('course', course);
     return this.http.get(this.url, {search:searchParams, headers: this.headers })
-      .map(res => res.json()[0]);
+      .map(res => {
+        console.log(res.json());
+        return res.json().courses.find(object => object.course ===course);
+      });
   }
 
+  addToc(toc){
+    return this.http.post(this.url, toc, {headers: this.headers})
+      .map(res => {
+        console.log("Toc Post succeeded:", res.json());
+        return res.json();
+      })
+  }
   updateToc() {
-    
+
+  }
+
+  deleteToc(course) {
+    let params = new URLSearchParams();
+    params.set("course", course);
+    return this.http.delete(this.url, {search: params, headers:this.headers})
+      .map( res => {
+        res.json()
+      })
   }
 
 }

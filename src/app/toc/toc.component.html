@@ -1,8 +1,14 @@
 <div class="toc container" *ngIf="toc">
   <!-- TODO 연도별 보기 -->
-  <h2>{{toc.course}} <a [routerLink]="['/toc',toc.course,'edit']" class="text-secondary"> Edit </a></h2>
-  <div class="topic-list">
+  <h2>{{toc.course}} <a [routerLink]="['/toc',toc.course,'edit']" class="text-secondary small px-2"> <span class="fa fa-pencil"></span> </a></h2>
+  <div class="topic-list mt-3">
     <ul class="list-group">
+      <li class="list-group-item" style="background-color:#f1f1f1">
+        <div class="row h5 mb-0" >
+          <div class="col-6"><strong>수업</strong></div>
+          <div class="col-6"><strong>교수</strong></div>
+        </div>
+      </li>
       <li *ngFor="let item of toc.topics" class="list-group-item">
         <div class="row">
           <div class="topic col-6">{{item.topic}}</div>

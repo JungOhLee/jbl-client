@@ -1,7 +1,22 @@
-<div class="problem">
-  <div class="float-right"><a class="text-secondary fa fa-ellipsis-h" [routerLink]="['/problem', problem.id, 'edit']"></a></div>
+<div class="problem" *ngIf="problem">
+  <div class="float-right text-right" >
+    <a class="text-secondary fa fa-ellipsis-h" (click)=toggleOptions()></a>
+    <div class="tooltip bs-tooltip-left show" *ngIf="showOptions" >
+      <div class="arrow"></div>
+      <div class="tooltip-inner">
+        <a [routerLink]="['/problem', problem.id, 'edit']" >수정하기</a><br>
+        <a (click)="deleteProblem(problem)" >삭제하기</a>
+      </div>
+    </div>
+  </div>
+
   <!-- 문제 기본 정보 해시태그 - 연도, 번호 교수 -->
   <div class="problem-info text-muted">
+    <div class="pr-2 d-inline-block" *ngIf="problem.year">#{{problem?.year}}</div>
+    <div class="pr-2 d-inline-block" *ngIf="problem.course">#{{problem?.course}}</div>
+    <div class="pr-2 d-inline-block" *ngIf="problem.topic">#{{problem?.topic}}</div>
+    <div class="pr-2 d-inline-block" *ngFor="let number of problem.numbers">#{{number}}</div>
+    <div class="pr-2 d-inline-block" *ngFor="let prof of problem.profs">#{{prof}}</div>
     <div class="pr-2 d-inline-block" *ngFor="let tag of problem.tags">#{{tag}}</div>
   </div>
   <!-- 문제 질문 -->
@@ -27,7 +42,7 @@
       <span *ngIf="checkCommentUser(comment)"class="fa fa-times float-right text-muted mr-1" (click)="deleteComment(comment, i)"></span>
     </div>
     <!-- comment form -->
-    <form class="comment-form form-inline" [attr.id]="'problem-comment-form'+problem.id" (submit)="toggleCommentForm()">
+    <form class="comment-form form-inline" [attr.id]="'problem-comment-form'+problem.id">
       <div class="col text-right d-flex justify-content-center p-0">
         <div class="input-group row col py-1">
           <textarea #newComment class="form-control comment-form" required name="body" [(ngModel)]="newCommentBody"></textarea>

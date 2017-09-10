@@ -1,23 +1,28 @@
 <div class="toc container">
-  <h2 *ngIf="!showCourseInput">{{toc.course}} <span class="text-secondary small btn-link" (click)="toggleCourseInput()">Edit</span></h2>
-  <div class="row" *ngIf="showCourseInput">
-    <input class="form-control form-control-lg col-6" type="text" value="{{toc.course}}" [(ngModel)] ="toc.course">
+  <div class="row my-2" *ngIf="!showCourseInput">
+    <h2 class="d-inline">{{toc.course}}</h2> <span class="text-secondary btn-link p-2" (click)="toggleCourseInput()"> 이름변경 <span class="fa fa-pencil"></span></span>
+  </div>
+  <div class="row my-2" *ngIf="showCourseInput">
+    <input class="form-control form-control-lg col-6" type="text" value="{{toc.course}}" [(ngModel)]="toc.course">
     <button type="button" class="btn btn-secondary col-2" (click)="toggleCourseInput()">완료</button>
   </div>
-  <br>
+
   <div class="topic-list">
-  <h4>수업 순서</h4>
+    <div class="row py-2">
+      <h4 class="d-inline">수업 순서</h4><div class="d-inline text-secondary px-2">끌어서 정렬하세요</div>
+    </div>
     <div class="row no-gutters">
       <div class="col-sm-8">
         <ul class="list-group" dnd-sortable-container [sortableData]="toc.topics">
-          <li *ngFor="let item of toc.topics; let i = index" class="list-group-item py-0" dnd-sortable [sortableIndex]="i">
-            <div class="row">
-              <div class="blockquote col-8">{{i+1}}. {{item.topic}}</div>
-              <div class="col-3">
-                <span class="blockquote-footer" *ngFor="let prof of item.profs">{{prof}}</span>
+          <li *ngFor="let item of toc.topics; let i = index" class="list-group-item p-0" dnd-sortable [sortableIndex]="i">
+            <div class="row no-gutters py-1">
+              <div class="col-1 text-center"><span class="align-middle">{{i+1}}</span></div>
+              <div class="col-6 blockquote mb-0">{{item.topic}}</div>
+              <div class="col-4" style="white-space: normal">
+                <span class="small text-secondary px-1 d-inline-block" *ngFor="let prof of item.profs">{{prof}}</span>
               </div>
               <div class="col-1">
-                <a class="small" (click)="deleteTopic(i)">삭제</a><br>
+                <a class="text-secondary" (click)="deleteTopic(i)"><span class="fa fa-times"></span></a><br>
                 <!-- <a class="small">수정</a> -->
               </div>
             </div>
@@ -25,44 +30,55 @@
         </ul>
       </div>
     </div>
-    <button type="button" class="btn btn-info col-8" (click)="saveToc()">저장하기</button>
-    <br><br>
-    <h4>추가하기</h4>
-    <form [formGroup]= topicForm (ngSubmit)="addTopic()" class="col-8 card">
-      <div class="card-body text-right">
-        <div class="form-group row no-gutters">
-          <div class="col-8">
-            <label for="topic" class="sr-only">수업</label>
-            <select class="form-control" formControlName="topic">
-              <option value="" disabled selected>수업명을 입력하세요</option>
-              <option [value]="topic" *ngFor="let topic of topicList">{{topic}}</option>
-            </select>
-          </div>
-          <div class="col-4 text-center"><button class="btn btn-light"type="button" name="button" (click)="toggleTopicInput()">직접입력</button></div>
-          <input *ngIf="showTopicInput" class="form-control" type="text" formControlName="topic" [value]="topic.value" placeholder="직접 입력">
-        </div>
-        <div class="form-group row text-left" formArrayName="profs">
-          <label for="profs" class="sr-only">교수</label>
-          <div *ngFor ="let prof of profs.controls; let i = index;" class="col-8">
-            <select *ngIf="!showProfInput[i]" class="form-control w-75 d-inline" [formControlName]="i">
-              <option value="" selected disabled>교수명</option>
-              <option [value]="prof" *ngFor ="let prof of profList">{{prof}}</option>
-            </select>
-            <input *ngIf="showProfInput[i]" class="form-control w-75 d-inline" type="text" [formControlName]="i" [value]="topic.value" placeholder="교수명">
-            <button *ngIf="!showProfInput[i]" class="btn btn-light" type="button" (click)="toggleProfInput(i)">직접입력</button>
-            <button *ngIf="showProfInput[i]" class="btn btn-light" type="button" (click)="toggleProfInput(i)">선택입력</button>
-            <span *ngIf="i!=0" (click)="deleteProf(i)" class="d-inline fa fa-times"></span>
-          </div>
+    <br>
+    <div class="row no-gutters">
+      <div class="topicForm col-8 px-2">
+        <form [formGroup]="topicForm" (ngSubmit)="addTopic()" class="col-12 card px-0">
+          <div class="card-header py-2">수업 입력</div>
+          <div class="card-body text-right">
+            <div class="form-group row no-gutters">
+              <div class="col-8">
+                <label for="topic" class="sr-only">수업</label>
+                <select class="form-control" formControlName="topic" [hidden]="showTopicInput">
+                  <option value="" disabled selected>수업명을 입력하세요</option>
+                  <option [value]="topic" *ngFor="let topic of topicList">{{topic}}</option>
+                </select>
+                <input [hidden]="!showTopicInput" class="form-control" type="text" formControlName="topic" [value]="topic.value" placeholder="직접 입력">
+              </div>
+              <div class="col-4 px-3 text-left"><button class="btn btn-light" type="button" name="button" (click)="toggleTopicInput()"><span [hidden]="showTopicInput">직접입력</span><span [hidden]="!showTopicInput">선택입력</span></button></div>
+            </div>
+            <div class="form-group row no-gutters text-left mb-0" formArrayName="profs">
+              <label for="profs" class="sr-only">교수</label>
+              <ng-container *ngFor="let prof of profs.controls; let i = index;" >
+                <div class="col-5 px-0 pb-2">
+                  <select *ngIf="!showProfInput[i]" class="form-control d-inline" [formControlName]="i">
+                    <option value="" selected disabled>교수명</option>
+                    <option [value]="prof" *ngFor ="let prof of profList">{{prof}}</option>
+                  </select>
+                  <input *ngIf="showProfInput[i]" class="form-control d-inline" type="text" [formControlName]="i" [value]="prof.value" placeholder="교수명">
+                </div>
+                <div class="col-4 px-3 pb-2">
+                  <button *ngIf="!showProfInput[i]" class="btn btn-light" type="button" (click)="toggleProfInput(i)">직접입력</button>
+                  <button *ngIf="showProfInput[i]" class="btn btn-light" type="button" (click)="toggleProfInput(i)">선택입력</button>
+                  <span *ngIf="i!=0" (click)="deleteProf(i)" class="d-inline fa fa-times"></span>
+                </div>
+              </ng-container>
+              <div class="col-4">
+                <button (click)="addProf()" class="btn btn-light" type="button">교수 추가</button>
+              </div>
+              <div class="col-8">
+                <button type="submit" [disabled]="topicForm.invalid" class="btn btn-success float-right"><span class="fa fa-plus"></span> 추가</button>
+              </div>
+            </div>
 
-          <div class="col-12">
-            <button (click)="addProf()" class="btn btn-light" type="button">교수 추가</button>
           </div>
-
-        </div>
-        <button type="submit" [disabled]="topicForm.invalid" class="btn btn-success">추가하기</button> &nbsp;
-        <button type="button" (click)="revert()" [disabled]="topicForm.pristine" class="btn btn-danger">취소</button>
+        </form>
       </div>
-    </form>
+    </div>
+    <br>
+    <button type="button" class="btn btn-info col-8" (click)="saveToc()">저장</button>
+    <br><br>
+
 
 
 

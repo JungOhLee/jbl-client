@@ -29,4 +29,25 @@ export class SearchService {
       });
   }
 
+  getResultByCourse(course) {
+    console.log("Search_course:", course);
+    let searchParams = new URLSearchParams();
+    searchParams.append('course',course);
+    return this.http.get(this.url, {search: searchParams, headers: this.headers})
+      .map(res =>{
+        console.log("Search_result:", res.json());
+        return res.json();
+      })
+  }
+
+  getResultByTopic(topic) {
+    console.log("Search_topic:", topic);
+    let searchParams = new URLSearchParams();
+    searchParams.append('topic', topic);
+    return this.http.get(this.url, {search: searchParams, headers: this.headers})
+      .map(res =>{
+        console.log("Search_result:", res.json());
+        return res.json();
+      })
+  }
 }
