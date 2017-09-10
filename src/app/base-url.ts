@@ -7,7 +7,7 @@ function setBaseUrl(){
   if(!environment.production){
     return 'http://jbl-api-devel.snumedu.net:8000'
   } else {
-    return 'http://jbl-api.snumedu.net:5000'
+    return 'http://jbl-api.snumedu.net:8000'
   }
 }
 
