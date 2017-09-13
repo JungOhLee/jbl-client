@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TocService } from '../toc.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'toc-form',
@@ -35,7 +36,8 @@ export class TocFormComponent implements OnInit{
     private fb: FormBuilder,
     private tocService: TocService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private location: Location
   ){
     this.createForm();
     this.route.params.subscribe(param => {
