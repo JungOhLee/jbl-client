@@ -1,0 +1,17 @@
+.problem-menu{
+  position: absolute;
+  width: 100px;
+  right: 10px;
+  background-clip: padding-box;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+}
+
+.problem-menu>ul{
+  list-style-type: none;
+  text-align: center;
+  padding: 0 12px;
+  margin: 0;
+}
