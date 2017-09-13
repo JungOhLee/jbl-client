@@ -17,16 +17,10 @@ export class AppComponent {
   }
 
   checkLogin(){
-    if(localStorage.getItem('curUser')){
-      return true
-    }
-    return false
+    return this.authService.isLoggedIn;
   }
   userName(){
-    if(localStorage.getItem('curUser')){
-      return JSON.parse(localStorage.getItem('curUser')).email;
-    }
-    return "";
+    return this.authService.getUserEmail();
   }
   logout(){
     this.authService.logout();
