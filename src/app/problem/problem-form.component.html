@@ -36,7 +36,7 @@
         <div class="form-group row">
           <label for="topic" class="col-sm-2 sr-only">수업</label>
           <div class="col-sm-8 px-0">
-            <select class="form-control" formControlName="topic" (change)="updateProfList(topic.value)">
+            <select class="form-control" formControlName="topic" (change)="updateProfList(topic.value, undefined)">
               <option value="" disabled selected>수업</option>
               <option *ngFor="let topic of topicList" [value]="topic">{{topic}}</option>
             </select>
