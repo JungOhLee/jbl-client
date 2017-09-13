@@ -1,4 +1,4 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProblemService } from '../problem.service';
 import { ActivatedRoute, Router} from '@angular/router';
 
@@ -7,14 +7,15 @@ import * as $ from 'jquery';
 @Component({
   selector: 'problem',
   templateUrl: './problem.component.html',
-  styles: []
+  styleUrls: ['./problem.component.css']
 })
 
 export class ProblemComponent implements OnInit {
 
   @Input() problem;
   public showComments = false;
-  public showOptions = false;
+  public showMenu = false;
+  public menuClicked = false;
   private newCommentBody: string;
   private comments: Array<any> = [];
   constructor(
@@ -35,16 +36,25 @@ export class ProblemComponent implements OnInit {
         }
       })
   }
-  toggleOptions() {
-    this.showOptions = !this.showOptions
+  toggleMenu(event) {
+    event.stopPropagation(); //TODO 이렇게 하면 버튼 여러개 누르면, 여러개 열림
+    this.showMenu = !this.showMenu;
   }
+  closeMenu() {
+    this.showMenu = false
+  }
+
   toggleComments() {
     this.showComments = !this.showComments
   }
 
   deleteProblem(problem) {
-    this.problemService.deleteProblem(problem.id)
-      .subscribe(res => {this.router.navigate(["./"]);})
+    if(confirm("정말 문제를 지우시겠습니까?")){
+      this.problemService.deleteProblem(problem.id)
+        .subscribe(res => {
+          location.reload(); //TODO 문제 하나만 보던 페이지에서는 해당 페이지에 다시 가게 됨
+        })
+    }
   }
 
   editComment() {
