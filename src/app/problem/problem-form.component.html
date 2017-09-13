@@ -1,7 +1,7 @@
 <div class="problem-form container">
 
   <div class="row">
-    <form class="col-sm-6" [formGroup]="problemForm" (ngSubmit)="onSubmit()" novalidate>
+    <form class="col-md-6" [formGroup]="problemForm" (ngSubmit)="onSubmit()" novalidate>
       <div formGroupName="info">
         <div class="form-group row">
           <label for="year" class="col-sm-2 sr-only">년도</label>
@@ -55,6 +55,7 @@
             <select class="form-control d-inline w-75" [formControlName]="i">
               <option value="" disabled selected>교수</option>
               <option *ngFor="let prof of profList" [value]="prof">{{prof}}</option>
+              <option value="교수미상">교수미상</option>
             </select>
             <span *ngIf="i!=0" (click)="deleteProf(i)" class="d-inline fa fa-times"></span>
             <div *ngIf="profs.at(i).invalid && (profs.at(i).dirty || profs.at(i).touched)" class="alert alert-danger row no-gutters py-1 w-75">
@@ -67,16 +68,20 @@
         </div>
       </div>
 
-      <div class="form-group row"><label for="numbers" class="col-sm-2 sr-only">번호</label> <input type="text" class="form-control col-sm-8" formControlName="numbers" placeholder="문제 번호" (input)="cleanNum()">
+      <div class="form-group row">
+        <div class="col-sm-8 px-0">
+          <label class="px-1" for="numbers">번호</label>
+          <input type="text" class="form-control" formControlName="numbers" placeholder="문제 번호" (keydown)="noSpace($event)">
+          <div *ngIf="numbers.invalid && (numbers.dirty || numbers.touched)" class="alert alert-danger py-1">
+            <div *ngIf="numbers.errors.pattern">
+              0으로 시작할 수 없습니다.
+            </div>
+          </div>
+        </div>
         <div class="col-sm-4 text-secondary">묶음 문제의 경우, 콤마로 번호를 분리하세요. Ex) 1,2,3 / R4,R5</div>
       </div>
-      <div *ngIf="numbers.invalid && (numbers.dirty || numbers.touched)" class="alert alert-danger">
-        <div *ngIf="numbers.errors.pattern">
-          Number is invalid.
-        </div>
-      </div>
 
-      <div formArrayName="tags" class="form-group row">
+      <div formArrayName="tags" class="form-group row mb-0">
         <label for="tags" class="col-sm-2 sr-only">태그</label>
         <div *ngFor="let tag of tags.controls; let i=index" [formGroupName]="i" class="col-sm-4 px-0">
           <input type="text" class="form-control w-75 d-inline" formControlName="body">
@@ -87,8 +92,9 @@
 
       <div class="form-group row">
         <label for="question" class="col-12 sr-only">질문</label>
+        <div class="col-12 text-right p-0 m-0 small text-secondary"><span>*이미지는 최대 500kb 까지 첨부가능</span></div>
         <div class="col-md-12 px-0" style="border-radius: .25rem;">
-          <ng2-summernote formControlName="question" height="300" placeholder="질문을 입력하세요" serverImgUp="true" uploadFolder="./assets"></ng2-summernote>
+          <ng2-summernote formControlName="question" height="300" placeholder="질문을 입력하세요" serverImgUp="true" hostUpload="{{imgUrl}}"></ng2-summernote>
         </div>
       </div>
 
@@ -103,13 +109,13 @@
           </div>
         </div>
       </div>
-      <!-- <div class="form-group"><label for="tags">태그: <input type="text" class="form-control" formControlName="tags"></label></div> -->
-
-      <button type="submit" [disabled]="problemForm.invalid" class="btn btn-success">저장</button>
-      <button type="button" (click)="toPreviousPage()" class="btn btn-danger">이전페이지</button>
+      <div class="text-right">
+        <button type="submit" [disabled]="problemForm.invalid" class="btn btn-success">저장</button>
+        <button type="button" (click)="toPreviousPage()" class="btn btn-danger">이전페이지</button>
+      </div>
     </form>
 
-    <div class="col-6 hidden-sm-down">
+    <div class="col-sm-6 d-none d-md-block">
       <div class="card sticky-top">
         <h4 class="card-header">미리보기</h4>
         <div class="card-body">
