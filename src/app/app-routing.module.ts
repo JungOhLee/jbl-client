@@ -10,14 +10,16 @@ import { TocIndexComponent } from './toc/toc-index.component';
 import { TocComponent } from './toc/toc.component';
 
 import { AuthGuard } from './login/auth-guard.service';
+import { AdminGuard } from './login/admin-guard.service';
 
 const appRoutes: Routes = [
   // { path: 'crisis-center', component: CrisisListComponent },
-  { path: '', component: JblMainComponent, pathMatch: 'full' },
+
   {
     path: '',
     canActivateChild: [AuthGuard],
     children: [
+      { path: '', component: JblMainComponent, pathMatch: 'full' },
       {
         path: 'search',
         component: SearchComponent
@@ -35,21 +37,28 @@ const appRoutes: Routes = [
         component: ProblemFormComponent
       },
       {
-        path: 'toc/new',
-        component: TocFormComponent
-      },
-      {
-        path: 'toc/:course',
-        component: TocComponent
-      },
-      {
-        path: 'toc/:course/edit',
-        component: TocFormComponent
-      },
-      {
-        path: 'toc',
-        component: TocIndexComponent
+        path:'',
+        canActivateChild: [AdminGuard],
+        children: [
+          {
+            path: 'toc/new',
+            component: TocFormComponent
+          },
+          {
+            path: 'toc/:course',
+            component: TocComponent
+          },
+          {
+            path: 'toc/:course/edit',
+            component: TocFormComponent
+          },
+          {
+            path: 'toc',
+            component: TocIndexComponent
+          }
+        ]
       }
+
       //이후 routing 추가할 부분
     ]
   },
@@ -66,6 +75,9 @@ const appRoutes: Routes = [
   ],
   exports: [
     RouterModule
+  ],
+  providers: [
+    AdminGuard
   ]
 })
 export class AppRoutingModule {}
