@@ -25,10 +25,12 @@ export class TocIndexComponent implements OnInit{
   }
 
   deleteToc(course){
-    this.tocService.deleteToc(course)
-      .subscribe(res => {
-        console.log("Delete succeeded:", res);
-        this.router.navigate(['/toc']);
-      })
+    if(confirm("정말 지우시겠습니까?")){
+      this.tocService.deleteToc(course)
+        .subscribe(res => {
+          console.log("Delete succeeded:", res);
+          location.reload();
+        })
+    }
   }
 }
