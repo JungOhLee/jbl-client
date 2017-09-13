@@ -23,7 +23,7 @@
               </div>
               <div class="col-1">
                 <a class="text-secondary" (click)="deleteTopic(i)"><span class="fa fa-times"></span></a><br>
-                <!-- <a class="small">수정</a> -->
+                <!-- <a class="small">수정</a> TODO 수정버튼-->
               </div>
             </div>
           </li>
@@ -44,6 +44,11 @@
                   <option [value]="topic" *ngFor="let topic of topicList">{{topic}}</option>
                 </select>
                 <input [hidden]="!showTopicInput" class="form-control" type="text" formControlName="topic" [value]="topic.value" placeholder="직접 입력">
+                <div *ngIf="topic.invalid && (topic.dirty || topic.touched)" class="alert alert-danger row no-gutters py-1">
+                  <div *ngIf="topic.errors.required">
+                    빈 수업명입니다
+                  </div>
+                </div>
               </div>
               <div class="col-4 px-3 text-left"><button class="btn btn-light" type="button" name="button" (click)="toggleTopicInput()"><span [hidden]="showTopicInput">직접입력</span><span [hidden]="!showTopicInput">선택입력</span></button></div>
             </div>
@@ -56,6 +61,11 @@
                     <option [value]="prof" *ngFor ="let prof of profList">{{prof}}</option>
                   </select>
                   <input *ngIf="showProfInput[i]" class="form-control d-inline" type="text" [formControlName]="i" [value]="prof.value" placeholder="교수명">
+                  <div *ngIf="prof.invalid && (prof.dirty || prof.touched)" class="alert alert-danger row no-gutters py-1">
+                    <div *ngIf="prof.errors.required">
+                      빈 칸입니다
+                    </div>
+                  </div>
                 </div>
                 <div class="col-4 px-3 pb-2">
                   <button *ngIf="!showProfInput[i]" class="btn btn-light" type="button" (click)="toggleProfInput(i)">직접입력</button>
@@ -76,7 +86,8 @@
       </div>
     </div>
     <br>
-    <button type="button" class="btn btn-info col-8" (click)="saveToc()">저장</button>
+    <button type="button" class="btn btn-secondary col-4" (click)="location.back()">이전화면</button>
+    <button type="button" class="btn btn-info col-4" (click)="saveToc()">저장</button>
     <br><br>
 
 
