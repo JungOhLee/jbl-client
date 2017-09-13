@@ -2,13 +2,15 @@
   <h1>JBL <span class="h3">- Jokbo Based Learning</span></h1>
 
   <div class="col mt-3">
-    <ul class="">
-      <li>
-        <a href (click)="preventDefault($event);sendQuery($event.target.textContent);">질병의 병리학적 이해</a>
-      </li>
-      <li>
-        <a [routerLink]="['/problem/new']">새 문제 추가하기</a>
+    <h2 class="h3">과목</h2>
+    <ul class="list-unstyled col-sm-6">
+      <li class="list-group-item list-group-item-action font-weight-bold py-2" *ngFor="let toc of tocList" (click)="preventDefault($event);sendQuery(toc.course);">
+        <a href class="">{{toc.course}}</a>
       </li>
     </ul>
+    <div class="col-sm-6 text-right">
+      <a class="btn btn-success btn-sm" [routerLink]="['/problem/new']">새 문제 추가</a>
+      <a class="btn btn-danger btn-sm" [routerLink]="['/toc']" *ngIf="checkAdmin()" >과목 관리</a>
+    </div>
   </div>
 </div>
