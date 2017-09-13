@@ -12,16 +12,16 @@ export class TocFormComponent implements OnInit{
 
   topicForm: FormGroup;
   toc = {
-    course: "course1",
+    course: "과목이름",
     topics: [{
-      topic: "topic1",
-      profs: ["prof1", "prof2"]
+      topic: "예시수업1",
+      profs: ["교수1", "교수2"]
     },{
-      topic: "topic2",
-      profs: ["prof2","prof3"]
+      topic: "예시수업2",
+      profs: ["교수2","교수3"]
     },{
-      topic: "topic3",
-      profs: ["prof3","prof4"]
+      topic: "예시수업3",
+      profs: ["교수3","교수4"]
     }]
   }
   topicList: Array<string> =[];
@@ -50,8 +50,8 @@ export class TocFormComponent implements OnInit{
 
   createForm(){
     this.topicForm = this.fb.group({
-      topic: [""],
-      profs: this.fb.array([[""]])
+      topic: ["", Validators.required],
+      profs: this.fb.array([["", Validators.required]])
     })
   }
 
@@ -59,7 +59,7 @@ export class TocFormComponent implements OnInit{
   get profs(): FormArray { return this.topicForm.get('profs') as FormArray; }
 
   addProf() {
-    this.profs.push(this.fb.control('', Validators.required));
+    this.profs.push(this.fb.control(''));
   }
   deleteProf(index){
     this.profs.removeAt(index);
@@ -96,7 +96,19 @@ export class TocFormComponent implements OnInit{
     this.showProfInput[i] =!this.showProfInput[i];
   }
   addTopic(){
-    const saveValue = this.topicForm.value
+    function onlyUnique(value, index, self) {
+      return self.indexOf(value) === index;
+    }
+    function noEmpty(value){
+      return value !== "";
+    }
+    const currentValue = this.topicForm.value;
+    const topicTitle = currentValue.topic.trim();
+    const topicProfs = currentValue.profs.map(prof => prof.trim()).filter(noEmpty).filter(onlyUnique);
+    const saveValue = {
+      topic: topicTitle,
+      profs: topicProfs
+    }
     this.topicForm.reset();
     this.toc.topics.push(saveValue);
   }
