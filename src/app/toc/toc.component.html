@@ -1,6 +1,7 @@
 <div class="toc container" *ngIf="toc">
   <!-- TODO 연도별 보기 -->
   <h2>{{toc.course}} <a [routerLink]="['/toc',toc.course,'edit']" class="text-secondary small px-2"> <span class="fa fa-pencil"></span> </a></h2>
+
   <div class="topic-list mt-3">
     <ul class="list-group">
       <li class="list-group-item" style="background-color:#f1f1f1">
@@ -16,5 +17,9 @@
         </div>
       </li>
     </ul>
+  </div>
+  <div class="buttons text-right mt-2">
+    <button class="btn btn-info col-1" [routerLink]="['/toc']">목록</button>
+    <button class="btn btn-danger col-1" (click)="deleteToc(toc.course)">삭제</button>
   </div>
 </div>
