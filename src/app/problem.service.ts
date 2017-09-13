@@ -3,7 +3,7 @@ import { Http, URLSearchParams, RequestOptions, Headers } from '@angular/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-import {baseUrl} from './base-url';
+import { baseUrl } from './base-url';
 
 @Injectable()
 export class ProblemService {
@@ -34,15 +34,6 @@ export class ProblemService {
     return params;
   }
 
-  // Find Problem Info
-  findInfo(problemInfo) {
-    let params = this.setSearchParams(problemInfo);
-    params.append('profs', '');
-    params.append('numbers', '');
-    console.log(params);
-    return this.http.get(this.problemInfoUrl, { search: params, headers: this.headers })
-      .map(res => { console.log(res.json()); return res.json() });
-  }
   //----------------//
   //  problem CRUD  //
   //--------------//
@@ -57,7 +48,14 @@ export class ProblemService {
     let params = new URLSearchParams();
     params.set("id", id);
     return this.http.get(this.problemUrl, {search: params, headers: this.headers})
-      .map(res => {console.log(res.json()); return res.json()})
+      .map(res => {
+        if(!res.json()){
+          alert("해당 질문이 없습니다.");
+          this.router.navigateByUrl("/");
+        }
+        console.log("Got Problem:",res.json());
+        return res.json();
+      })
   }
 
   updateProblem(problem) {
