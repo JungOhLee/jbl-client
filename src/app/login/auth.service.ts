@@ -12,7 +12,11 @@ export class AuthService {
   constructor(private http: Http){
   }
 
+  //TODO userEmail 과 isAdmin 을 로그인 시에 설정하면, 번거롭게 항상 함수를 호출할 필요가 없을 듯 
   isLoggedIn = this.checkLogin();
+  userEmail = this.getUserEmail();
+  isAdmin = this.checkAdmin();
+
   url = baseUrl + '/login';
   // store the URL so we can redirect after logging in
   redirectUrl: string;
@@ -20,6 +24,23 @@ export class AuthService {
   checkLogin() {
     if (localStorage.getItem('curUser')){
       return true;
+    }
+    return false;
+  }
+
+  getUserEmail() {
+    if (localStorage.getItem('curUser')){
+      return JSON.parse(localStorage.getItem('curUser')).email;
+    }
+    return "";
+  }
+
+  checkAdmin() {
+    if (localStorage.getItem('curUser')){
+      if (JSON.parse(localStorage.getItem('curUser')).email === 'admin'){
+        return true;
+      }
+      return false;
     }
     return false;
   }
