@@ -35,7 +35,13 @@ export class SearchComponent implements OnInit {
     this.route.queryParamMap
       .switchMap((params: ParamMap) =>
         this.searchService.getResultByCourse(params.get('query')))
-      .subscribe(res => {this.jblData = res;});
+      .subscribe(res => {
+        if(!res){
+          this.jblData = {title: "", contents:[{ title: "검색결과가 없습니다.", contents:[{}]}]}
+        } else {
+          this.jblData = res;
+        }
+      });
   }
 
   ngAfterViewInit() {
