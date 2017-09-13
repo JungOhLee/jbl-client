@@ -117,7 +117,9 @@ export class TocFormComponent implements OnInit{
   deleteTopic(i){
     this.toc.topics.splice(i,1);
   }
-
+  goBack(){
+    this.location.back()
+  }
   saveToc(){
     const saveValue = this.prepareSave();
     this.tocService.addToc(saveValue)
