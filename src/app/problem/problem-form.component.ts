@@ -7,10 +7,11 @@ import { TocService } from '../toc.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { baseUrl } from '../base-url';
+
 import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
 
 import 'rxjs/add/operator/filter';
-// TODO adding duplicate validators
 
 @Component({
   selector: 'problem-form',
@@ -27,8 +28,9 @@ export class ProblemFormComponent implements OnInit {
   yearList: Array<string> = ["2017","2016","2015","2014","2013"];
   courseList: Array<string>;
   topicList: Array<string>;
-  profList;
-  showModal=false;
+  profList: Array<string>;
+
+  imgUrl: string = baseUrl + "/image";
 
   constructor(
     private fb: FormBuilder,
@@ -39,8 +41,6 @@ export class ProblemFormComponent implements OnInit {
     private router: Router
   ) {
     this.createForm();
-    // problem-info: year -> course -> topic -> prof
-
     this.tocService.getAllTocs()
       .subscribe(res => {
         this.tocs=res;
@@ -182,14 +182,21 @@ export class ProblemFormComponent implements OnInit {
         .subscribe(res => {
           let problem = res;
           console.log("Save problem succeeded!", problem);
-          this.router.navigate(['/problem', problem.id]);
+          if(confirm("문제가 저장되었습니다. 다른 문제를 입력하시겠습니까?")){
+            location.reload();
+          } else {
+            this.router.navigate(['/problem', problem.id]);
+          }
         });
     }
 
   }
 
-  cleanNum(){
-    this.numbers.setValue(this.numbers.value.replace(/ /g, ""))
+  // cleanNum(){
+  //   this.numbers.setValue(this.numbers.value.replace(/\s/g, "")) //TODO 한글 입력시 오류
+  // }
+  noSpace(event){
+    return event.which !==32; //이렇게 하면 복붙일때 빈 공간을 막을 수 없음 
   }
 
   prepareSave(): Problem {
