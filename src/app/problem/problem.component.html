@@ -1,12 +1,11 @@
 <div class="problem" *ngIf="problem">
   <div class="float-right text-right" >
-    <a class="text-secondary fa fa-ellipsis-h" (click)=toggleOptions()></a>
-    <div class="tooltip bs-tooltip-left show" *ngIf="showOptions" >
-      <div class="arrow"></div>
-      <div class="tooltip-inner">
-        <a [routerLink]="['/problem', problem.id, 'edit']" >수정하기</a><br>
-        <a (click)="deleteProblem(problem)" >삭제하기</a>
-      </div>
+    <a class="text-secondary fa fa-ellipsis-h" (document:click)=closeMenu() (click)=toggleMenu($event) ></a>
+    <div class="problem-menu" *ngIf="showMenu">
+      <ul>
+        <li><a [routerLink]="['/problem', problem.id, 'edit']" >수정하기</a><br></li>
+        <li><a (click)="deleteProblem(problem)" >삭제하기</a></li>
+      </ul>
     </div>
   </div>
 
@@ -15,7 +14,7 @@
     <div class="pr-2 d-inline-block" *ngIf="problem.year">#{{problem?.year}}</div>
     <div class="pr-2 d-inline-block" *ngIf="problem.course">#{{problem?.course}}</div>
     <div class="pr-2 d-inline-block" *ngIf="problem.topic">#{{problem?.topic}}</div>
-    <div class="pr-2 d-inline-block" *ngFor="let number of problem.numbers">#{{number}}</div>
+    <div class="pr-2 d-inline-block" *ngFor="let number of problem.numbers">#{{number}}번</div>
     <div class="pr-2 d-inline-block" *ngFor="let prof of problem.profs">#{{prof}}</div>
     <div class="pr-2 d-inline-block" *ngFor="let tag of problem.tags">#{{tag}}</div>
   </div>
