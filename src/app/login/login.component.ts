@@ -10,7 +10,10 @@ import 'rxjs/add/operator/toPromise';
 export class LoginComponent {
   message: string;
   failMessage: string;
-  model: any = {};
+  model: Object = {
+    email: "",
+    password: ""
+  };
 
   constructor(public authService: AuthService, public router: Router) {
     this.setMessage();
