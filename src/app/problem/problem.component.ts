@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProblemService } from '../problem.service';
 import { ActivatedRoute, Router} from '@angular/router';
+import { BookmarkService } from '../bookmark.service';
+import { Bookmark } from '../bookmark';
 
 import * as $ from 'jquery';
 
@@ -18,8 +20,11 @@ export class ProblemComponent implements OnInit {
   public menuClicked = false;
   private newCommentBody: string;
   private comments: Array<any> = [];
+  @Input() public isBookmark: boolean = false;
+
   constructor(
     private problemService: ProblemService,
+    private bookmarkService: BookmarkService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -32,7 +37,8 @@ export class ProblemComponent implements OnInit {
             .subscribe(problem =>{
               this.problem = problem;
               this.showComments= true;
-            })
+            });
+          this.checkBookmark(param.id);
         }
       })
   }
@@ -57,7 +63,44 @@ export class ProblemComponent implements OnInit {
     }
   }
 
-  editComment() {
+  checkBookmark(id){
+    this.bookmarkService.getBookmarks()
+      .subscribe(bookmarks => {
+        let problemIdArray = bookmarks.map(bookmark => bookmark.problemId)
+        if(problemIdArray.indexOf(id)===-1){
+          return false;
+        } else {
+          this.isBookmark = true;
+        }
+      })
+  }
+
+  toggleBookmark(){
+    if(this.isBookmark){
+      this.deleteBookmark(this.problem)
+        .subscribe(res => {
+          console.log("Bookmark deleted");
+          this.isBookmark = !this.isBookmark;
+        })
+    } else {
+      this.addBookmark(this.problem)
+        .subscribe(res => {
+          console.log("Bookmark added");
+          this.isBookmark = !this.isBookmark;
+        })
+    }
+
+  }
+
+  addBookmark(problem){
+    console.log("add Bookmark");
+    let newBookmark:Bookmark = { user:"", course: problem.course, problemId: problem.id }
+    return this.bookmarkService.addBookmark(newBookmark)
+  }
+  deleteBookmark(problem){
+    console.log("delete Bookmark");
+    let bookmark:Bookmark = { user: "", course: problem.course, problemId: problem.id}
+    return this.bookmarkService.deleteBookmark(bookmark)
   }
 
   checkCommentUser(comment) {

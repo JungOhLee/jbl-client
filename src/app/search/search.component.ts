@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { SearchService } from '../search.service';
+import { BookmarkService } from '../bookmark.service';
 import { Router, ActivatedRoute, ParamMap, NavigationEnd} from '@angular/router'
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
@@ -14,11 +15,13 @@ export class SearchComponent implements OnInit {
 
   @ViewChild('toc') toc: ElementRef;
   public jblData;
+  public bookmarkIdArray:Array<string>;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private bookmarkService: BookmarkService
   ) {
     // router.events.subscribe(s => {
     //   if (s instanceof NavigationEnd) {
@@ -32,6 +35,11 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.setResult();
+    this.setBookmarks();
+  }
+
+  setResult(){
     this.route.queryParamMap
       .switchMap((params: ParamMap) =>
         this.searchService.getResultByCourse(params.get('query')))
@@ -44,8 +52,20 @@ export class SearchComponent implements OnInit {
       });
   }
 
-  ngAfterViewInit() {
+  setBookmarks(){
+    this.bookmarkService.getBookmarks()
+      .subscribe(bookmarks => {
+        let problemIdArray = bookmarks.map(bookmark => bookmark.problemId);
+        this.bookmarkIdArray = problemIdArray;
+      })
+  }
 
+  checkBookmarks(id){
+    if(this.bookmarkIdArray){
+      return this.bookmarkIdArray.indexOf(id)!==-1
+    } else {
+      return false
+    }
   }
 
   goToId(event){

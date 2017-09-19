@@ -23,6 +23,7 @@ import { TocIndexComponent } from './toc/toc-index.component';
 import { SearchService} from './search.service';
 import { ProblemService } from './problem.service';
 import { TocService } from './toc.service';
+import { BookmarkService } from './bookmark.service';
 
 //Pipe
 import { TopicIdPipe } from './topic-id.pipe';
@@ -70,7 +71,8 @@ class AuthRequestOptions extends BaseRequestOptions {
   providers: [
     SearchService,
     ProblemService,
-    TocService
+    TocService,
+    BookmarkService
     // {provide: RequestOptions, useClass: AuthRequestOptions}
   ],
   bootstrap: [AppComponent]
