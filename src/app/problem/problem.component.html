@@ -4,8 +4,9 @@
     <a class="text-secondary fa fa-ellipsis-h" (document:click)=closeMenu() (click)=toggleMenu($event) ></a>
     <div class="problem-menu" *ngIf="showMenu">
       <ul>
-        <li><a [routerLink]="['/problem', problem.id, 'edit']" >수정하기</a><br></li>
-        <li><a (click)="deleteProblem(problem)" >삭제하기</a></li>
+        <li><a [routerLink]="['/problem',problem.id]">자세히</a></li>
+        <li><a [routerLink]="['/problem', problem.id, 'edit']" >수정</a><br></li>
+        <li><a (click)="deleteProblem(problem)" >삭제</a></li>
       </ul>
     </div>
   </div>
@@ -30,32 +31,7 @@
   <div class="problem-answer text-right">
     <a data-toggle="collapse" [attr.data-parent]="'#problem'+problem.id" [attr.href]="'#problem-answer'+problem.id" aria-expanded="false" [attr.aria-controls]="'problem-answer'+problem.id">Answer</a>
     <div [attr.id]="'problem-answer'+problem.id" class="collapse" role="tabpanel">
-      <div class="d-inline answer text-left" [innerHTML]="problem.answer"></div>
+      <div class="d-inline answer text-left"><pre><code  [innerHTML]="problem.answer"></code></pre></div>
     </div>
-  </div>
-
-  <!-- 문제 comment toggler -->
-  <div class="comments-toggler">
-    <a class="btn btn-outline-secondary btn-sm" (click)="toggleComments();getComments()">Comments</a>
-    <!-- <span class="badge badge-pill badge-info align-top">{{problem.commentsCount}}</span>  -->
-  </div>
-  <!-- comments -->
-  <div class="problem-comments col-12" *ngIf="showComments">
-    <div class="problem-comment clearfix" *ngFor="let comment of comments; let i = index;">
-      <div class="comment-body">{{comment.body}}</div>
-      <!-- <span class="fa fa-pencil float-right text-muted mr-1"></span>  -->
-      <span *ngIf="checkCommentUser(comment)"class="fa fa-times float-right text-muted mr-1" (click)="deleteComment(comment, i)"></span>
-    </div>
-    <!-- comment form -->
-    <form class="comment-form form-inline" [attr.id]="'problem-comment-form'+problem.id">
-      <div class="col text-right d-flex justify-content-center p-0">
-        <div class="input-group row col py-1">
-          <textarea #newComment class="form-control comment-form" required name="body" [(ngModel)]="newCommentBody"></textarea>
-          <span class="input-group-btn">
-            <button type="submit" class="btn btn-outline-secondary h-100" (click)="addComment(newComment.value)">Submit</button>
-          </span>
-        </div>
-      </div>
-    </form>
   </div>
 </div>

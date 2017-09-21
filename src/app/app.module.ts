@@ -13,7 +13,9 @@ import { LoginComponent } from './login/login.component';
 
 import { JblMainComponent } from './jbl-main/jbl-main.component';
 import { SearchComponent } from './search/search.component';
+import { PcBoxComponent } from './problem/pc-box.component';
 import { ProblemComponent } from './problem/problem.component';
+import { CommentsComponent } from './problem/comments.component';
 import { ProblemFormComponent } from './problem/problem-form.component';
 import { TocFormComponent } from './toc/toc-form.component';
 import { TocComponent } from './toc/toc.component';
@@ -52,7 +54,9 @@ class AuthRequestOptions extends BaseRequestOptions {
     JblMainComponent,
     SearchBarComponent,
     SearchComponent,
+    PcBoxComponent,
     ProblemComponent,
+    CommentsComponent,
     ProblemFormComponent,
     TocFormComponent,
     TocComponent,

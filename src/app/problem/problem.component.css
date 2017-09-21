@@ -15,3 +15,23 @@
   padding: 0 12px;
   margin: 0;
 }
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:not([href]) {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:not([href]):hover {
+  color: #0056b3;
+  text-decoration: none;
+  cursor: pointer;
+}

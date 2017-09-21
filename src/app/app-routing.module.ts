@@ -4,6 +4,7 @@ import { RouterModule, Routes }  from '@angular/router';
 import { JblMainComponent } from './jbl-main/jbl-main.component'
 import { SearchComponent } from './search/search.component';
 import { ProblemFormComponent } from './problem/problem-form.component';
+import { PcBoxComponent } from './problem/pc-box.component';
 import { ProblemComponent } from './problem/problem.component';
 import { TocFormComponent } from './toc/toc-form.component';
 import { TocIndexComponent } from './toc/toc-index.component';
@@ -30,7 +31,7 @@ const appRoutes: Routes = [
       },
       {
         path: 'problem/:id',
-        component: ProblemComponent
+        component: PcBoxComponent
       },
       {
         path: 'problem/:id/edit',
