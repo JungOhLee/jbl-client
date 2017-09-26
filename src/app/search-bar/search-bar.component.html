@@ -1,8 +1,19 @@
 <!-- Search bar -->
 <div class="input-group container p-2">
   <label for="mainSearch" class="sr-only">Search</label>
-  <input #input type="text" class="form-control" id="mainSearch" placeholder="Search for..." (keyup.enter)="search(input.value)">
+  <input #input type="text" class="form-control" id="mainSearch" placeholder="Search for..." [(ngModel)]="query" (keyup)="filter()" >
+  <!-- (keyup.enter)="search(input.value)" -->
   <span class="input-group-btn">
-    <button class="btn btn-outline-primary" type="button" (click)="search(input.value)"><span class="fa fa-search"></span></button>
+    <button class="btn btn-outline-primary rounded-right" type="button" (click)="test(input.value)"><span class="fa fa-search"></span></button>
   </span>
+  <!-- <div class="suggestions" *ngIf="filteredList.length > 0">
+    <ul *ngFor="let item of filteredList">
+      <li>
+        <a (click)="select(item)">{{item}}</a>
+      </li>
+    </ul>
+  </div> -->
+  <div class="search-list">
+
+  </div>
 </div>

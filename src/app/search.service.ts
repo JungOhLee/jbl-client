@@ -50,4 +50,15 @@ export class SearchService {
         return res.json();
       })
   }
+
+  download(course) {
+    let searchParams = new URLSearchParams();
+    searchParams.append('course',course);
+    searchParams.append('download', 'csv');
+    return this.http.get(this.url, {search: searchParams, headers: this.headers})
+      .map(res =>{
+        console.log(res);
+        return res["_body"];
+      })
+  }
 }
