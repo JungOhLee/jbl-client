@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProblemService } from '../problem.service';
+import { CommentService } from '../comment.service';
 import { Comment } from './comment';
 
 @Component({
@@ -17,7 +18,7 @@ export class CommentsComponent implements OnInit {
   @Input() public isBookmark: boolean = false;
 
   constructor(
-    private problemService: ProblemService
+    private commentService: CommentService
   ) { }
 
   ngOnInit() {
@@ -36,7 +37,7 @@ export class CommentsComponent implements OnInit {
 
   // Comment C(R)UD
   getComments() {
-    this.problemService.getComments(this.problem)
+    this.commentService.getComments(this.problem)
       .subscribe(res => { if (res) { this.comments = res } });
   }
 
@@ -49,16 +50,16 @@ export class CommentsComponent implements OnInit {
       "body": commentBody
     }
     console.log(newComment)
-    this.problemService.addComment(this.problem, newComment)
+    this.commentService.addComment(this.problem, newComment)
       .subscribe(res => { this.newCommentBody = ""; this.comments.push(res) });
   }
 
   updateComment(comment) {
-    this.problemService.updateComment(comment);
+    this.commentService.updateComment(comment);
   }
 
   deleteComment(comment, i) {
-    this.problemService.deleteComment(comment)
+    this.commentService.deleteComment(comment)
       .subscribe(res => { this.comments.splice(i, 1); console.log(res); });
   }
 }

@@ -24,6 +24,7 @@ import { TocIndexComponent } from './toc/toc-index.component';
 //Service
 import { SearchService} from './search.service';
 import { ProblemService } from './problem.service';
+import { CommentService } from './comment.service';
 import { TocService } from './toc.service';
 import { BookmarkService } from './bookmark.service';
 
@@ -75,6 +76,7 @@ class AuthRequestOptions extends BaseRequestOptions {
   providers: [
     SearchService,
     ProblemService,
+    CommentService,
     TocService,
     BookmarkService
     // {provide: RequestOptions, useClass: AuthRequestOptions}

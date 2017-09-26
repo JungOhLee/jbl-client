@@ -96,7 +96,7 @@ export class ProblemFormComponent implements OnInit {
       answer: problem.answer,
       tags: [],
       numbers: problem.numbers.join(","),
-      commentsCount: 0
+      commentsCount: problem.commentsCount
     };
     this.problemForm.setValue(value);
     this.setProfs(problem.profs);
@@ -196,7 +196,7 @@ export class ProblemFormComponent implements OnInit {
   //   this.numbers.setValue(this.numbers.value.replace(/\s/g, "")) //TODO 한글 입력시 오류
   // }
   noSpace(event){
-    return event.which !==32; //이렇게 하면 복붙일때 빈 공간을 막을 수 없음 
+    return event.which !==32; //이렇게 하면 복붙일때 빈 공간을 막을 수 없음
   }
 
   prepareSave(): Problem {
@@ -223,7 +223,7 @@ export class ProblemFormComponent implements OnInit {
       answer: formModel.answer,
       tags: tagsDeepCopy.filter(onlyUnique),
       numbers: formModel.numbers.replace(/\s+/g, "").split(",").filter(onlyUnique).filter(noEmpty),
-      commentsCount: 0
+      commentsCount: this.problem? this.problem.commentsCount : 0
     };
     return saveProblem;
   }
