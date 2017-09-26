@@ -12,12 +12,12 @@ export class AuthService {
   constructor(private http: Http){
   }
 
-  //TODO userEmail 과 isAdmin 을 로그인 시에 설정하면, 번거롭게 항상 함수를 호출할 필요가 없을 듯 
+  //TODO userEmail 과 isAdmin 을 로그인 시에 설정하면, 번거롭게 항상 함수를 호출할 필요가 없을 듯
   isLoggedIn = this.checkLogin();
   userEmail = this.getUserEmail();
   isAdmin = this.checkAdmin();
 
-  url = baseUrl + '/login';
+  ApiUrl = baseUrl + '/login';
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
@@ -46,7 +46,7 @@ export class AuthService {
   }
 
   login(info) {
-    return this.http.post(this.url, info)
+    return this.http.post(this.ApiUrl, info)
       .toPromise()
       .then(res => {
               localStorage.setItem('curUser', JSON.stringify(res.json()));

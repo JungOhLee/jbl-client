@@ -13,9 +13,7 @@ export class ProblemService {
     private router: Router
   ) { }
 
-  private commentUrl = baseUrl + '/comments'
-  private problemUrl = baseUrl + '/problem'
-  private problemInfoUrl = baseUrl + '/problem-info'
+  private ApiUrl = baseUrl + '/problem'
 
   headers = new Headers(
     {
@@ -40,14 +38,14 @@ export class ProblemService {
 
 
   addProblem(problem) {
-    return this.http.post(this.problemUrl, problem, { headers: this.headers})
+    return this.http.post(this.ApiUrl, problem, { headers: this.headers})
       .map(res => res.json());
   }
 
   getProblem(id) {
     let params = new URLSearchParams();
     params.set("id", id);
-    return this.http.get(this.problemUrl, {search: params, headers: this.headers})
+    return this.http.get(this.ApiUrl, {search: params, headers: this.headers})
       .map(res => {
         if(!res.json()){
           alert("해당 질문이 없습니다.");
@@ -59,14 +57,14 @@ export class ProblemService {
   }
 
   updateProblem(problem) {
-    return this.http.put(this.problemUrl, problem, { headers: this.headers})
+    return this.http.put(this.ApiUrl, problem, { headers: this.headers})
       .map(res => res.json());
   }
 
   deleteProblem(id) {
     let params = new URLSearchParams();
     params.set("id", id);
-    return this.http.delete(this.problemUrl, {search: params, headers:this.headers})
+    return this.http.delete(this.ApiUrl, {search: params, headers:this.headers})
       .map( res => {
         console.log(res);
         return res;

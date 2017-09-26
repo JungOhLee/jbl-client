@@ -17,10 +17,10 @@ export class BookmarkService {
     }
   );
 
-  private url = baseUrl + '/bookmark'
+  private ApiUrl = baseUrl + '/bookmark'
 
   getBookmarks(){
-    return this.http.get(this.url, {headers: this.headers})
+    return this.http.get(this.ApiUrl, {headers: this.headers})
       .map(res => {
         console.log("Get Bookmark Success: ",res.json());
         return res.json();
@@ -28,14 +28,14 @@ export class BookmarkService {
   }
 
   addBookmark(bookmark:Bookmark){
-    return this.http.post(this.url, bookmark ,{headers: this.headers})
+    return this.http.post(this.ApiUrl, bookmark ,{headers: this.headers})
       .map(res => {
         return res.json();
       })
   }
 
   deleteBookmark(bookmark:Bookmark){
-    return this.http.delete(this.url, {headers:this.headers, search: bookmark})
+    return this.http.delete(this.ApiUrl, {headers:this.headers, search: bookmark})
       .map(res => {
         return res;
       })

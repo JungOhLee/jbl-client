@@ -16,13 +16,13 @@ export class SearchService {
     }
   );
 
-  private url = baseUrl + '/search'
+  private ApiUrl = baseUrl + '/search'
 
   getResult(query) {
     console.log(query);
     let searchParams =new URLSearchParams();
     searchParams.append('query', query);
-    return this.http.get(this.url, {search: searchParams, headers: this.headers })
+    return this.http.get(this.ApiUrl, {search: searchParams, headers: this.headers })
       .map(res => {
         console.log(res.json());
         return res.json();
@@ -33,7 +33,7 @@ export class SearchService {
     console.log("Search_course:", course);
     let searchParams = new URLSearchParams();
     searchParams.append('course',course);
-    return this.http.get(this.url, {search: searchParams, headers: this.headers})
+    return this.http.get(this.ApiUrl, {search: searchParams, headers: this.headers})
       .map(res =>{
         console.log("Search_result:", res.json());
         return res.json();
@@ -44,7 +44,7 @@ export class SearchService {
     console.log("Search_topic:", topic);
     let searchParams = new URLSearchParams();
     searchParams.append('topic', topic);
-    return this.http.get(this.url, {search: searchParams, headers: this.headers})
+    return this.http.get(this.ApiUrl, {search: searchParams, headers: this.headers})
       .map(res =>{
         console.log("Search_result:", res.json());
         return res.json();
@@ -55,7 +55,7 @@ export class SearchService {
     let searchParams = new URLSearchParams();
     searchParams.append('course',course);
     searchParams.append('download', 'csv');
-    return this.http.get(this.url, {search: searchParams, headers: this.headers})
+    return this.http.get(this.ApiUrl, {search: searchParams, headers: this.headers})
       .map(res =>{
         console.log(res);
         return res["_body"];

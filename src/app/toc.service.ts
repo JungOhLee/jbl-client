@@ -16,10 +16,10 @@ export class TocService {
     }
   );
 
-  private url = baseUrl + '/toc'
+  private ApiUrl = baseUrl + '/toc'
 
   getAllTocs() {
-    return this.http.get(this.url, {headers: this.headers })
+    return this.http.get(this.ApiUrl, {headers: this.headers })
       .map(res => {
         console.log(res.json());
         return res.json().courses;
@@ -28,7 +28,7 @@ export class TocService {
   getToc(course) {
     let searchParams =new URLSearchParams();
     searchParams.append('course', course);
-    return this.http.get(this.url, {search:searchParams, headers: this.headers })
+    return this.http.get(this.ApiUrl, {search:searchParams, headers: this.headers })
       .map(res => {
         console.log(res.json());
         return res.json().courses.find(object => object.course ===course);
@@ -36,7 +36,7 @@ export class TocService {
   }
 
   addToc(toc){
-    return this.http.post(this.url, toc, {headers: this.headers})
+    return this.http.post(this.ApiUrl, toc, {headers: this.headers})
       .map(res => {
         console.log("Toc Post succeeded:", res.json());
         return res.json();
@@ -49,7 +49,7 @@ export class TocService {
   deleteToc(course) {
     let params = new URLSearchParams();
     params.set("course", course);
-    return this.http.delete(this.url, {search: params, headers:this.headers})
+    return this.http.delete(this.ApiUrl, {search: params, headers:this.headers})
       .map( res => {
         res.json()
       })

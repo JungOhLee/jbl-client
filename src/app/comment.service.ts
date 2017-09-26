@@ -14,7 +14,7 @@ export class CommentService {
     private router: Router
   ) { }
 
-  private commentUrl = baseUrl + '/comment'
+  private ApiUrl = baseUrl + '/comment'
 
   headers = new Headers(
     {
@@ -34,24 +34,24 @@ export class CommentService {
   //------------------//
   getComments(problem) {
     let params = this.setSearchProblemId(problem);
-    return this.http.get(this.commentUrl, { search: params, headers: this.headers })
+    return this.http.get(this.ApiUrl, { search: params, headers: this.headers })
       .map(res => res.json());
   }
 
   addComment(problem, newComment) {
     let params = this.setSearchProblemId(problem);
-    return this.http.post(this.commentUrl, newComment, { search: params, headers: this.headers })
+    return this.http.post(this.ApiUrl, newComment, { search: params, headers: this.headers })
       .map(res => res.json());
   }
 
   updateComment(comment) {
-    return this.http.post(this.commentUrl, {
+    return this.http.post(this.ApiUrl, {
       comment: comment
     })
       .map(res => res.json());
   }
 
   deleteComment(comment) {
-    return this.http.delete(this.commentUrl, { body: comment, headers: this.headers })
+    return this.http.delete(this.ApiUrl, { body: comment, headers: this.headers })
   }
 }
