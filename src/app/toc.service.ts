@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, URLSearchParams } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-import {baseUrl} from './base-url';
+import { baseUrl } from './base-url';
 
 @Injectable()
 export class TocService {
@@ -54,5 +54,4 @@ export class TocService {
         res.json()
       })
   }
-
 }
