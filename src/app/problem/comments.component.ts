@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProblemService } from '../problem.service';
+import { Comment } from './comment';
 
 @Component({
   selector: 'comments',
@@ -38,7 +39,7 @@ export class CommentsComponent implements OnInit {
     this.problemService.getComments(this.problem)
       .subscribe(res => { if (res) { this.comments = res } });
   }
-  
+
   addComment(commentBody) {
     if (commentBody === "") {
       return null;
