@@ -28,7 +28,7 @@
   opacity:0.7;
   border: 1px dashed #000;
 }
-/* You can add global styles to this file, and also import other style files */
+* You can add global styles to this file, and also import other style files */
 
 p {
   margin-top: 0;
@@ -145,6 +145,7 @@ div .answer > pre>code{
   max-width: 100%;
   overflow-wrap: normal;
   white-space: pre-line;
+  word-break: break-word;
 }
 
 .toc {
@@ -160,13 +161,18 @@ div .answer > pre>code{
 
 .sidebar {
   border-right: 1px dotted #ccc;
+  cursor: default;
 }
 
-a:not([href]):not([tabindex]) {
+a {
+  cursor: pointer;
+}
+
+a:not([href]):not([tabindex]).nav-link {
   color: black;
 }
 
-a:not([href]):not([tabindex]):hover {
+a:not([href]):not([tabindex]):hover.nav-link {
   /*color: #2d2dad;*/
   color: #2644af;
   cursor: pointer;
@@ -176,7 +182,7 @@ div.content {
   background-color: #f1f1f1;
 }
 
-div.problem {
+div.pc-box{
   background-color: #fff;
   margin-bottom: 0.75rem;
   padding: 0.75rem;
