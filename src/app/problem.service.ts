@@ -36,7 +36,7 @@ export class ProblemService {
 
   //----------------//
   //  problem CRUD  //
-  //--------------//
+  //----------------//
 
 
   addProblem(problem) {
@@ -73,28 +73,4 @@ export class ProblemService {
       })
   }
 
-  //------------------//
-  // comment CRUD //
-  //------------------//
-  getComments(problem) {
-    let params = this.setSearchParams(problem);
-    return this.http.get(this.commentUrl, { search: params, headers: this.headers })
-      .map(res => res.json());
-  }
-  addComment(problem, newComment) {
-    let params = this.setSearchParams(problem);
-    return this.http.post(this.commentUrl, newComment, { search: params, headers: this.headers })
-      .map(res => res.json());
-  }
-
-  updateComment(comment) {
-    return this.http.post(this.commentUrl, {
-      comment: comment
-    })
-      .map(res => res.json());
-  }
-
-  deleteComment(comment) {
-    return this.http.delete(this.commentUrl, { body: comment, headers: this.headers })
-  }
 }
