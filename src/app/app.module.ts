@@ -32,7 +32,7 @@ import { TopicIdPipe } from './topic-id.pipe';
 
 //External Component
 import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
-import {DndModule} from 'ng2-dnd';
+import { DndModule } from 'ng2-dnd';
 
 import {RequestOptions, BaseRequestOptions} from '@angular/http';
 /**
