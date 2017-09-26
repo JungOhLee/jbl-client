@@ -14,7 +14,7 @@ export class CommentsComponent implements OnInit {
   @Input() problem;
   @Input() public showComments = false;
   private newCommentBody: string;
-  private comments: Array<any> = [];
+  private comments: Comment[] = [];
   @Input() public isBookmark: boolean = false;
 
   constructor(
@@ -45,9 +45,12 @@ export class CommentsComponent implements OnInit {
     if (commentBody === "") {
       return null;
     }
-    let newComment = {
+    let newComment:Comment = {
       "email": JSON.parse(localStorage.getItem('curUser')).email,
-      "body": commentBody
+      "body": commentBody,
+      "problemId": this.problem.id,
+      "timestamp": "",
+      "likes":[]
     }
     console.log(newComment)
     this.commentService.addComment(this.problem, newComment)
