@@ -1,6 +1,7 @@
 import { Component }   from '@angular/core';
 import { Router }      from '@angular/router';
 import { AuthService } from './auth.service';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import 'rxjs/add/operator/toPromise';
 
 
@@ -10,23 +11,39 @@ import 'rxjs/add/operator/toPromise';
 export class LoginComponent {
   message: string;
   failMessage: string;
+  loginForm:FormGroup;
   model: Object = {
     email: "",
     password: ""
   };
 
-  constructor(public authService: AuthService, public router: Router) {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private fb: FormBuilder
+  ) {
     this.setMessage();
+    this.createForm();
   }
+
+  get email() { return this.loginForm.get('email')};
+  get password() { return this.loginForm.get('password')};
 
   setMessage() {
     this.message = 'Login';
   }
 
+  createForm() {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    })
+  }
+
   login() {
     this.message = '로그인 중입니다. ';
     this.failMessage = "";
-    this.authService.login(this.model)
+    this.authService.login(this.loginForm.value)
     .then(() => {
       this.setMessage();
       if (this.authService.isLoggedIn) {
@@ -45,5 +62,8 @@ export class LoginComponent {
   logout() {
     this.authService.logout();
     this.setMessage();
+  }
+  checkLogin() {
+    return this.authService.isLoggedIn
   }
 }
