@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   @ViewChild('toc') toc: ElementRef;
   public jblData;
   public bookmarkIdArray:Array<string>;
+  public showAnswers = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -76,5 +77,8 @@ export class SearchComponent implements OnInit {
   }
   goToTop(){
     window.scrollTo(0, 0)
+  }
+  toggleAnswers(){
+    this.showAnswers = !this.showAnswers
   }
 }

@@ -8,7 +8,7 @@
 
       <div *ngFor="let problems of innerContent.contents">
         <!-- 문제 div-->
-        <problem *ngFor="let problem of problems.contents" [problem]="problem" ></problem>
+        <problem *ngFor="let problem of problems.contents" [problem]="problem" [showAnswer]="true"></problem>
       </div>
     </div>
   </div>

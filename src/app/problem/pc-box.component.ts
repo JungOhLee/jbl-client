@@ -13,6 +13,7 @@ export class PcBoxComponent implements OnInit {
 
   @Input() problem;
   @Input() isBookmark:boolean=false;
+  @Input() showAnswer:boolean=false;
   public showComments = false;
 
   constructor(

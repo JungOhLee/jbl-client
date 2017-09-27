@@ -11,6 +11,7 @@
 
     <div class="problems py-2 col-sm-9 px-0 pr-md-2" data-spy="scroll" data-target="#toc-list" >
       <h1 class="text-center py-2">{{jblData.title}}</h1>
+      <a class="small text-secondary float-right" (click)="toggleAnswers()">모든 답 <span [hidden]="showAnswers">펼치기</span><span [hidden]="!showAnswers">닫기</span></a>
       <div class="problems-by-content" *ngFor="let content of jblData.contents">
         <div class="mb-2">
           <h2 id="{{content.title|topicId}}" class="d-inline block"> {{content.title}}</h2> <a class="small text-muted px-1" (click)="goToTop()">맨위로</a>
@@ -20,7 +21,7 @@
 
           <div *ngFor="let problems of innerContent.contents">
             <!-- 문제 div-->
-            <pc-box *ngFor="let problem of problems.contents" [problem]="problem" [isBookmark]="checkBookmarks(problem.id)"></pc-box>
+            <pc-box *ngFor="let problem of problems.contents" [problem]="problem" [isBookmark]="checkBookmarks(problem.id)" [showAnswer]="showAnswers"></pc-box>
           </div>
         </div>
       </div>
