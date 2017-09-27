@@ -52,8 +52,8 @@ export class TocFormComponent implements OnInit{
 
   createForm(){
     this.topicForm = this.fb.group({
-      topic: ["", Validators.required],
-      profs: this.fb.array([["", Validators.required]])
+      topic: ["", [Validators.required, Validators.pattern('^[^ ].*')]],
+      profs: this.fb.array([["", [Validators.required, Validators.pattern('^[^ ].*')]]])
     })
   }
 
@@ -106,12 +106,16 @@ export class TocFormComponent implements OnInit{
     }
     const currentValue = this.topicForm.value;
     const topicTitle = currentValue.topic.trim();
-    const topicProfs = currentValue.profs.map(prof => prof.trim()).filter(noEmpty).filter(onlyUnique);
+    const topicProfs = currentValue.profs.map(prof => {
+      if(prof){ //after reset, null.trim() evokes error
+        return prof.trim();
+      }
+    }).filter(noEmpty).filter(onlyUnique);
     const saveValue = {
       topic: topicTitle,
       profs: topicProfs
     }
-    this.topicForm.reset();
+    this.topicForm.reset("");
     this.toc.topics.push(saveValue);
   }
   deleteTopic(i){

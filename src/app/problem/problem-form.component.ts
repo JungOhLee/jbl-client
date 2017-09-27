@@ -123,7 +123,7 @@ export class ProblemFormComponent implements OnInit {
     this.tags.removeAt(index);
   }
   addProf() {
-    this.profs.push(this.fb.control('', Validators.required));
+    this.profs.push(this.fb.control(''));
   }
   deleteProf(index){
     this.profs.removeAt(index);
