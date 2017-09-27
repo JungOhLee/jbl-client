@@ -26,7 +26,7 @@
     <div class="pr-2 d-inline-block" *ngFor="let tag of problem.tags">#{{tag}}</div>
   </div>
   <!-- 문제 질문 -->
-  <div class="problem-question pl-2" [innerHTML]="problem.question"></div>
+  <div class="problem-question pl-2 pt-1" [innerHTML]="problem.question"></div>
   <!-- 문제 답 -->
   <div class="problem-answer text-right">
     <a data-toggle="collapse" [attr.data-parent]="'#problem'+problem.id" [attr.href]="'#problem-answer'+problem.id" aria-expanded="false" [attr.aria-controls]="'problem-answer'+problem.id">Answer</a>
