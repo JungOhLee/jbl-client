@@ -30,7 +30,7 @@
   <!-- 문제 답 -->
   <div class="problem-answer text-right">
     <a data-toggle="collapse" [attr.data-parent]="'#problem'+problem.id" [attr.href]="'#problem-answer'+problem.id" aria-expanded="false" [attr.aria-controls]="'problem-answer'+problem.id">Answer</a>
-    <div [attr.id]="'problem-answer'+problem.id" class="collapse" role="tabpanel">
+    <div [attr.id]="'problem-answer'+problem.id" class="collapse" [ngClass]="{'show': showAnswer}"  role="tabpanel">
       <div class="d-inline answer text-left"><pre><code  [innerHTML]="problem.answer"></code></pre></div>
     </div>
   </div>
