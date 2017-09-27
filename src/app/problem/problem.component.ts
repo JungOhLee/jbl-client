@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProblemService } from '../problem.service';
 import { ActivatedRoute, Router} from '@angular/router';
+import { Location } from '@angular/common';
 import { BookmarkService } from '../bookmark.service';
 import { Bookmark } from '../bookmark';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 import * as $ from 'jquery';
 
@@ -17,13 +19,15 @@ export class ProblemComponent implements OnInit {
   @Input() problem;
   public showMenu = false;
   public menuClicked = false;
+  @Input() public showAnswer = false;
   @Input() public isBookmark: boolean = false;
 
   constructor(
     private problemService: ProblemService,
     private bookmarkService: BookmarkService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -40,7 +44,11 @@ export class ProblemComponent implements OnInit {
     if(confirm("정말 문제를 지우시겠습니까?")){
       this.problemService.deleteProblem(problem.id)
         .subscribe(res => {
-          location.reload(); //TODO 문제 하나만 보던 페이지에서는 해당 페이지에 다시 가게 됨
+          if(this.problem){
+            this.location.back()
+          } else {
+            location.reload();
+          }
         })
     }
   }
