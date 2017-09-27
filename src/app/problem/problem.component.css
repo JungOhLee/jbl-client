@@ -35,3 +35,32 @@ a:not([href]):hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+div .problem-info {
+  font-size: 13px;
+  border-bottom: 1px solid #ccc;
+  white-space: normal;
+}
+
+div .answer > pre{
+  text-align: right;
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+  word-wrap: normal;
+}
+
+div .answer > pre>code{
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  font-family: monospace, monospace;
+  max-width: 100%;
+  overflow-wrap: normal;
+  white-space: pre-line;
+  word-break: break-word;
+}
