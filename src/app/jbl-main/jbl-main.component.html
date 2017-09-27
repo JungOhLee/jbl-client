@@ -6,6 +6,7 @@
     <ul class="list-unstyled col-sm-6">
       <li class="list-group-item list-group-item-action font-weight-bold py-2" *ngFor="let toc of tocList" (click)="preventDefault($event);sendQuery(toc.course);">
         <a href class="">{{toc.course}}</a>
+        <span class="badge badge-pill badge-success">csv</span>
       </li>
     </ul>
     <div class="col-sm-6 text-right">
