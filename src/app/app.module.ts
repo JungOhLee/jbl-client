@@ -36,6 +36,7 @@ import { TopicIdPipe } from './topic-id.pipe';
 //External Component
 import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
 import { DndModule } from 'ng2-dnd';
+import { AutoCompleteModule } from 'primeng/components/autocomplete/autocomplete';
 
 import {RequestOptions, BaseRequestOptions} from '@angular/http';
 /**
@@ -74,7 +75,8 @@ class AuthRequestOptions extends BaseRequestOptions {
     ReactiveFormsModule,
     HttpModule,
     LoginRoutingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AutoCompleteModule
   ],
   providers: [
     SearchService,
