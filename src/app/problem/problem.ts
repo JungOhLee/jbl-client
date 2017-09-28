@@ -10,6 +10,7 @@ export class Problem {
 	question: string ='';
   commentsCount: number =0;
   numbers: string[]=[];
+  email: string;
 }
 
 export const courseList =["병리학", "면역학", "이외"];

@@ -1,12 +1,14 @@
 import { Component, Input, OnInit, OnChanges, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
-import { ProblemService } from '../problem.service';
-import { Problem } from './problem';
-import { TocService } from '../toc.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { AuthService } from '../login/auth.service';
+import { ProblemService } from '../problem.service';
+import { TocService } from '../toc.service';
+
+import { Problem } from './problem';
 import { baseUrl } from '../base-url';
 
 import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
@@ -25,7 +27,7 @@ export class ProblemFormComponent implements OnInit {
   @Input() problem: Problem;
   newProblem: Problem;
   tocs: Array<any>;
-  yearList: Array<string> = ["2017","2016","2015","2014","2013"];
+  yearList: Array<string> = ["2017","2016","2015","2014","2013","2012"];
   courseList: Array<string>;
   topicList: Array<string>;
   profList: Array<string>;
@@ -34,11 +36,13 @@ export class ProblemFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private problemService: ProblemService,
-    private tocService: TocService,
     private route: ActivatedRoute,
     private location: Location,
-    private router: Router
+    private router: Router,
+
+    private problemService: ProblemService,
+    private tocService: TocService,
+    private authService: AuthService
   ) {
     this.createForm();
     this.tocService.getAllTocs()
@@ -223,7 +227,8 @@ export class ProblemFormComponent implements OnInit {
       answer: formModel.answer,
       tags: tagsDeepCopy.filter(onlyUnique),
       numbers: formModel.numbers.replace(/\s+/g, "").split(",").filter(onlyUnique).filter(noEmpty),
-      commentsCount: this.problem? this.problem.commentsCount : 0
+      commentsCount: this.problem? this.problem.commentsCount : 0,
+      email: this.problem? this.problem.email : this.authService.getUserEmail()
     };
     return saveProblem;
   }
