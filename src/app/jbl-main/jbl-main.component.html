@@ -5,8 +5,14 @@
     <h2 class="h3">과목</h2>
     <ul class="list-unstyled col-sm-6">
       <li class="list-group-item list-group-item-action font-weight-bold py-2" *ngFor="let toc of tocList" (click)="preventDefault($event);sendQuery(toc.course);">
-        <a href class="">{{toc.course}}</a>
-        <span class="badge badge-pill badge-success">csv</span>
+        <div class="row">
+          <div class="col-9">
+            <a href class="">{{toc.course}}</a>
+          </div>
+          <div class="col-3 text-right">
+            <a class="badge badge-pill badge-success text-white" (click)="getCsv(toc.course)">csv</a>
+          </div>
+        </div>
       </li>
     </ul>
     <div class="col-sm-6 text-right">
