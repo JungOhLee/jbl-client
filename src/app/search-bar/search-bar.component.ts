@@ -58,11 +58,11 @@ export class SearchBarComponent implements OnInit {
     console.log(this.searchList);
   }
 
-  filter() {
-    if (this.query !== ""){
-        this.filteredList = this.searchList.filter(function(el){
-            return el.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
-        }.bind(this));
+  filter(query) {
+    if (query !== ""){
+        this.filteredList = this.searchList.filter(el =>{
+            return el['value'].toLowerCase().indexOf(query.toLowerCase()) > -1;
+        });
     }else{
         this.filteredList = [];
     }

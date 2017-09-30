@@ -1,11 +1,14 @@
 <!-- Search bar -->
-<div class="input-group container p-2">
-  <label for="mainSearch" class="sr-only">Search</label>
-  <input #input type="text" class="form-control" id="mainSearch" placeholder="Search for..." [(ngModel)]="query" (keyup)="filter()" >
-  <!-- (keyup.enter)="search(input.value)" -->
-  <span class="input-group-btn">
-    <button class="btn btn-outline-primary rounded-right" type="button" (click)="test(input.value)"><span class="fa fa-search"></span></button>
-  </span>
+<div class="container p-2">
+  <div class="form-inline row no-gutters">
+    <div class="search-bar col-10 text-right">
+      <label for="mainSearch" class="sr-only">Search</label>
+      <p-autoComplete [(ngModel)]="query" [suggestions]="filteredList" (completeMethod)="filter($event.query)"size="30" styleClass="search-bar" inputStyleClass="form-control inline-block w-100" placeholder="과목, 수업, 교수, 연도"></p-autoComplete>
+    </div>
+    <div class="input-group-btn col-2">
+      <button class="btn btn-outline-primary rounded-right" type="button" (click)="search(input.value)"><span class="fa fa-search"></span></button>
+    </div>
+  </div>
   <!-- <div class="suggestions" *ngIf="filteredList.length > 0">
     <ul *ngFor="let item of filteredList">
       <li>
@@ -16,4 +19,7 @@
   <div class="search-list">
 
   </div>
+
+
+
 </div>

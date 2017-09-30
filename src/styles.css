@@ -217,3 +217,16 @@ h6 {
 .dropdown-toggle::after {
   display: none;
 }
+
+.search-bar .ui-inputtext {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.search-bar .ui-inputtext:focus {
+  outline: 0 none;
+  box-shadow: 0px 0px 0px #c0c0c0;
+}
+
+.search-bar .ui-inputtext:enabled:hover {
+  border-color: #80bdff;
+}
