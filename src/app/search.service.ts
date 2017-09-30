@@ -51,6 +51,18 @@ export class SearchService {
       })
   }
 
+  search(course:string="", topic:string="", year:string=""){
+    let searchParams = new URLSearchParams();
+    searchParams.append('course',course);
+    searchParams.append('topic',topic);
+    searchParams.append('year',year);
+    return this.http.get(this.ApiUrl, {search: searchParams, headers: this.headers})
+      .map(res => {
+        console.log("Search_result:", res.json());
+        return res.json();
+      })
+  }
+
   download(course) {
     let searchParams = new URLSearchParams();
     searchParams.append('course',course);
