@@ -10,8 +10,7 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "../node_modules/summernote/dist/font/*",
-        "404.html"
+        "../node_modules/summernote/dist/font/*"
       ],
       "index": "index.html",
       "main": "main.ts",
