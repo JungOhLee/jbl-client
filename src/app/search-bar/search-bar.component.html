@@ -6,16 +6,9 @@
       <p-autoComplete [(ngModel)]="query" [suggestions]="filteredList" (completeMethod)="filter($event.query)"size="30" styleClass="search-bar" inputStyleClass="form-control inline-block w-100" placeholder="과목, 수업, 교수, 연도"></p-autoComplete>
     </div>
     <div class="input-group-btn col-2">
-      <button class="btn btn-outline-primary rounded-right" type="button" (click)="search(input.value)"><span class="fa fa-search"></span></button>
+      <button class="btn btn-outline-primary rounded-right" type="button" ><span class="fa fa-search"></span></button>
     </div>
   </div>
-  <!-- <div class="suggestions" *ngIf="filteredList.length > 0">
-    <ul *ngFor="let item of filteredList">
-      <li>
-        <a (click)="select(item)">{{item}}</a>
-      </li>
-    </ul>
-  </div> -->
   <div class="search-list">
 
   </div>
