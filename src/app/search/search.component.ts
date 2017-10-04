@@ -42,8 +42,15 @@ export class SearchComponent implements OnInit {
 
   setResult(){
     this.route.queryParamMap
-      .switchMap((params: ParamMap) =>
-        this.searchService.getResultByCourse(params.get('query')))
+      .switchMap((params: ParamMap) => {
+        let searchObject = {
+          course: params.get('course'),
+          topic: params.get('topic'),
+          year: params.get('year')
+          //TODO Add prof,tags later
+        }
+        return this.searchService.search(searchObject)
+      })
       .subscribe(res => {
         if(!res){
           this.jblData = {title: "", contents:[{ title: "검색결과가 없습니다.", contents:[{}]}]}

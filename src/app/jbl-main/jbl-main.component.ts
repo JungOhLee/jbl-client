@@ -28,9 +28,9 @@ export class JblMainComponent implements OnInit {
 
   }
 
-  sendQuery(query) {
-    this.router.navigate(['/search'],{queryParams: {query: query}});
-    console.log(query);
+  findByCourse(course) {
+    this.router.navigate(['/search'],{queryParams: {course: course}});
+    console.log("Find course: ", course);
   }
   preventDefault(event){
     event.preventDefault();

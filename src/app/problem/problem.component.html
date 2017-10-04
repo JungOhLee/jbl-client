@@ -18,9 +18,9 @@
       <a class="fa fa-star-o text-muted" *ngIf="!isBookmark"></a>
       <a class="fa fa-star text-warning" *ngIf="isBookmark"></a>
     </div>
-    <div class="pr-2 d-inline-block" *ngIf="problem.year">#{{problem?.year}}</div>
+    <div class="pr-2 d-inline-block" *ngIf="problem.year"><a [routerLink]="['/search']" [queryParams]= "{course: problem.course, year:problem.year}" class="text-muted">#{{problem?.year}}</a></div>
     <div class="pr-2 d-inline-block" *ngIf="problem.course">#{{problem?.course}}</div>
-    <div class="pr-2 d-inline-block" *ngIf="problem.topic">#{{problem?.topic}}</div>
+    <div class="pr-2 d-inline-block" *ngIf="problem.topic"><a [routerLink]="['/search']" [queryParams]= "{topic: problem.topic}" class="text-muted">#{{problem?.topic}}</a></div>
     <div class="pr-2 d-inline-block" *ngFor="let number of problem.numbers">#{{number}}번</div>
     <div class="pr-2 d-inline-block" *ngFor="let prof of problem.profs">#{{prof}}</div>
     <div class="pr-2 d-inline-block" *ngFor="let tag of problem.tags">#{{tag}}</div>

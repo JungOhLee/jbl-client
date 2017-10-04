@@ -4,7 +4,7 @@
   <div class="col mt-3">
     <h2 class="h3">과목</h2>
     <ul class="list-unstyled col-sm-6">
-      <li class="list-group-item list-group-item-action font-weight-bold py-2" *ngFor="let toc of tocList" (click)="preventDefault($event);sendQuery(toc.course);">
+      <li class="list-group-item list-group-item-action font-weight-bold py-2" *ngFor="let toc of tocList" (click)="preventDefault($event);findByCourse(toc.course);">
         <div class="row">
           <div class="col-9">
             <a href class="">{{toc.course}}</a>
