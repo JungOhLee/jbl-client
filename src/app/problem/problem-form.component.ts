@@ -25,6 +25,7 @@ export class ProblemFormComponent implements OnInit {
   problemForm: FormGroup;
   problemInfoForm;
   @Input() problem: Problem;
+  @Input() showPreview: Boolean = true;
   newProblem: Problem;
   tocs: Array<any>;
   yearList: Array<string> = ["2017","2016","2015","2014","2013","2012"];

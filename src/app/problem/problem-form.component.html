@@ -1,7 +1,7 @@
 <div class="problem-form container">
 
   <div class="row">
-    <form class="col-md-6" [formGroup]="problemForm" (ngSubmit)="onSubmit()" novalidate>
+    <form class="col" [formGroup]="problemForm" (ngSubmit)="onSubmit()" novalidate>
       <div formGroupName="info">
         <div class="form-group row">
           <label for="year" class="col-sm-2 sr-only">년도</label>
@@ -115,7 +115,7 @@
       </div>
     </form>
 
-    <div class="col-sm-6 d-none d-md-block">
+    <div class="col-sm-6 d-none d-md-block" *ngIf="showPreview">
       <div class="card sticky-top">
         <h4 class="card-header">미리보기</h4>
         <div class="card-body">
