@@ -1,20 +1,23 @@
 <div class="toc container" *ngIf="toc">
   <!-- TODO 연도별 보기 -->
   <h2>{{toc.course}} <a [routerLink]="['/toc',toc.course,'edit']" class="text-secondary small px-2"> <span class="fa fa-pencil"></span> </a></h2>
+  <ul class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let year of recentYears"><a class="nav-link" (click)="setSelectedYear(year)" [ngClass]="{'active': selectedYear==year}" >{{year}}</a></li>
+  </ul>
   <div class="row">
     <div class="toc col-6">
       <div class="topic-list mt-3">
         <ul class="list-group">
           <li class="list-group-item" style="background-color:#f1f1f1">
-            <div class="row h5 mb-0" >
-              <div class="col-6"><strong>수업</strong></div>
-              <div class="col-6"><strong>교수</strong></div>
+            <div class="row h5 mb-0">
+              <div class="col-8"><strong>수업</strong></div>
+              <div class="col-4"><strong>교수</strong></div>
             </div>
           </li>
           <li *ngFor="let item of toc.topics" class="list-group-item">
             <div class="row">
-              <div class="topic col-6">{{item.topic}}</div>
-              <div class="profs col-6">{{item.profs}}</div>
+              <div class="topic col-8">{{item.topic}}</div>
+              <div class="profs col-4">{{item.profs}}</div>
             </div>
           </li>
         </ul>
@@ -25,7 +28,7 @@
       </div>
     </div>
     <div class="col-6">
-      <toc-problems course="toc.course"></toc-problems>
+      <toc-problems *ngIf="toc" [course]="toc.course" [year]="selectedYear"></toc-problems>
     </div>
   </div>
 </div>

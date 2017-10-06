@@ -11,6 +11,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class TocComponent implements OnInit{
 
   public toc
+  public recentYears =[];
+  public yearRange = 5;
+  public selectedYear
 
   constructor(
     private tocService: TocService,
@@ -30,10 +33,12 @@ export class TocComponent implements OnInit{
                 console.log(this.toc);
               }
             })
-        })
+        });
+    this.setRecentYears();
   }
 
   ngOnInit(){
+
   }
 
   deleteToc(course){
@@ -46,4 +51,15 @@ export class TocComponent implements OnInit{
     }
   }
 
+  setRecentYears(){
+    let today = new Date();
+    for(let i=0; i< this.yearRange; i++){
+      this.recentYears.push(today.getFullYear()-i);
+    }
+    this.setSelectedYear(today.getFullYear())
+  }
+  setSelectedYear(year){
+    this.selectedYear = year
+    console.log(year);
+  }
 }
