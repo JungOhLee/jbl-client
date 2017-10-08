@@ -14,6 +14,7 @@ export class TocComponent implements OnInit{
   public recentYears =[];
   public yearRange = 5;
   public selectedYear
+  public editMode:Boolean = false;
 
   constructor(
     private tocService: TocService,
@@ -61,5 +62,8 @@ export class TocComponent implements OnInit{
   setSelectedYear(year){
     this.selectedYear = year
     console.log(year);
+  }
+  openEditMode(){
+    this.editMode = !this.editMode
   }
 }
