@@ -11,8 +11,11 @@ export class TocProblemsComponent implements OnInit{
   @Input() toc;
   @Input() course: string;
   @Input() year: string;
-  @Output() toggleForm: EventEmitter<any> = new EventEmitter();
+  @Output() formOpen: EventEmitter<any> = new EventEmitter();
+  @Output() formClose: EventEmitter<any> = new EventEmitter();
   problems: Problem[];
+  editProblem: Problem;
+  editMode: Boolean = false;
   public searchData;
 
   constructor(
@@ -33,5 +36,15 @@ export class TocProblemsComponent implements OnInit{
     })
   }
 
+  openForm(problem){
+    this.editProblem=problem;
+    this.editMode = true;
+    this.formOpen.emit(null);
+  }
+
+  closeForm(){
+    this.editMode = false;
+    this.formClose.emit(null);
+  }
 
 }
