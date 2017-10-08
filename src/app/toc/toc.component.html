@@ -1,11 +1,12 @@
 <div class="toc container" *ngIf="toc">
-  <!-- TODO 연도별 보기 -->
   <h2>{{toc.course}} <a [routerLink]="['/toc',toc.course,'edit']" class="text-secondary small px-2"> <span class="fa fa-pencil"></span> </a></h2>
+  <!-- Year tab -->
   <ul class="nav nav-tabs">
     <li class="nav-item" *ngFor="let year of recentYears"><a class="nav-link" (click)="setSelectedYear(year)" [ngClass]="{'active': selectedYear==year}" >{{year}}</a></li>
   </ul>
   <div class="row">
-    <div class="toc col-6">
+    <!-- Topic-prof Table -->
+    <div class="toc col-6" [hidden]="editMode">
       <div class="topic-list mt-3">
         <ul class="list-group">
           <li class="list-group-item" style="background-color:#f1f1f1">
@@ -27,8 +28,9 @@
         <button class="btn btn-danger col-2" (click)="deleteToc(toc.course)">삭제</button>
       </div>
     </div>
-    <div class="col-6">
-      <toc-problems *ngIf="toc" [course]="toc.course" [year]="selectedYear"></toc-problems>
+    <!-- Course year Problems -->
+    <div class="col">
+      <toc-problems *ngIf="toc" [course]="toc.course" [year]="selectedYear" (formOpen)="editMode = true" (formClose)= "editMode = false"></toc-problems>
     </div>
   </div>
 </div>
