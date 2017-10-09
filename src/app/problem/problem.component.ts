@@ -40,17 +40,9 @@ export class ProblemComponent implements OnInit {
   closeMenu() {
     this.showMenu = false
   }
-  deleteProblem(problem) {
-    if(confirm("정말 문제를 지우시겠습니까?")){
-      this.problemService.deleteProblem(problem.id)
-        .subscribe(res => {
-          if(this.problem){
-            this.location.back()
-          } else {
-            location.reload();
-          }
-        })
-    }
+
+  toggleAnswer(){
+    this.showAnswer = !this.showAnswer
   }
 
   toggleBookmark(){
@@ -67,7 +59,6 @@ export class ProblemComponent implements OnInit {
           this.isBookmark = !this.isBookmark;
         })
     }
-
   }
 
   addBookmark(problem){
@@ -79,5 +70,18 @@ export class ProblemComponent implements OnInit {
     console.log("delete Bookmark");
     let bookmark:Bookmark = { user: "", course: problem.course, problemId: problem.id}
     return this.bookmarkService.deleteBookmark(bookmark)
+  }
+
+  deleteProblem(problem) {
+    if(confirm("정말 문제를 지우시겠습니까?")){
+      this.problemService.deleteProblem(problem.id)
+        .subscribe(res => {
+          if(this.problem){
+            this.location.back()
+          } else {
+            location.reload();
+          }
+        })
+    }
   }
 }

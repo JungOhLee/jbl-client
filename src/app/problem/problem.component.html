@@ -1,7 +1,7 @@
 <div class="problem" *ngIf="problem">
   <!-- 옵션 메뉴 토글  -->
   <div class="float-right text-right" >
-    <a class="text-secondary fa fa-ellipsis-h" (document:click)=closeMenu() (click)=toggleMenu($event) ></a>
+    <a class="text-secondary fa fa-ellipsis-h" (click)=toggleMenu($event) ></a>
     <div class="problem-menu" *ngIf="showMenu">
       <ul>
         <li><a [routerLink]="['/problem',problem.id]">자세히</a></li>
@@ -29,8 +29,8 @@
   <div class="problem-question pl-2 pt-1" [innerHTML]="problem.question"></div>
   <!-- 문제 답 -->
   <div class="problem-answer text-right">
-    <a data-toggle="collapse" [attr.data-parent]="'#problem'+problem.id" [attr.href]="'#problem-answer'+problem.id" aria-expanded="false" [attr.aria-controls]="'problem-answer'+problem.id">Answer</a>
-    <div [attr.id]="'problem-answer'+problem.id" class="collapse" [ngClass]="{'show': showAnswer}"  role="tabpanel">
+    <a (click)="toggleAnswer()">Answer</a>
+    <div class="collapse" [ngClass]="{'show': showAnswer}" >
       <div class="d-inline answer text-left"><pre><code  [innerHTML]="problem.answer"></code></pre></div>
     </div>
   </div>
