@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SearchService } from '../search.service';
+import { TocService } from '../toc.service';
 import { Problem } from '../problem/problem';
 
 @Component({
@@ -9,6 +10,7 @@ import { Problem } from '../problem/problem';
 })
 export class TocProblemsComponent implements OnInit{
   @Input() toc;
+  tocs;
   @Input() course: string;
   @Input() year: string;
   @Output() formOpen: EventEmitter<any> = new EventEmitter();
@@ -20,10 +22,13 @@ export class TocProblemsComponent implements OnInit{
 
   constructor(
     private searchService: SearchService,
+    private tocService: TocService
   ){
   }
 
   ngOnInit(){
+    this.tocService.getAllTocs()
+      .subscribe(res => this.tocs = res)
   }
   ngOnChanges(){
     this.fetchData();
