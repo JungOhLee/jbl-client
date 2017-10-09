@@ -39,7 +39,6 @@ export class TocComponent implements OnInit{
   }
 
   ngOnInit(){
-
   }
 
   deleteToc(course){
