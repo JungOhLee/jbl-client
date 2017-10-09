@@ -79,7 +79,7 @@ export class SearchComponent implements OnInit {
   goToId(event){
     event.preventDefault();
     let id = event.target.text.replace(/ /g, "-");
-    const element = document.querySelector("#" + id);
+    const element = document.getElementById(id);
     if (element) { element.scrollIntoView(element); }
   }
   goToTop(){
