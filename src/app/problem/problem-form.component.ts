@@ -27,7 +27,7 @@ export class ProblemFormComponent implements OnInit {
   @Input() problem: Problem;
   @Input() showPreview: Boolean = true;
   newProblem: Problem;
-  tocs: Array<any>;
+  @Input() tocs: Array<any>;
   yearList: Array<string> = ["2017","2016","2015","2014","2013","2012"];
   courseList: Array<string>;
   topicList: Array<string>;
@@ -55,6 +55,11 @@ export class ProblemFormComponent implements OnInit {
   }
 
   ngOnInit(){
+
+  }
+  ngOnChanges(){
+    this.getAllList(this.problem);
+    this.setFormValue(this.problem);
   }
 
   createForm() {
