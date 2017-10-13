@@ -17,6 +17,7 @@ export class SearchService {
   );
 
   private ApiUrl = baseUrl + '/search'
+  private statApiUrl = baseUrl + '/stat-search'
 
   getResult(query) {
     console.log(query);
@@ -70,6 +71,14 @@ export class SearchService {
     searchParams.append('course',course);
     searchParams.append('download', 'csv');
     return this.http.get(this.ApiUrl, {search: searchParams, headers: this.headers})
+      .map(res =>{
+        console.log(res);
+        return res["_body"];
+      })
+  }
+
+  downloadStat(){
+    return this.http.get(this.statApiUrl, {headers: this.headers})
       .map(res =>{
         console.log(res);
         return res["_body"];
