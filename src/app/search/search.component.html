@@ -3,27 +3,33 @@
     <div class="toc col-sm-3 pr-0" id="toc-list" #toc>
       <div class="toc-header">Contents</div>
       <ul class="nav sidebar sticky-top">
-        <li class="nav-item" *ngFor="let content of jblData.contents">
-          <a class="nav-link pt-0" (click)="goToId($event)" >{{content.title}}</a>
+        <li class="nav-item" *ngFor="let content of jblData.contents; let i = index;">
+          <a class="nav-link pt-0" (click)="goToId($event); showProbs(i);" >{{content.title}}</a>
         </li>
       </ul>
     </div>
 
     <div class="problems py-2 col-sm-9 px-0 pr-md-2" data-spy="scroll" data-target="#toc-list" >
       <h1 class="text-center py-2">{{jblData.title}}</h1>
-      <a class="small text-secondary float-right" (click)="toggleAnswers()">모든 답 <span [hidden]="showAnswers">펼치기</span><span [hidden]="!showAnswers">닫기</span></a>
-      <div class="problems-by-content" *ngFor="let content of jblData.contents">
+      <a class="small text-secondary float-right px-1" (click)="toggleAllProblems()">모든 문제 <span [hidden]="showAllProblems">펼치기</span><span [hidden]="!showAllProblems">닫기</span></a>
+      <a class="small text-secondary float-right px-1" (click)="toggleAnswers()">모든 답 <span [hidden]="showAnswers">펼치기</span><span [hidden]="!showAnswers">닫기</span></a>
+      <div class="problems-by-content" *ngFor="let content of jblData.contents; let i = index;">
         <div class="mb-2">
-          <h2 id="{{content.title|topicId}}" class="d-inline block"> {{content.title}}</h2> <a class="small text-muted px-1" (click)="goToTop()">맨위로</a>
+          <h2 id="{{content.title|topicId}}" class="d-inline block"> {{content.title}}
+            <a (click)="toggleProblems(i)"><span [hidden]="!showProblems[i]" class="fa fa-minus-square-o"></span><span [hidden]="showProblems[i]" class="fa fa-plus-square-o"></span></a>
+          </h2>
+          <a class="small text-muted px-1" (click)="goToTop()">맨위로</a>
         </div>
-        <div *ngFor = "let innerContent of content.contents">
-          <h3>{{innerContent.title}}</h3>
+        <ng-container *ngIf = showProblems[i]>
+          <div *ngFor = "let innerContent of content.contents">
+            <h3>{{innerContent.title}}</h3>
 
-          <div *ngFor="let problems of innerContent.contents">
-            <!-- 문제 div-->
-            <pc-box *ngFor="let problem of problems.contents" [problem]="problem" [isBookmark]="checkBookmarks(problem.id)" [showAnswer]="showAnswers"></pc-box>
+            <div *ngFor="let problems of innerContent.contents">
+              <!-- 문제 div-->
+              <pc-box *ngFor="let problem of problems.contents" [problem]="problem" [isBookmark]="checkBookmarks(problem.id)" [showAnswer]="showAnswers"></pc-box>
+            </div>
           </div>
-        </div>
+        </ng-container>
       </div>
     </div>
   </div>
