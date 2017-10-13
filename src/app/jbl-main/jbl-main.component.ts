@@ -47,6 +47,13 @@ export class JblMainComponent implements OnInit {
       })
   }
 
+  getStat(){
+    this.searchService.downloadStat()
+      .subscribe(res => {
+        this.download("stat", res)
+      })
+  }
+
   download(course, contents){
     var link = document.createElement("a");
     link.download = course + ".csv";
