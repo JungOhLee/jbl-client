@@ -8,14 +8,15 @@ import { ProblemComponent } from '../problem/problem.component';
 
 @Component({
   selector: 'search',
-  templateUrl: './search.component.html',
-  styles: []
+  templateUrl: './search.component.html'
 })
 export class SearchComponent implements OnInit {
 
   @ViewChild('toc') toc: ElementRef;
   public jblData;
   public bookmarkIdArray:Array<string>;
+  public showProblems = [];
+  public showAllProblems = false;
   public showAnswers = false;
 
   constructor(
@@ -56,6 +57,7 @@ export class SearchComponent implements OnInit {
           this.jblData = {title: "", contents:[{ title: "검색결과가 없습니다.", contents:[{}]}]}
         } else {
           this.jblData = res;
+          this.checkShowAllProbs(res);
         }
       });
   }
@@ -66,6 +68,21 @@ export class SearchComponent implements OnInit {
         let problemIdArray = bookmarks.map(bookmark => bookmark.problemId);
         this.bookmarkIdArray = problemIdArray;
       })
+  }
+
+  checkShowAllProbs(res){
+    if(res.contents.length ==1){
+      this.toggleAllProblems(true);
+      return false;
+    }
+    // this.route.queryParamMap
+    //   .subscribe((params: ParamMap) => {
+    //     if(params.get('topic') || params.get('prof') || ( params.get('year') && params.get('course') ) ){
+    //       this.toggleAllProblems(true);
+    //       console.log("checkShow");
+    //       return false;
+    //     }
+    //   })
   }
 
   checkBookmarks(id){
@@ -82,8 +99,24 @@ export class SearchComponent implements OnInit {
     const element = document.getElementById(id);
     if (element) { element.scrollIntoView(element); }
   }
+
   goToTop(){
     window.scrollTo(0, 0)
+  }
+
+  toggleProblems(index){
+    this.showProblems[index] = !this.showProblems[index]
+  }
+
+  showProbs(index){
+    this.showProblems[index] = true;
+  }
+  toggleAllProblems(show=false){
+    this.showAllProblems = show? show : !this.showAllProblems;
+    let totalTopicNum = this.jblData.contents.length;
+    for( let i = 0; i < totalTopicNum; i ++){
+      this.showProblems[i] = show? show: this.showAllProblems;
+    }
   }
   toggleAnswers(){
     this.showAnswers = !this.showAnswers
