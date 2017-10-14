@@ -18,6 +18,7 @@ import { SearchComponent } from './search/search.component';
 import { PcBoxComponent } from './problem/pc-box.component';
 import { ProblemComponent } from './problem/problem.component';
 import { CommentsComponent } from './comment/comments.component';
+import { RecentCommentsComponent } from './comment/recent-comments.component'
 import { ProblemFormComponent } from './problem/problem-form.component';
 import { TocFormComponent } from './toc/toc-form.component';
 import { TocComponent } from './toc/toc.component';
@@ -63,8 +64,9 @@ class AuthRequestOptions extends BaseRequestOptions {
     SearchComponent,
     PcBoxComponent,
     ProblemComponent,
-    CommentsComponent,
     ProblemFormComponent,
+    CommentsComponent,
+    RecentCommentsComponent,
     TocFormComponent,
     TocComponent,
     TocIndexComponent,
