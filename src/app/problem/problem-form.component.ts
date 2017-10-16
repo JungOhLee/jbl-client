@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, AfterViewInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnChanges } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 import { ActivatedRoute } from '@angular/router';
@@ -28,10 +28,14 @@ export class ProblemFormComponent implements OnInit {
   @Input() showPreview: Boolean = true;
   newProblem: Problem;
   @Input() tocs: Array<any>;
-  yearList: Array<string> = ["2017","2016","2015","2014","2013","2012"];
+  yearList: Array<string>=[];
+  yearRange: Number = 6;
   courseList: Array<string>;
   topicList: Array<string>;
   profList: Array<string>;
+
+  @Input() tocMode: Boolean = false;
+  @Output() close: EventEmitter<any> = new EventEmitter();
 
   imgUrl: string = baseUrl + "/image";
 
@@ -46,6 +50,7 @@ export class ProblemFormComponent implements OnInit {
     private authService: AuthService
   ) {
     this.createForm();
+    this.updateYearList();
     this.tocService.getAllTocs()
       .subscribe(res => {
         this.tocs=res;
@@ -150,6 +155,13 @@ export class ProblemFormComponent implements OnInit {
 
 
   // Getting Select Box List //
+  updateYearList() {
+      let today = new Date();
+      for(let i=0; i< this.yearRange; i++){
+        this.yearList.push(String(today.getFullYear()-i));
+      }
+  }
+
   updateCourseList() {
     const courseControl = this.problemInfoForm.get('course');
     const topicControl = this.problemInfoForm.get('topic');
@@ -242,4 +254,19 @@ export class ProblemFormComponent implements OnInit {
   toPreviousPage(){
     this.location.back()
   }
+
+  tocModeSubmit(){
+    this.newProblem = this.prepareSave();
+    console.log(this.newProblem);
+    this.problemService.updateProblem(this.newProblem)
+      .subscribe(res => {
+        let problem = res;
+        console.log("Save problem succeeded!", problem);
+        this.closeForm(problem);
+      })
+  }
+  closeForm(problem=null){
+    this.close.emit(problem);
+  }
+
 }
