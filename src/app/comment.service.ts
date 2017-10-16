@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { baseUrl } from './base-url';
-import { Comment } from './problem/comment';
+import { Comment } from './comment/comment';
 
 @Injectable()
 export class CommentService {
@@ -32,8 +32,10 @@ export class CommentService {
   //------------------//
   // comment CRUD //
   //------------------//
-  getComments(problem) {
+  getComments(problem, recent = '') {
     let params = this.setSearchProblemId(problem);
+    params.append('recentlyAdded', recent);
+
     return this.http.get(this.ApiUrl, { search: params, headers: this.headers })
       .map(res => res.json());
   }
