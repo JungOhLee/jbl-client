@@ -5,14 +5,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'toc',
   templateUrl: './toc.component.html',
-  styles:[]
+  styleUrls: ['./toc.component.css']
 })
 
 export class TocComponent implements OnInit{
 
   public toc
   public recentYears =[];
-  public yearRange = 5;
+  public yearRange = 6;
   public selectedYear
   public editMode:Boolean = false;
 
