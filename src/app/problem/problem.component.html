@@ -1,6 +1,6 @@
 <div class="problem" *ngIf="problem">
   <!-- 옵션 메뉴 토글  -->
-  <div class="float-right text-right" >
+  <div class="menu-toggler float-right text-right" >
     <a class="text-secondary fa fa-ellipsis-h" (click)=toggleMenu($event) ></a>
     <div class="problem-menu" *ngIf="showMenu">
       <ul>
@@ -19,10 +19,10 @@
       <a class="fa fa-star text-warning" *ngIf="isBookmark"></a>
     </div>
     <div class="pr-2 d-inline-block" *ngIf="problem.year"><a [routerLink]="['/search']" [queryParams]= "{course: problem.course, year:problem.year}" class="text-muted">#{{problem?.year}}</a></div>
-    <div class="pr-2 d-inline-block" *ngIf="problem.course">#{{problem?.course}}</div>
-    <div class="pr-2 d-inline-block" *ngIf="problem.topic"><a [routerLink]="['/search']" [queryParams]= "{topic: problem.topic}" class="text-muted">#{{problem?.topic}}</a></div>
+    <div class="pr-2 d-inline-block" *ngIf="problem.course"><a [routerLink]="['/search']" [queryParams]= "{course: problem.course}" class="text-muted">#{{problem?.course}}</a></div>
+    <div class="pr-2 d-inline-block" *ngIf="problem.topic"><a [routerLink]="['/search']" [queryParams]= "{course: problem.course, topic: problem.topic}" class="text-muted">#{{problem?.topic}}</a></div>
     <div class="pr-2 d-inline-block" *ngFor="let number of problem.numbers">#{{number}}번</div>
-    <div class="pr-2 d-inline-block" *ngFor="let prof of problem.profs">#{{prof}}</div>
+    <div class="pr-2 d-inline-block" *ngFor="let prof of problem.profs"><a [routerLink]="['/search']" [queryParams]= "{course: problem.course, prof: prof}" class="text-muted">#{{prof}}</a></div>
     <div class="pr-2 d-inline-block" *ngFor="let tag of problem.tags">#{{tag}}</div>
   </div>
   <!-- 문제 질문 -->
