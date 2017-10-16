@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TocService } from '../toc.service';
 import { AuthService } from '../login/auth.service';
 import { SearchService } from '../search.service';
+import { ProblemService } from '../problem.service';
 
 @Component({
   selector: 'app-jbl-main',
@@ -17,7 +18,8 @@ export class JblMainComponent implements OnInit {
     private router: Router,
     private tocService: TocService,
     private authService: AuthService,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private problemService: ProblemService
   ) {
       this.tocService.getAllTocs().subscribe(res => {
         this.tocList = res;
@@ -51,6 +53,13 @@ export class JblMainComponent implements OnInit {
     this.searchService.downloadStat()
       .subscribe(res => {
         this.download("stat", res)
+      })
+  }
+
+  getAllJBL(){
+    this.problemService.downloadAll()
+      .subscribe(res => {
+        this.download("JBL",res)
       })
   }
 
