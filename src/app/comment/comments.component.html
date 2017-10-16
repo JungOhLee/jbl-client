@@ -1,0 +1,24 @@
+<!-- 문제 comment toggler -->
+<div class="comments-toggler">
+  <a class="btn btn-outline-secondary btn-sm" (click)="toggleComments()">Comments</a>
+  <!-- <span class="badge badge-pill badge-info align-top">{{problem.commentsCount}}</span>  -->
+</div>
+<!-- comments -->
+<div class="problem-comments col-12" *ngIf="showComments">
+  <div class="problem-comment clearfix" *ngFor="let comment of comments; let i = index;">
+    <div class="comment-body">{{comment.body}}</div>
+    <!-- <span class="fa fa-pencil float-right text-muted mr-1"></span>  -->
+    <span *ngIf="checkCommentUser(comment)"class="fa fa-times float-right text-muted mr-1" (click)="deleteComment(comment, i)"></span>
+  </div>
+  <!-- comment form -->
+  <form class="comment-form form-inline" [attr.id]="'problem-comment-form'+problem.id">
+    <div class="col text-right d-flex justify-content-center p-0">
+      <div class="input-group row col py-1">
+        <textarea #newComment class="form-control comment-form" required name="body" [(ngModel)]="newCommentBody"></textarea>
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-outline-secondary h-100" (click)="addComment(newComment.value)">Submit</button>
+        </span>
+      </div>
+    </div>
+  </form>
+</div>

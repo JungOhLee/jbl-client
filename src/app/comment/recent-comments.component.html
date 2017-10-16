@@ -1,0 +1,12 @@
+<div class="recent-comments">
+  <br>
+  <h5>최근 댓글</h5>
+  <ul *ngIf="recentComments" class="list-group">
+    <li *ngFor="let comment of recentComments" class="list-group-item list-group-item-action py-2" (click)="goToProblem(comment.problemId)">
+      <div class="row">
+        <div class="col-9">{{comment.body}}</div>
+        <div class="col-3 small text-right"><a>자세히</a></div>
+      </div>
+    </li>
+  </ul>
+</div>
