@@ -71,4 +71,10 @@ export class ProblemService {
       })
   }
 
+  downloadAll(){
+    let params = new URLSearchParams();
+    params.set('download', "csv");
+    return this.http.get(this.ApiUrl, {search: params, headers: this.headers})
+      .map( res => res.text())
+  }
 }
