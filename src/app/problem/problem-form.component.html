@@ -98,7 +98,6 @@
         </div>
       </div>
 
-
       <div class="form-group row"><label for="answer" class="col-sm-2 sr-only">정답</label>
         <div class="col-sm-12 px-0">
           <textarea class="form-control" formControlName="answer" rows="2" placeholder="정답"></textarea>
@@ -109,9 +108,13 @@
           </div>
         </div>
       </div>
-      <div class="text-right">
+      <div class="normal-mode-btn text-right" *ngIf="!tocMode">
         <button type="submit" [disabled]="problemForm.invalid" class="btn btn-success">저장</button>
         <button type="button" (click)="toPreviousPage()" class="btn btn-danger">이전페이지</button>
+      </div>
+      <div class="toc-mode-btn text-right" *ngIf="tocMode">
+        <button type="button" (click)="tocModeSubmit()" [disabled]="problemForm.invalid" class="btn btn-success">저장</button>
+        <button type="button" (click)="closeForm()" class="btn btn-danger">종료</button>
       </div>
     </form>
 
