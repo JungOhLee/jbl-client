@@ -1,5 +1,5 @@
 <div class="jbl-main container">
-  <h1>JBL <span class="h3">- Jokbo Based Learning</span> <a class="badge badge-pill badge-danger text-white" (click)="getStat()" *ngIf="checkAdmin()">stat</a> </h1>
+  <h1>JBL <span class="h3">- Jokbo Based Learning</span> <a class="badge badge-pill badge-danger text-white" (click)="getStat()" *ngIf="checkAdmin()">stat</a> <a class="badge badge-pill badge-warning text-white" (click)="getAllJBL()" *ngIf="checkAdmin()">JBL all</a></h1>
 
   <div class="row mt-3">
     <div class="col-sm-6">
@@ -20,19 +20,26 @@
         <a class="btn btn-success btn-sm" [routerLink]="['/problem/new']">새 문제 추가</a>
         <a class="btn btn-danger btn-sm" [routerLink]="['/toc']" *ngIf="checkAdmin()" >과목 관리</a>
       </div>
+      <br>
+      <br>
+      <div class="col">
+        <br>
+        <div class="h6">업데이트 사항</div>
+        <ul class="ul">
+          <li>과목 선택시 로딩 시간 개선</li>
+          <li>기본적으로 문제를 접혀있도록 설정</li>
+        </ul>
+        <br>
+        <div class="h6">안내 사항</div>
+        <ul class="ul">
+          <li>개선 사항 및 문의 사항은 leejung209@gmail.com</li>
+        </ul>
+      </div>
     </div>
     <div class="col-sm-6">
-      <br>
-      <div class="h6">업데이트 사항</div>
-      <ul class="ul">
-        <li>과목 선택시 로딩 시간 개선</li>
-        <li>기본적으로 문제를 접혀있도록 설정</li>
-      </ul>
-      <br>
-      <div class="h6">안내 사항</div>
-      <ul class="ul">
-        <li>개선 사항 및 문의 사항은 leejung209@gmail.com</li>
-      </ul>
+      <recent-comments></recent-comments>
     </div>
+
+
   </div>
 </div>
