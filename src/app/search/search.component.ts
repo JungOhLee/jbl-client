@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterContentInit, AfterViewChecked, ElementRef, ViewChild } from '@angular/core';
 import { SearchService } from '../search.service';
 import { BookmarkService } from '../bookmark.service';
 import { Router, ActivatedRoute, ParamMap, NavigationEnd} from '@angular/router'
@@ -10,7 +10,7 @@ import { ProblemComponent } from '../problem/problem.component';
   selector: 'search',
   templateUrl: './search.component.html'
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, AfterViewChecked, AfterContentInit{
 
   @ViewChild('toc') toc: ElementRef;
   public jblData;
@@ -40,6 +40,11 @@ export class SearchComponent implements OnInit {
     this.setResult();
     this.setBookmarks();
   }
+  ngAfterContentInit(){
+
+  }
+  ngAfterViewChecked(){
+  }
 
   setResult(){
     this.route.queryParamMap
@@ -47,8 +52,9 @@ export class SearchComponent implements OnInit {
         let searchObject = {
           course: params.get('course'),
           topic: params.get('topic'),
-          year: params.get('year')
-          //TODO Add prof,tags later
+          year: params.get('year'),
+          prof: params.get('prof')
+          //TODO Add tags later
         }
         return this.searchService.search(searchObject)
       })
