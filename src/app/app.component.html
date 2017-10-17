@@ -59,7 +59,9 @@
 
 
 <!-- <router-outlet></router-outlet> -->
-<router-outlet></router-outlet>
+<router-outlet>
+  <mat-spinner *ngIf="showLoader"></mat-spinner>
+</router-outlet>
 
 
 

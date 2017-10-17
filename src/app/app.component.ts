@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './login/auth.service';
-import { Router, NavigationEnd } from '@angular/router'
+import { Router, NavigationEnd } from '@angular/router';
+import { LoaderService } from './loader.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,18 @@ import { Router, NavigationEnd } from '@angular/router'
 export class AppComponent {
   title = 'app';
   alert ="";
+  showLoader: boolean;
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    private loaderService: LoaderService
   ) {
+  }
+
+  ngOnInit(){
+    this.loaderService.status.subscribe((val: boolean) => {
+            this.showLoader = val;
+        });
   }
 
   checkLogin(){

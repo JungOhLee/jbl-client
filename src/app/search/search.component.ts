@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterContentInit, AfterViewChecked, ElementRef, ViewChild } from '@angular/core';
 import { SearchService } from '../search.service';
 import { BookmarkService } from '../bookmark.service';
+import { LoaderService } from '../loader.service';
 import { Router, ActivatedRoute, ParamMap, NavigationEnd} from '@angular/router'
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
@@ -23,7 +24,8 @@ export class SearchComponent implements OnInit, AfterViewChecked, AfterContentIn
     private route: ActivatedRoute,
     private router: Router,
     private searchService: SearchService,
-    private bookmarkService: BookmarkService
+    private bookmarkService: BookmarkService,
+    private loaderService: LoaderService
   ) {
     // router.events.subscribe(s => {
     //   if (s instanceof NavigationEnd) {
@@ -44,6 +46,7 @@ export class SearchComponent implements OnInit, AfterViewChecked, AfterContentIn
 
   }
   ngAfterViewChecked(){
+    this.loaderService.display(false);
   }
 
   setResult(){
