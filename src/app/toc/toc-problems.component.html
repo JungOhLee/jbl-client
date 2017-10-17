@@ -1,23 +1,27 @@
 <div class="toc-problems" *ngIf="searchData" class="row">
   <div class="col">
-    <div *ngFor="let content of searchData.contents" class="w-100">
+    <div *ngFor="let content of searchData.contents; let i = index" class="w-100">
       <div class="mb-2">
         <h2 id="{{content.title|topicId}}" class="d-inline block"> {{content.title}}</h2>
       </div>
-      <div *ngFor = "let innerContent of content.contents">
+      <div *ngFor = "let innerContent of content.contents; let j = index;">
         <h3>{{innerContent.title}}</h3>
 
-        <div *ngFor="let problems of innerContent.contents">
+        <div *ngFor="let problems of innerContent.contents; let k =index;">
           <!-- 문제 div-->
-          <div class="problem" *ngFor="let problem of problems.contents" >
-            <button type="button" name="button" class="btn btn-sm float-right" (click)="openForm(problem)">수정</button>
-            <button type="button" name="button" class="btn btn-sm float-right" >삭제</button>
+          <div class="problem" *ngFor="let problem of problems.contents; let l = index" [ngClass]="{'border border-danger': editingId ==problem.id }">
+            <a class="float-right px-1 text-danger small" (click)="openForm(problem)">수정</a>
+            <a class="float-right px-1 pl-2 text-danger small" >삭제</a>
             <problem [problem]="problem" [showAnswer]="true"></problem>
           </div>
-          <button type="button" name="button" (click)="closeForm()">종료</button>
+
         </div>
       </div>
     </div>
   </div>
-  <problem-form *ngIf="editMode" class="col" [showPreview]="false" [problem]="editProblem" [tocs]="tocs"></problem-form>
+  <div *ngIf="editMode" class="col">
+    <div class="sticky-top">
+      <problem-form [showPreview]="false" [problem]="editProblem" [tocs]="tocs" [tocMode]="true" (close)="changeProblem($event); closeForm();"></problem-form>
+    </div>
+  </div>
 </div>

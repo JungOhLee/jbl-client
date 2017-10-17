@@ -6,7 +6,7 @@ import { Problem } from '../problem/problem';
 @Component({
   selector: 'toc-problems',
   templateUrl: './toc-problems.component.html',
-  styleUrls:[]
+  styleUrls:['./toc.component.css']
 })
 export class TocProblemsComponent implements OnInit{
   @Input() toc;
@@ -15,6 +15,7 @@ export class TocProblemsComponent implements OnInit{
   @Input() year: string;
   @Output() formOpen: EventEmitter<any> = new EventEmitter();
   @Output() formClose: EventEmitter<any> = new EventEmitter();
+  editingId: string;
   problems: Problem[];
   editProblem: Problem;
   editMode: Boolean = false;
@@ -42,14 +43,38 @@ export class TocProblemsComponent implements OnInit{
   }
 
   openForm(problem){
+    this.editingId = problem.id;
+
     this.editProblem=problem;
     this.editMode = true;
     this.formOpen.emit(null);
   }
 
   closeForm(){
+    this.editingId = '';
     this.editMode = false;
     this.formClose.emit(null);
+  }
+
+  changeProblem(newProblem){
+    let targetId = this.editingId
+    if(!newProblem){
+      return false
+    }
+    else {
+      for(let firstIndex in this.searchData.contents){
+        for(let secondIndex in this.searchData.contents[firstIndex].contents){
+          for(let thirdIndex in this.searchData.contents[firstIndex].contents[secondIndex].contents){
+            for(let problemIndex in this.searchData.contents[firstIndex].contents[secondIndex].contents[thirdIndex].contents){
+              let problem = this.searchData.contents[firstIndex].contents[secondIndex].contents[thirdIndex].contents[problemIndex]
+              if(problem.id==targetId){
+                this.searchData.contents[firstIndex].contents[secondIndex].contents[thirdIndex].contents[problemIndex] = newProblem;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
 }
