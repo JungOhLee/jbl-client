@@ -12,6 +12,7 @@ import { LoginRoutingModule } from './login/login-routing.module';
 import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './login/logout.component';
 
 import { JblMainComponent } from './jbl-main/jbl-main.component';
 import { SearchComponent } from './search/search.component';
@@ -71,7 +72,8 @@ class AuthRequestOptions extends BaseRequestOptions {
     TocComponent,
     TocIndexComponent,
     TocProblemsComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     DndModule.forRoot(),

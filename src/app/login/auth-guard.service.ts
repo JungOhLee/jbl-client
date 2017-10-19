@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild } from '@angular/router';
 import { AuthService } from './auth.service';
+import { baseUrl } from '../base-url';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
@@ -21,13 +22,22 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   }
 
   checkLogin(url: string): boolean{
-    if (localStorage.getItem('curUser')) { return true; }
-
-    // Store the attempted URL for redirecting
-    this.authService.redirectUrl = url;
-
-    // Navigate to the login page with extras
-    this.router.navigate(['/login']);
-    return false;
+    this.authService.redirectUrl = url
+    if (localStorage.getItem('curUser'))
+    {
+      return true;
+    } else {
+      this.authService.checkAuth()
+        .subscribe(res => {
+          if(res.email !== "unknown"){
+            console.log(res);
+            localStorage.setItem('curUser', JSON.stringify(res));
+            return true;
+          } else {
+            window.location.href= baseUrl +'/login';
+            return false;
+          }
+        })
+    }
   }
 }

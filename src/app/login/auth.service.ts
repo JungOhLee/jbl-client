@@ -17,7 +17,8 @@ export class AuthService {
   userEmail = this.getUserEmail();
   isAdmin = this.checkAdmin();
 
-  ApiUrl = baseUrl + '/login-admin';
+  ApiUrl = baseUrl + '/auth';
+  adminApiUrl = baseUrl + '/login-admin';
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
@@ -26,6 +27,11 @@ export class AuthService {
       return true;
     }
     return false;
+  }
+
+  checkAuth() {
+    return this.http.get(this.ApiUrl, { withCredentials: true })
+      .map(res => res.json())
   }
 
   getUserEmail() {
@@ -46,7 +52,7 @@ export class AuthService {
   }
 
   login(info) {
-    return this.http.post(this.ApiUrl, info)
+    return this.http.post(this.adminApiUrl, info)
       .toPromise()
       .then(res => {
               localStorage.setItem('curUser', JSON.stringify(res.json()));
