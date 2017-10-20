@@ -18,7 +18,7 @@
             </li>
             <li *ngFor="let item of toc.topics" class="list-group-item">
               <div class="row">
-                <div class="topic col-8">{{item.topic}}</div>
+                <div class="topic col-8"><a (click)="goToId($event)">{{item.topic}}</a></div>
                 <div class="profs col-4">{{item.profs}}</div>
               </div>
             </li>

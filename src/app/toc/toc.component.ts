@@ -65,4 +65,13 @@ export class TocComponent implements OnInit{
   openEditMode(){
     this.editMode = !this.editMode
   }
+
+  goToId(event){
+    event.preventDefault();
+    let id = event.target.text.replace(/ /g, "-");
+    const element = document.getElementById(id);
+    if (element) { element.scrollIntoView(element); }
+    else { alert("해당하는 문제가 없습니다.");}
+  }
+
 }
