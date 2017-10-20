@@ -5,8 +5,8 @@
     <div class="problem-menu" *ngIf="showMenu">
       <ul>
         <li><a [routerLink]="['/problem',problem.id]">자세히</a></li>
-        <li><a [routerLink]="['/problem', problem.id, 'edit']" >수정</a><br></li>
-        <li><a (click)="deleteProblem(problem)" >삭제</a></li>
+        <li *ngIf="isAuth()"><a (click)="editProblem(problem)" >수정</a><br></li>
+        <li *ngIf="isAuth()"><a (click)="deleteProblem(problem)" >삭제</a></li>
       </ul>
     </div>
   </div>
