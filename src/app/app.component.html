@@ -6,7 +6,7 @@
         <a class="navbar-brand" href="/"><img src="./assets/medical_directory-512.png" width="45" height="45" class="d-inline-block align-top" alt=""><img src="./assets/brand.png" height="45" class="d-inline-block align-top" alt=""></a>
       </div>
 
-      <div *ngIf="checkLogin()" class="col-12 col-sm-6 text-right" ><span>{{userName()}}</span> | <a (click)="logout()" href="/">Logout</a></div>
+      <div *ngIf="checkLogin()" class="col-12 col-sm-6 text-right" ><span>{{userName()}}</span> | <a [routerLink]="['/logout']" >Logout</a></div>
     </div>
     <!-- toggle buttons   -->
     <!-- <div class="btn-group justify-content-end" role="group"> -->
