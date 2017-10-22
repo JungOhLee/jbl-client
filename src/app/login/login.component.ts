@@ -2,6 +2,7 @@ import { Component }   from '@angular/core';
 import { Router }      from '@angular/router';
 import { AuthService } from './auth.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { baseUrl } from '../base-url';
 import 'rxjs/add/operator/toPromise';
 
 
@@ -12,10 +13,8 @@ export class LoginComponent {
   message: string;
   failMessage: string;
   loginForm:FormGroup;
-  model: Object = {
-    email: "",
-    password: ""
-  };
+  isAdmin: Boolean = false;
+  extLoginUrl: string = baseUrl + '/login'
 
   constructor(
     private authService: AuthService,
@@ -66,4 +65,13 @@ export class LoginComponent {
   checkLogin() {
     return this.authService.isLoggedIn
   }
+
+  toggleIsAdmin(){
+    this.isAdmin = !this.isAdmin
+  }
+
+  goToExtLogin(){
+    window.location.href= this.extLoginUrl;
+  }
+
 }
