@@ -47,11 +47,8 @@ import {RequestOptions, BaseRequestOptions} from '@angular/http';
 /**
  * Extending BaseRequestOptions to inject common headers to all requests.
  */
-class AuthRequestOptions extends BaseRequestOptions {
-    constructor() {
-        super();
-        // this.headers.append("a","b")
-    }
+export class AuthRequestOptions extends BaseRequestOptions {
+    withCredentials: boolean = true;
 }
 
 
@@ -92,8 +89,8 @@ class AuthRequestOptions extends BaseRequestOptions {
     CommentService,
     TocService,
     BookmarkService,
-    LoaderService
-    // {provide: RequestOptions, useClass: AuthRequestOptions}
+    LoaderService,
+    {provide: RequestOptions, useClass: AuthRequestOptions}
   ],
   bootstrap: [AppComponent]
 })
