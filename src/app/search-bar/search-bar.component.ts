@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SearchBarComponent implements OnInit {
   public query:string;
-  public searchList:Array<object> ;
+  public searchList:Object[] ;
   public filteredList:Array<any> ;
 
   constructor(
@@ -28,7 +28,22 @@ export class SearchBarComponent implements OnInit {
   }
 
   search(query) {
-    this.router.navigate(['/search',{query: {course: query}}])
+    switch(query.type) {
+      case "course":
+        this.router.navigate(['/search'],{queryParams: {course: query.origin}});
+        this.query ="";
+        break;
+      case "topic":
+        this.router.navigate(['/search'],{queryParams: {topic: query.origin}});
+        this.query="";
+        break;
+      case "prof":
+        this.router.navigate(['/search'],{queryParams: {prof: query.origin}});
+        this.query="";
+        break;
+      default:
+        alert("오류")
+    }
   }
 
   setSearchList(tocs){
@@ -49,10 +64,14 @@ export class SearchBarComponent implements OnInit {
       })
     })
 
-    let resultList:Array<object> = [];
-    courseList.map(course => resultList.push({course: course, value: course.replace(/\s/g,"")}))
-    topicList.map(topic => resultList.push({topic: topic, value: topic.replace(/\s/g,"")}))
-    profList.map(prof => resultList.push({prof: prof, value: prof}))
+    let resultList:Object[] = [];
+    courseList.map(course => resultList.push({name: "과목: "+course, type: "course", value: course.replace(/\s/g,""), origin: course}))
+    topicList.map(topic => resultList.push({name: "수업: "+topic, type:"topic", value: topic.replace(/\s/g,""), origin: topic}))
+    profList.map(prof => resultList.push({name: "교수: "+prof, type:"prof", value: prof, origin: prof}))
+
+    // courseList.map(course => resultList.push("과목: "+course))
+    // topicList.map(topic => resultList.push("수업: "+topic))
+    // profList.map(prof => resultList.push("교수: "+prof))
 
     this.searchList = resultList;
     console.log(this.searchList);
@@ -61,7 +80,7 @@ export class SearchBarComponent implements OnInit {
   filter(query) {
     if (query !== ""){
         this.filteredList = this.searchList.filter(el =>{
-            return el['value'].toLowerCase().indexOf(query.toLowerCase()) > -1;
+            return el["value"].toLowerCase().indexOf(query.toLowerCase()) > -1;
         });
     }else{
         this.filteredList = [];

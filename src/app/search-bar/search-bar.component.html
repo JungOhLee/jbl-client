@@ -3,7 +3,7 @@
   <div class="form-inline row no-gutters">
     <div class="search-bar col-10 text-right">
       <label for="mainSearch" class="sr-only">Search</label>
-      <p-autoComplete [(ngModel)]="query" [suggestions]="filteredList" (completeMethod)="filter($event.query)"size="30" styleClass="search-bar" inputStyleClass="form-control inline-block w-100" placeholder="과목, 수업, 교수, 연도"></p-autoComplete>
+      <p-autoComplete [(ngModel)]="query" [suggestions]="filteredList" field="name" (completeMethod)="filter($event.query)"size="30" styleClass="search-bar" inputStyleClass="form-control inline-block w-100" placeholder="과목, 수업, 교수, 연도" forceSelection="true" (onSelect)="search(query)"></p-autoComplete>
     </div>
     <div class="input-group-btn col-2">
       <button class="btn btn-outline-primary rounded-right" type="button" ><span class="fa fa-search"></span></button>
