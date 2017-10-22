@@ -30,7 +30,7 @@ export class AuthService {
   }
 
   checkAuth() {
-    return this.http.get(this.ApiUrl, { withCredentials: true })
+    return this.http.get(this.ApiUrl)
       .map(res => res.json())
   }
 
@@ -51,7 +51,7 @@ export class AuthService {
     return false;
   }
 
-  login(info) {
+  adminLogin(info) {
     return this.http.post(this.adminApiUrl, info)
       .toPromise()
       .then(res => {
@@ -60,6 +60,11 @@ export class AuthService {
             },
             err => { console.log(err); }
       )
+  }
+
+  login(token){
+    localStorage.setItem('curUser', JSON.stringify(token));
+    this.isLoggedIn = true;
   }
 
   logout(): void {

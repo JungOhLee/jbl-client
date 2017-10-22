@@ -30,8 +30,9 @@ export class AuthGuard implements CanActivate, CanActivateChild {
       this.authService.checkAuth()
         .subscribe(res => {
           if(res.email !== "unknown"){
-            console.log(res);
-            localStorage.setItem('curUser', JSON.stringify(res));
+            let token = res
+            this.authService.login(token);
+            this.router.navigate(['/']);
             return true;
           } else {
             window.location.href= baseUrl +'/login';
