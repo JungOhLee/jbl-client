@@ -20,14 +20,12 @@ export class JblMainComponent implements OnInit {
     private authService: AuthService,
     private searchService: SearchService,
     private problemService: ProblemService
-  ) {
-      this.tocService.getAllTocs().subscribe(res => {
-        this.tocList = res;
-      })
-    }
+  ) {}
 
   ngOnInit() {
-
+    this.tocService.getAllTocs().subscribe(res => {
+      this.tocList = res;
+    })
   }
 
   findByCourse(course) {
