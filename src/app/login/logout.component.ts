@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
+import { baseUrl } from '../base-url';
 
 @Component({
   template: ''
@@ -12,7 +13,8 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit() {
     this.authService.logout();
-    this.router.navigate(['login']);
+    localStorage.removeItem('curUser');
+    window.location.href= baseUrl +'/logout';
   }
 
 }
