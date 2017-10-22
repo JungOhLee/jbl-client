@@ -5,9 +5,9 @@ export const baseUrl: string = setBaseUrl();
 
 function setBaseUrl(){
   if(!environment.production){
-    return 'http://jbl-api-devel.snumedu.net:8000'
+    return 'http://devel.jung-kook.com:8000'
   } else {
-    return 'http://jbl-api.ap-northeast-2.elasticbeanstalk.com'
+    return 'http://jbl-api.snumed.kr'
   }
 }
 
