@@ -43,7 +43,7 @@ export class LoginComponent {
   login() {
     this.message = '로그인 중입니다. ';
     this.failMessage = "";
-    this.authService.login(this.loginForm.value)
+    this.authService.adminLogin(this.loginForm.value)
     .then(() => {
       this.setMessage();
       if (this.authService.isLoggedIn) {
@@ -60,8 +60,8 @@ export class LoginComponent {
   }
 
   logout() {
-    this.authService.logout();
     this.setMessage();
+    this.router.navigate['/logout'];
   }
   checkLogin() {
     return this.authService.isLoggedIn
