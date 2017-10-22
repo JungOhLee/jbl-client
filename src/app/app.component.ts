@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthService } from './login/auth.service';
-import { Router, NavigationEnd } from '@angular/router';
 import { LoaderService } from './loader.service';
 
 @Component({
@@ -31,8 +30,4 @@ export class AppComponent {
   userName(){
     return this.authService.getUserEmail();
   }
-  logout(){
-    this.authService.logout();
-  }
-
 }
