@@ -48,7 +48,11 @@
   </nav> -->
 
 <!-- TODO 나중에 추가 -->
-<!-- <search-bar></search-bar> -->
+<div class="row">
+  <div class="col-12 col-sm-6 ml-auto">
+    <search-bar *ngIf="checkLogin()"></search-bar>
+  </div>
+</div>
 
   <!-- Warning -->
   <div *ngIf="alert" class="alert alert-danger" role="alert">
