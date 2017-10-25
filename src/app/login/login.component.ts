@@ -60,7 +60,7 @@ export class LoginComponent {
 
   logout() {
     this.setMessage();
-    this.router.navigate['/logout'];
+    this.router.navigate(['/logout']);
   }
   checkLogin() {
     return this.authService.isLoggedIn
