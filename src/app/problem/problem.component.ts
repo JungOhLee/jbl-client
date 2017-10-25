@@ -44,7 +44,7 @@ export class ProblemComponent implements OnInit {
   }
 
   isAuth() {
-    let logic = (this.authService.getUserEmail==this.problem.email) || (this.authService.checkAdmin)
+    let logic = (this.authService.getUserEmail()==this.problem.email) || (this.authService.checkAdmin())
     return logic
   }
 
