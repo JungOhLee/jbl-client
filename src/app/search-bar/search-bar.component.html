@@ -1,12 +1,12 @@
 <!-- Search bar -->
 <div class="container p-2">
   <div class="form-inline row no-gutters">
-    <div class="search-bar col-10 text-right">
+    <div class="search-bar col-11 text-right">
       <label for="mainSearch" class="sr-only">Search</label>
-      <p-autoComplete [(ngModel)]="query" [suggestions]="filteredList" field="name" (completeMethod)="filter($event.query)"size="30" styleClass="search-bar" inputStyleClass="form-control inline-block w-100" placeholder="과목, 수업, 교수, 연도" forceSelection="true" (onSelect)="search(query)"></p-autoComplete>
+      <p-autoComplete class="float-right" [(ngModel)]="query" [suggestions]="filteredList" field="name" (completeMethod)="filter($event.query)"size="30" styleClass="search-bar" inputStyleClass="form-control inline-block w-100" placeholder="과목, 수업, 교수, 연도" forceSelection="true" (onSelect)="search(query)"></p-autoComplete>
     </div>
-    <div class="input-group-btn col-2">
-      <button class="btn btn-outline-primary rounded-right" type="button" ><span class="fa fa-search"></span></button>
+    <div class="input-group-btn col-1">
+      <button class="btn btn-outline-primary rounded-right float-right" type="button" ><span class="fa fa-search"></span></button>
     </div>
   </div>
   <div class="search-list">
